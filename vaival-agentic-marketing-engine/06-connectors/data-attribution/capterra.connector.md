@@ -1,0 +1,13 @@
+---
+name: capterra
+tool_display_name: Capterra
+category: data-attribution
+owner_vertical: seo-aeo-geo
+used_by_roles: [seo-manager, content-marketing-manager, link-building-digital-pr-specialist]
+purpose: Review platform; key GEO citation source.
+auth_method: TBD
+status: stub
+phase: 1
+---
+
+To be implemented in Phase 5. See connector-standard.md.
