@@ -45,6 +45,10 @@ Then invoke the Orchestrator with:
 
 Output: a fully populated `ledger.md` that gates all downstream work.
 
+## Execution flow
+
+See **[FLOWS.md](FLOWS.md)** for 8 Mermaid diagrams covering: system map, onboarding sequence, weekly loop, per-artifact rubric gate, decision-authority matrix, stop-loss enforcement, HITL lifecycle, and a when/what/how table.
+
 ## Architecture
 
 ```
