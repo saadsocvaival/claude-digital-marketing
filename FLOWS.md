@@ -176,10 +176,10 @@ stateDiagram-v2
     Ship --> Event
     Event --> Measure: wired to measurement plan
     Measure --> Review: review date (14/30/90d)
-    Review --> Scale: above threshold
+    Review --> Scaled: above threshold
     Review --> Kill: below threshold
     Review --> Iterate2: inconclusive
-    Scale --> Done
+    Scaled --> Done
     Kill --> Done
     Iterate2 --> Draft
     Done --> [*]
