@@ -161,16 +161,19 @@ stateDiagram-v2
 
     LegalGate: Legal review?<br/>(only for regulated claims /<br/>competitor naming)
     LegalGate --> Hold: needs review
-    Hold --> Legal[Legal sign-off]
+    state "Legal sign-off" as Legal
+    Hold --> Legal
     Legal --> LegalGate
     LegalGate --> CROGate: clean or N/A
 
     CROGate: CRO sign-off?<br/>(only for LPs / forms)
-    CROGate --> DanaReview[Head of CRO approval]
+    state "Head of CRO approval" as DanaReview
+    CROGate --> DanaReview
     DanaReview --> CROGate
     CROGate --> Ship: clean or N/A
 
-    Ship --> Event[append ledger-events/*.jsonl]
+    state "append ledger-events/*.jsonl" as Event
+    Ship --> Event
     Event --> Measure: wired to measurement plan
     Measure --> Review: review date (14/30/90d)
     Review --> Scale: ≥threshold
