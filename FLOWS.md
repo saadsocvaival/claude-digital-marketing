@@ -11,7 +11,7 @@ flowchart TB
     Operator([👤 Operator / VP Marketing])
     CMO[🎯 CMO Orchestrator<br/>.claude/agents/cmo-orchestrator.md]
 
-    subgraph Heads[8 Department Heads]
+    subgraph Heads ["8 Department Heads"]
       direction LR
       HG[Head of Growth]
       HP[Head of Performance]
@@ -27,7 +27,7 @@ flowchart TB
     Rubrics[(19 rubrics<br/>pass bar 8)]
     Templates[(15 templates)]
 
-    subgraph Client[clients/{id}/]
+    subgraph Client ["clients/{id}/"]
       Ledger[ledger.md]
       Plan[plan.md + okrs/]
       Feeds[feeds/weekly-kpi-snapshot.md]
