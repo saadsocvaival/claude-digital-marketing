@@ -1,2 +1,39 @@
 .claude/skills
 .claude/settings.local.json
+
+# Secrets — NEVER commit
+*.env
+*.env.*
+*.secret
+*.pem
+*.key
+.envrc
+.secrets/
+credentials.json
+service-account*.json
+
+# Per-client raw secrets (vault pointers only)
+clients/*/secrets/
+!clients/*/secrets.pointer.md
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# Build / caches
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+dist/
+build/
+
+# Local dev scratch
+scratch/
+tmp/
+*.log

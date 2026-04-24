@@ -1,0 +1,43 @@
+name: Competitor Battlecard
+criteria:
+  - id: competitor_identified
+    weight: 9
+    description: Named competitor; category + positioning claim + primary ICP overlap stated.
+    anti_patterns: ["vague 'competitors'", "no ICP overlap"]
+  - id: why_they_win
+    weight: 10
+    description: Honest top 3 reasons they beat us (not strawmanned).
+    anti_patterns: ["only weaknesses listed", "dismissive tone"]
+  - id: why_we_win
+    weight: 10
+    description: Top 3 defensible wins with proof (feature, data, case study, pricing, SLA).
+    anti_patterns: ["marketing fluff", "unprovable claims"]
+  - id: trap_setting_questions
+    weight: 9
+    description: 3–5 discovery questions that surface our advantages / their gaps — non-leading.
+    anti_patterns: ["leading questions", "no questions"]
+  - id: objection_rebuttals
+    weight: 9
+    description: Top 5 objections ("they're cheaper", "they have X feature") with 2–3 sentence rebuttal.
+    anti_patterns: ["no rebuttals", "dishonest rebuttals"]
+  - id: pricing_intel
+    weight: 8
+    description: Public pricing + known discount patterns + contract terms noted.
+    anti_patterns: ["unsourced pricing"]
+  - id: switch_playbook
+    weight: 8
+    description: Migration/switching plan for customers coming from them (data export, parity checklist).
+    anti_patterns: ["no switch plan"]
+  - id: landmines
+    weight: 8
+    description: Where we lose — deals to walk away from; disqualifiers.
+    anti_patterns: ["no walk-away criteria"]
+  - id: freshness
+    weight: 8
+    description: Last-reviewed date ≤ 90 days; intel source cited.
+    anti_patterns: ["stale data", "unsourced"]
+  - id: usability
+    weight: 7
+    description: 1-page cheat card + full card; scannable by sales rep pre-call.
+    anti_patterns: ["essay", "no cheat card"]
+pass_bar: 8

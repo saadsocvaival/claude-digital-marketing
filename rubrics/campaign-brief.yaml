@@ -1,0 +1,43 @@
+name: Paid Campaign Brief
+criteria:
+  - id: objective_specific
+    weight: 10
+    description: Single clear objective (awareness / demand / demand-capture / retargeting / retention) — not compound.
+    anti_patterns: ["multi-objective campaign", "vague 'grow pipeline'"]
+  - id: icp_segment_named
+    weight: 9
+    description: Specific persona from icp.md referenced (not "our audience").
+    anti_patterns: ["generic audience", "no persona mapping"]
+  - id: message_offer_linked
+    weight: 9
+    description: Message pulled from positioning/messaging doc; offer from offer.md.
+    anti_patterns: ["freelance messaging", "offer inconsistent"]
+  - id: creative_concepts
+    weight: 9
+    description: ≥3 creative angles with headlines (not one variant presented as "the" creative).
+    anti_patterns: ["single variant", "headlines read alike"]
+  - id: lp_message_match
+    weight: 10
+    description: LP referenced with message-match note; CRO sign-off required pre-launch.
+    anti_patterns: ["no LP link", "LP hero doesn't match ad"]
+  - id: budget_duration
+    weight: 9
+    description: Total budget, daily cap, campaign duration; pacing plan.
+    anti_patterns: ["no daily cap", "open-ended duration"]
+  - id: measurement_plan
+    weight: 9
+    description: Primary + secondary KPIs, attribution window, data path.
+    anti_patterns: ["no attribution window stated"]
+  - id: stop_loss
+    weight: 10
+    description: Explicit ROAS/CAC thresholds → auto-pause.
+    anti_patterns: ["no stop-loss", "stop-loss without threshold"]
+  - id: utm_compliance
+    weight: 8
+    description: UTMs generated from taxonomy; any deviation blocks launch.
+    anti_patterns: ["ad-hoc UTMs"]
+  - id: launch_gate_checklist
+    weight: 9
+    description: CRO/Brand/Legal/Budget/Tracking QA all signed off before go.
+    anti_patterns: ["skipped gates"]
+pass_bar: 8

@@ -1,0 +1,31 @@
+name: HITL Request
+criteria:
+  - id: why_clear
+    weight: 10
+    description: One-sentence reason this needs a human; policy reference or threshold cited.
+    anti_patterns: ["vague 'please review'", "no policy ref"]
+  - id: options_given
+    weight: 10
+    description: 2–4 concrete options with tradeoffs; not open-ended.
+    anti_patterns: ["open question", "single option"]
+  - id: recommendation
+    weight: 9
+    description: Agent's recommended option + confidence level.
+    anti_patterns: ["no recommendation", "no confidence"]
+  - id: deadline
+    weight: 9
+    description: Response deadline + default-if-no-response action stated.
+    anti_patterns: ["no deadline", "no default"]
+  - id: blast_radius
+    weight: 9
+    description: What happens if wrong — cost, reach, reversibility.
+    anti_patterns: ["consequences hidden"]
+  - id: context_sufficient
+    weight: 8
+    description: Operator can decide without opening 5 other docs; key facts inline.
+    anti_patterns: ["context scattered"]
+  - id: schema_compliance
+    weight: 9
+    description: Matches hitl-request.skill.md schema exactly.
+    anti_patterns: ["freeform HITL"]
+pass_bar: 8

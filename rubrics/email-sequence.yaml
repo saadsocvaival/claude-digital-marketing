@@ -1,0 +1,43 @@
+name: Email Sequence
+criteria:
+  - id: sequence_purpose
+    weight: 10
+    description: One named goal (onboarding activation / lead nurture / winback / renewal) with target behavior.
+    anti_patterns: ["multi-goal sequence", "no target behavior"]
+  - id: segmentation
+    weight: 9
+    description: Entry criteria + exit criteria defined; suppression rules explicit.
+    anti_patterns: ["blast to all", "no exit", "no suppression"]
+  - id: cadence_logic
+    weight: 9
+    description: Send timing justified (behavioral trigger vs time delay); frequency caps respected.
+    anti_patterns: ["arbitrary daily cadence", "no frequency cap"]
+  - id: message_progression
+    weight: 9
+    description: Each email advances a distinct job (educate → prove → offer → urgency); no repetition.
+    anti_patterns: ["same message reworded", "no progression"]
+  - id: subject_line_quality
+    weight: 9
+    description: ≤50 chars; specific; curiosity or value; passes spam-trigger check.
+    anti_patterns: ["spam triggers", "clickbait", "generic"]
+  - id: personalization_depth
+    weight: 8
+    description: Uses ≥2 dynamic fields beyond first name (company, role, last action, product used).
+    anti_patterns: ["first-name-only", "no dynamic content"]
+  - id: cta_discipline
+    weight: 9
+    description: One primary CTA per email; secondary link optional; button text is a verb-object.
+    anti_patterns: ["competing CTAs", "vague CTA"]
+  - id: brand_voice_eval
+    weight: 9
+    description: Passes brand-voice.yaml ≥ 8.
+    anti_patterns: ["off-brand"]
+  - id: deliverability_hygiene
+    weight: 9
+    description: Text/HTML ratio sane; image-only emails avoided; unsubscribe + physical address present.
+    anti_patterns: ["image-only", "no unsub", "CAN-SPAM violation"]
+  - id: measurement_plan
+    weight: 8
+    description: Per-email KPIs + sequence-level KPI; attribution to target behavior defined.
+    anti_patterns: ["open rate only", "no attribution"]
+pass_bar: 8

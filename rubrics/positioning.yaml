@@ -1,0 +1,43 @@
+name: Positioning Statement & Framework
+criteria:
+  - id: moore_template_complete
+    weight: 10
+    description: Full Geoffrey Moore template filled (for/who/category/benefit/unlike/differentiator), each slot specific.
+    anti_patterns: ["missing unlike/differentiator", "category too generic (e.g., 'software')"]
+  - id: category_choice_defended
+    weight: 9
+    description: The product category is either a recognized category (with rationale) or a deliberate new category (with POV justification).
+    anti_patterns: ["squatting on multiple categories", "undefined category"]
+  - id: differentiator_is_real
+    weight: 10
+    description: Differentiator is verifiable, defensible, and matters to the ICP (not a feature-list, not a claim competitors could equally make).
+    anti_patterns: ["me-too differentiator", "unprovable claim"]
+  - id: three_pillars
+    weight: 8
+    description: 3 pillars of value, each with a plain-language statement + why-it-matters + proof point.
+    anti_patterns: ["<3 or >4 pillars", "pillars without proof"]
+  - id: proof_points_ranked
+    weight: 9
+    description: Proof points ranked by evidentiary weight (customer outcomes > third-party > self-claim); each sourced.
+    anti_patterns: ["unsourced claims", "marketing-fluff 'X% faster'"]
+  - id: objection_handling
+    weight: 8
+    description: Top 5 objections with responses + backup proof or reframe.
+    anti_patterns: ["defensive tone", "dodging objections"]
+  - id: anti_positioning
+    weight: 7
+    description: Explicit "what we are NOT" — at least 3 statements.
+    anti_patterns: ["no anti-positioning"]
+  - id: vocabulary_control
+    weight: 7
+    description: "Words we use / words we avoid" table populated.
+    anti_patterns: ["inconsistent terminology between docs"]
+  - id: icp_alignment
+    weight: 9
+    description: Positioning clearly speaks to the ICP personas in icp.md; wording passes the ICP's sniff test.
+    anti_patterns: ["positioning for wrong buyer", "jargon wrong for persona"]
+  - id: actionability
+    weight: 8
+    description: Sales, marketing, support can quote directly from this doc — no paraphrase needed.
+    anti_patterns: ["needs translation before use"]
+pass_bar: 8

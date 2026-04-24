@@ -1,0 +1,35 @@
+name: Brand Voice Guide
+criteria:
+  - id: principles_distinct
+    weight: 10
+    description: 3–5 voice principles; each pairs "we sound X, not Y" with a concrete example.
+    anti_patterns: ["abstract adjectives only", "<3 or >5 principles"]
+  - id: tone_by_context
+    weight: 9
+    description: Tone shifts defined for at least 6 contexts (hero copy, error msg, support reply, sales email, legal, community).
+    anti_patterns: ["one-tone-fits-all", "no context mapping"]
+  - id: lexicon
+    weight: 9
+    description: "We say / We don't say" tables with ≥10 entries each, rationale for avoids.
+    anti_patterns: ["missing avoid list", "no rationale"]
+  - id: grammar_style
+    weight: 7
+    description: Concrete rules: Oxford comma, contractions, sentence length, reading level (Flesch-Kincaid target).
+    anti_patterns: ["subjective style guidance", "no measurable target"]
+  - id: pov_pronouns
+    weight: 7
+    description: First-person + second-person conventions stated.
+    anti_patterns: ["inconsistent POV", "unspecified pronouns"]
+  - id: on_brand_vs_off_brand
+    weight: 9
+    description: ≥6 before/after pairs showing on-brand rewrite + why.
+    anti_patterns: ["examples without explanation", "only generic examples"]
+  - id: enforceable_by_qa
+    weight: 8
+    description: Rules are automatable; brand-voice-check.md can score copy against them.
+    anti_patterns: ["rules so subjective no QA can enforce"]
+  - id: evolution_policy
+    weight: 6
+    description: Cadence + signal for evolving the voice (not whim).
+    anti_patterns: ["no evolution policy"]
+pass_bar: 8

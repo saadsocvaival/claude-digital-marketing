@@ -1,0 +1,43 @@
+name: SEO Content Brief
+criteria:
+  - id: target_query_intent
+    weight: 10
+    description: Primary query + intent classification (informational/commercial/navigational/transactional) + SERP intent confirmed.
+    anti_patterns: ["multiple primary queries", "intent unstated"]
+  - id: serp_analysis
+    weight: 9
+    description: Top 10 SERP analyzed — format, depth, angle gaps identified; featured snippet target named.
+    anti_patterns: ["no SERP analysis", "rewrite top result"]
+  - id: keyword_cluster
+    weight: 9
+    description: Primary + 5–15 secondaries + entities/NLP terms; search volume + difficulty sourced.
+    anti_patterns: ["single keyword", "no volume data"]
+  - id: outline_structure
+    weight: 9
+    description: H1 + H2/H3 outline covers SERP intent completely + adds differentiator.
+    anti_patterns: ["clone of top result", "missing sub-intents"]
+  - id: geo_aeo_plays
+    weight: 9
+    description: GEO (LLM citation readiness) + AEO (PAA/snippet) plays defined — stat blocks, schema, definition blocks.
+    anti_patterns: ["no GEO plays", "no schema plan"]
+  - id: eeat_signals
+    weight: 8
+    description: Author, sources, original data/screenshots, expert quotes specified.
+    anti_patterns: ["no author", "unsourced"]
+  - id: internal_linking
+    weight: 8
+    description: Links out to ≥3 related pages; links in from ≥2 related pages planned.
+    anti_patterns: ["orphan page", "no link plan"]
+  - id: content_specs
+    weight: 7
+    description: Target length, reading level, media plan (images/video/interactive).
+    anti_patterns: ["no length target", "text-only default"]
+  - id: success_metrics
+    weight: 9
+    description: Target ranking window + organic sessions + conversion goal + review date.
+    anti_patterns: ["rank only", "no review date"]
+  - id: brand_voice_eval
+    weight: 8
+    description: Brief preserves brand voice constraints for writer.
+    anti_patterns: ["voice not referenced"]
+pass_bar: 8

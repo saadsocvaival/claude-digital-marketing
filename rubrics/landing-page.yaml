@@ -1,0 +1,47 @@
+name: Landing Page (brief + copy)
+criteria:
+  - id: single_conversion_goal
+    weight: 10
+    description: One primary conversion action; no nav competing; exit paths minimized.
+    anti_patterns: ["multiple goals", "full site nav"]
+  - id: message_match
+    weight: 10
+    description: Hero headline = ad promise (verbatim/near); source ad referenced.
+    anti_patterns: ["hero doesn't match ad", "no source ad"]
+  - id: hero_clarity
+    weight: 10
+    description: 5-second test passes — what/who/why/next is obvious.
+    anti_patterns: ["hero opens with logo vomit", "jargon-laden hero"]
+  - id: proof_density
+    weight: 9
+    description: ≥3 distinct proof types (logo, quote, number, case study, review) above fold or in first scroll.
+    anti_patterns: ["no proof", "stock logos"]
+  - id: objection_handling
+    weight: 9
+    description: Top 3 objections explicitly handled (price, trust, fit, time).
+    anti_patterns: ["objections ignored"]
+  - id: cta_hierarchy
+    weight: 9
+    description: Primary CTA repeated 2–3× with same verb; secondary CTA distinct if present.
+    anti_patterns: ["CTA text drift", "single CTA at bottom only"]
+  - id: form_friction
+    weight: 9
+    description: Fields justified (each field ties to a downstream process); progressive profiling used.
+    anti_patterns: ["phone required for lead magnet", "vanity fields"]
+  - id: brand_voice_eval
+    weight: 8
+    description: Passes brand-voice.yaml ≥ 8.
+    anti_patterns: ["off-brand"]
+  - id: trust_signals
+    weight: 8
+    description: Security/compliance badges, guarantees, risk reversal where relevant.
+    anti_patterns: ["no risk reversal"]
+  - id: mobile_first
+    weight: 9
+    description: Hero + primary CTA above fold on 375px viewport; tap targets ≥44px.
+    anti_patterns: ["mobile afterthought"]
+  - id: measurement_plan
+    weight: 9
+    description: Goal conversion + micro-conversions + heatmap/session-replay plan + test hypothesis.
+    anti_patterns: ["no test hypothesis"]
+pass_bar: 8

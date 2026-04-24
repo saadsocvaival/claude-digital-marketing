@@ -1,0 +1,39 @@
+name: Lead Scoring Model
+criteria:
+  - id: dimensions_explicit
+    weight: 10
+    description: Fit × Intent × Engagement modeled separately (not a single blended score).
+    anti_patterns: ["single score", "missing dimension"]
+  - id: fit_criteria_icp_aligned
+    weight: 10
+    description: Fit attributes pulled from icp.md (firmographics + role + tech stack); each weighted with rationale.
+    anti_patterns: ["fit ≠ ICP", "unweighted"]
+  - id: intent_signals_ranked
+    weight: 9
+    description: Intent signals ordered by predictive value (demo request > pricing page > blog read); decay defined.
+    anti_patterns: ["all signals equal", "no decay"]
+  - id: engagement_decay
+    weight: 9
+    description: Score decays over time of inactivity; decay rate justified.
+    anti_patterns: ["no decay", "permanent points"]
+  - id: mql_sql_thresholds
+    weight: 10
+    description: MQL / SQL / SAL thresholds defined; SLA on handoff + fallback path.
+    anti_patterns: ["no thresholds", "no SLA"]
+  - id: negative_scoring
+    weight: 9
+    description: Disqualifiers reduce or block score (competitor email, student, unsubscribe).
+    anti_patterns: ["no negatives", "disqualifier still scores"]
+  - id: validation_plan
+    weight: 9
+    description: Model validated vs historical won/lost data; precision+recall (or CVR by band) reported.
+    anti_patterns: ["gut-feel weights", "no validation"]
+  - id: feedback_loop
+    weight: 9
+    description: Sales disposition feedback re-trains model quarterly; drift monitor defined.
+    anti_patterns: ["set and forget"]
+  - id: transparency
+    weight: 7
+    description: Reps see WHY a lead scored — top contributing signals surfaced in CRM.
+    anti_patterns: ["black box score"]
+pass_bar: 8
