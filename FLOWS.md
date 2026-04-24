@@ -150,12 +150,12 @@ stateDiagram-v2
     [*] --> Brief: Head receives brief
     Brief --> Draft: invoke skill<br/>(uses template + context)
     Draft --> BrandGate: brand-voice.yaml check
-    BrandGate --> Rework1: score &lt;8
+    BrandGate --> Rework1: score under 8
     Rework1 --> Draft
     BrandGate --> SpecificGate: score ≥8
 
     SpecificGate: Artifact-specific rubric<br/>(e.g., ad-copy / seo-brief / campaign-brief)
-    SpecificGate --> Rework2: score &lt;8
+    SpecificGate --> Rework2: score under 8
     Rework2 --> Draft
     SpecificGate --> LegalGate: score ≥8
 
@@ -176,8 +176,8 @@ stateDiagram-v2
     Ship --> Event
     Event --> Measure: wired to measurement plan
     Measure --> Review: review date (14/30/90d)
-    Review --> Scale: ≥threshold
-    Review --> Kill: &lt;threshold
+    Review --> Scale: above threshold
+    Review --> Kill: below threshold
     Review --> Iterate2: inconclusive
     Scale --> [*]
     Kill --> [*]
