@@ -1,0 +1,35 @@
+name: RevOps Hygiene
+criteria:
+  - id: funnel_definitions
+    weight: 10
+    description: MQL/SQL/SAL/SQO/CW defined with precise entry+exit criteria agreed by marketing+sales.
+    anti_patterns: ["fuzzy definitions", "marketing and sales disagree on SQL"]
+  - id: stage_velocity
+    weight: 9
+    description: Median + p90 time-in-stage tracked per stage; stuck-deal triggers defined.
+    anti_patterns: ["no velocity tracking", "stuck deals ignored"]
+  - id: conversion_rates
+    weight: 10
+    description: Stage-to-stage conversion rates tracked by cohort; benchmarked against industry; outliers investigated.
+    anti_patterns: ["blended CR only", "no benchmark"]
+  - id: sla_handoff
+    weight: 10
+    description: SDR→AE handoff SLA defined (response time, context transfer); scorecard reported weekly.
+    anti_patterns: ["no SLA", "SLA not measured"]
+  - id: data_quality
+    weight: 9
+    description: CRM field completeness, duplicate rate, stale-deal rate monitored; owner named.
+    anti_patterns: ["no data quality metrics", "nobody owns CRM hygiene"]
+  - id: pipeline_coverage
+    weight: 9
+    description: Coverage ratio (pipeline $ / target $) reported weekly per segment with target band (typically 3–5×).
+    anti_patterns: ["no coverage tracking", "single blended coverage"]
+  - id: leaky_stage_diagnosis
+    weight: 8
+    description: Monthly funnel-diagnostic identifies the worst-performing stage and proposes fix.
+    anti_patterns: ["blame marketing for every gap", "no diagnostic ritual"]
+  - id: forecast_accuracy
+    weight: 8
+    description: Commit vs actuals tracked; MAPE reported; forecasting method improves over time.
+    anti_patterns: ["hope-based forecasting", "no MAPE"]
+pass_bar: 8

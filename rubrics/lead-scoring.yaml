@@ -1,8 +1,12 @@
 name: Lead Scoring Model
 criteria:
-  - id: dimensions_explicit
+  - id: phase_discipline
     weight: 10
-    description: Fit × Intent × Engagement modeled separately (not a single blended score).
+    description: "v1.1 — Phase-1 is fit-only (firmographic) + behavioral routing rules. Phase-2 composite (Fit×Intent×Engagement) gated on n≥2000 closed-won + data-quality + HITL approval. No composite scoring on insufficient data."
+    anti_patterns: ["composite before n≥2000", "phase conflation", "skipping Phase-1"]
+  - id: dimensions_explicit
+    weight: 9
+    description: In Phase-2 only — Fit × Intent × Engagement modeled separately (not a single blended score).
     anti_patterns: ["single score", "missing dimension"]
   - id: fit_criteria_icp_aligned
     weight: 10

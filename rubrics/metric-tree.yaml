@@ -1,0 +1,35 @@
+name: Metric Tree (NSM → L1 → L2)
+criteria:
+  - id: nsm_single
+    weight: 10
+    description: One North-Star Metric, customer-value bound, leading, actionable.
+    anti_patterns: ["multi-NSM", "revenue-as-NSM for early stage", "vanity NSM"]
+  - id: l1_decomposition
+    weight: 10
+    description: L1 input metrics are a complete, non-overlapping decomposition of NSM (users × activation × retention × expansion, or equivalent).
+    anti_patterns: ["overlap between L1s", "missing obvious L1", "additive instead of multiplicative where volumes compound"]
+  - id: l2_levers_actionable
+    weight: 10
+    description: L2 levers are owned by named Heads/motions and directly moveable within one cycle.
+    anti_patterns: ["lever no one owns", "lever takes 2 quarters to move"]
+  - id: owner_per_node
+    weight: 9
+    description: Every node (NSM, L1, L2) has a named owner — Motion lead or Head.
+    anti_patterns: ["orphan node", "committee ownership"]
+  - id: movement_arithmetic
+    weight: 9
+    description: Impact math explicit — moving L2 by X moves L1 by Y moves NSM by Z, with elasticities stated.
+    anti_patterns: ["hand-wave from lever to NSM", "no sensitivity analysis"]
+  - id: guardrails
+    weight: 8
+    description: Counter-metrics defined so gaming one lever doesn't quietly break another (e.g., signup-rate up but churn up too).
+    anti_patterns: ["no counter-metric", "Goodhart-vulnerable"]
+  - id: cadence
+    weight: 8
+    description: Each node has a review cadence (daily/weekly/monthly) and a data source.
+    anti_patterns: ["cadence not defined", "no source"]
+  - id: segmentation
+    weight: 8
+    description: Key nodes segmented (by ICP, plan, channel) — blended view is secondary.
+    anti_patterns: ["blended-only", "segment-fatigue (over-splitting)"]
+pass_bar: 8

@@ -147,6 +147,20 @@ Active NSMs: {list}. This cycle's theme: {theme}.
 |---|---|---|---|---|
 | ... | ... | ... | ... | 🟢/🟡/🔴 |
 
+## Motion Summary (v1.1 — added Stage 2.5)
+### Acquisition — new-ARR / CAC / payback / top-3 tradeoffs / seams
+### Activation — signups→aha / TTFV-p50 / wk2-retention / act→SQL / experiments
+### Retention — NRR / GRR / expansion pipeline / usage alerts / churn-risk
+
+## Unit Economics (standing section — v1.1)
+| Metric | Target | Current | Δ | Source |
+|---|---|---|---|---|
+| Blended CAC | ... | ... | ... | unit-economics.skill |
+| LTV (by segment) | ... | ... | ... | ... |
+| LTV:CAC | ≥3.0 | ... | ... | ... |
+| CAC payback (months) | ≤18 | ... | ... | ... |
+| Burn multiple | ≤2.0 | ... | ... | ... |
+
 ## Vertical Assignments & Next 7-Day Actions
 ### Growth — {Head action 1}, {action 2}, {action 3}
 ### Performance — ...
@@ -156,6 +170,7 @@ Active NSMs: {list}. This cycle's theme: {theme}.
 ### Analytics — ...
 ### Automation — ...
 ### Brand — ...
+### RevOps — pipeline hygiene / SLA scorecard / funnel diagnostic (v1.1)
 
 ## Autonomous Progress This Cycle
 - Completed: {N} deliverables across {M} verticals
@@ -178,7 +193,7 @@ Active NSMs: {list}. This cycle's theme: {theme}.
 ## Non-negotiable rules
 
 1. **No fabrication.** If data is not in ledger/feeds/memory/Playbook, you don't know it.
-2. **Rubric-grade every artifact you produce.** Below 8/10 → iterate.
+2. **Rubric-grade every artifact you produce.** Below 8/10 → iterate. **v1.1:** every artifact also passes through `adversarial-critic` agent; ship gate is `min(self-score, critic-score) ≥ 8`.
 3. **Playbook supremacy.** The Playbook wins every conflict.
 4. **One client per context.** Never leak data across clients.
 5. **Structured HITL only.** No unstructured "can you check this."

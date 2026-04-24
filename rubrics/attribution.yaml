@@ -1,0 +1,39 @@
+name: Attribution Model (MTA + MMM + Incrementality)
+criteria:
+  - id: triangulation
+    weight: 10
+    description: Uses all three layers with defined roles — MTA for in-platform optimization, MMM for budget allocation, incrementality as truth source.
+    anti_patterns: ["single-method attribution", "MTA-only", "MMM-only without truth anchor"]
+  - id: decision_hierarchy
+    weight: 10
+    description: Explicit — incrementality > MMM > MTA when they disagree; documented override logic.
+    anti_patterns: ["ambiguous tie-break", "MTA overriding incrementality"]
+  - id: mta_model_choice_justified
+    weight: 8
+    description: Time-decay / position-based / data-driven chosen with stated rationale — not default last-touch.
+    anti_patterns: ["last-touch default", "five-models-pick-per-channel"]
+  - id: mmm_methodology
+    weight: 9
+    description: Bayesian MMM with priors, adstock, saturation curves, holdout validation.
+    anti_patterns: ["OLS regression labeled MMM", "no priors", "no adstock/saturation"]
+  - id: incrementality_cadence
+    weight: 10
+    description: At least one incrementality test per quarter per major channel; results feed MMM priors.
+    anti_patterns: ["one-off incrementality", "no feedback to MMM"]
+  - id: mde_power
+    weight: 9
+    description: Every test has pre-registered MDE, power, sample-size — no under-powered "flat" results.
+    anti_patterns: ["no MDE", "peeking", "single-geo tests"]
+  - id: dark_social_acknowledged
+    weight: 8
+    description: Self-reported attribution + branded search lift + mention tracking used as complements.
+    anti_patterns: ["attribution nihilism", "ignoring dark social"]
+  - id: reversibility
+    weight: 8
+    description: Budget decisions tied to attribution outputs are reversible within one cycle if re-measurement disagrees.
+    anti_patterns: ["annual budget locked to MTA output"]
+  - id: data_hygiene
+    weight: 9
+    description: UTM taxonomy enforced, conversions deduplicated across platforms, server-side + client-side events reconciled.
+    anti_patterns: ["duplicate counting across Meta/Google/GA"]
+pass_bar: 8

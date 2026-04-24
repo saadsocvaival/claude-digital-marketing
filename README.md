@@ -1,6 +1,9 @@
 # Claude Digital Marketing — Autonomous Department OS
 
-> **An evidence-grade, rubric-gated, client-agnostic Operating System for running a Digital Marketing department with Claude Code.** CMO-level Orchestrator → 8 Department Heads → specialist skills → per-client state. Every artifact graded ≥8/10 against a public rubric before it ships.
+> **v1.1 — SME-hardened.** An evidence-grade, rubric-gated, client-agnostic Operating System for running a Digital Marketing department with Claude Code. CMO-level Orchestrator → 8 Department Heads + 3 Motion Leads → specialist skills → per-client state. Every artifact graded via `min(self-score, adversarial-critic-score) ≥ 8` before it ships.
+
+## v1.1 diff vs v1.0 (honest)
+Senior SME review of v1.0 flagged 17 methodology gaps. v1.1 closes 15 of 17 as authored work; 2 (MMM empirical fit, incrementality empirical proof) require real pipeline data and are gated to Stage 3.5. Headline additions: metric-tree decomposition, triangulated attribution (MTA + MMM + incrementality), two-phase lead scoring, motion-based overlay (acquisition/activation/retention), Head of RevOps, adversarial-critic gate, real GEO/AEO methodology, unit-economics standing section. See [CHANGELOG.md](CHANGELOG.md) for the full diff.
 
 ---
 

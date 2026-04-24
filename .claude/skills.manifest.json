@@ -1,6 +1,6 @@
 {
   "$schema": "./skills.manifest.schema.json",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Binds skills to agents. An agent MAY invoke only the skills listed under its name. Orchestration skills are invokable by cmo-orchestrator. Cross-cutting skills (compliance, QA) are invokable by all.",
   "orchestration": {
     "agent": "cmo-orchestrator",
@@ -87,9 +87,46 @@
         "social-content", "social-media-analyzer", "social-media-manager",
         "linkedin-content", "thread-writer", "x-twitter-growth",
         "bluesky", "reddit-marketing", "community-marketing", "podcast-marketing",
-        "content-creator"
+        "content-creator",
+        "category-design", "narrative-thesis"
+      ]
+    },
+    "head-of-revops": {
+      "owns": [
+        "revops", "pipeline-hygiene", "funnel-diagnostic",
+        "stage-velocity", "sla-scorecard", "crm-data-quality",
+        "forecast-accuracy"
       ]
     }
+  },
+  "motions": {
+    "motion-acquisition": {
+      "outcome_owned": ["new_arr", "blended_cac", "payback_months"],
+      "pulls_from": ["head-of-performance", "head-of-seo-geo-aeo", "head-of-content", "head-of-growth", "head-of-brand", "head-of-revops"]
+    },
+    "motion-activation": {
+      "outcome_owned": ["activation_rate", "ttfv_p50", "wk2_retention", "activation_to_sql"],
+      "pulls_from": ["head-of-cro", "head-of-automation", "head-of-content", "head-of-analytics", "head-of-growth"]
+    },
+    "motion-retention": {
+      "outcome_owned": ["nrr", "grr", "expansion_acv", "logo_churn"],
+      "pulls_from": ["head-of-automation", "head-of-content", "head-of-analytics", "head-of-brand", "head-of-revops"]
+    }
+  },
+  "skill_edges": {
+    "_comment": "v1.1 producer→consumer edges for composability. Downstream skills consume upstream Outputs.",
+    "edges": [
+      { "producer": "skills/orchestration/onboarding.skill.md", "consumer": "skills/orchestration/goal-decomposer.skill.md", "via": "icp.md, ledger.md" },
+      { "producer": "skills/orchestration/goal-decomposer.skill.md", "consumer": "skills/orchestration/weekly-tick.skill.md", "via": "okrs/*.md, plan.md" },
+      { "producer": "skills/analytics/unit-economics.skill.md", "consumer": "cmo-orchestrator (digest)", "via": "cac-ltv-ledger.md" },
+      { "producer": "skills/analytics/incrementality-test.skill.md", "consumer": "attribution-model.md (MMM prior)", "via": "experiments/incrementality/*.md" },
+      { "producer": "skills/seo/aeo-citation-audit.skill.md", "consumer": "skills/seo/answer-engine-brief.skill.md", "via": "remediation-queue.md" },
+      { "producer": "skills/seo/answer-engine-brief.skill.md", "consumer": "head-of-content (asset production)", "via": "aeo-brief.md" },
+      { "producer": "skills/content/distribution-map.skill.md", "consumer": "motion-acquisition", "via": "distribution/*.md" },
+      { "producer": "skills/growth/experiment-program.skill.md", "consumer": "skills/quality/rubric-calibration.skill.md", "via": "learning-ledger.jsonl" },
+      { "producer": "skills/performance/creative-ops.skill.md", "consumer": "head-of-performance (paid)", "via": "creative-log.jsonl" },
+      { "producer": "skills/quality/rubric-calibration.skill.md", "consumer": "rubrics/*.yaml (version bump)", "via": "_calibration/*.md" }
+    ]
   },
   "cross_cutting": {
     "available_to_all": [
