@@ -179,9 +179,10 @@ stateDiagram-v2
     Review --> Scale: above threshold
     Review --> Kill: below threshold
     Review --> Iterate2: inconclusive
-    Scale --> [*]
-    Kill --> [*]
+    Scale --> Done
+    Kill --> Done
     Iterate2 --> Draft
+    Done --> [*]
 ```
 
 ---
