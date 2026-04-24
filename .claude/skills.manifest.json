@@ -1,0 +1,109 @@
+{
+  "$schema": "./skills.manifest.schema.json",
+  "version": "1.0.0",
+  "description": "Binds skills to agents. An agent MAY invoke only the skills listed under its name. Orchestration skills are invokable by cmo-orchestrator. Cross-cutting skills (compliance, QA) are invokable by all.",
+  "orchestration": {
+    "agent": "cmo-orchestrator",
+    "skills": [
+      "skills/orchestration/onboarding.skill.md",
+      "skills/orchestration/goal-decomposer.skill.md",
+      "skills/orchestration/weekly-tick.skill.md",
+      "skills/orchestration/hitl-request.skill.md"
+    ]
+  },
+  "agents": {
+    "head-of-growth": {
+      "owns": [
+        "growth-strategy", "demand-gen", "marketing-demand-acquisition", "revops",
+        "icp-builder", "customer-research", "marketing-ideas", "marketing-psychology",
+        "launch-strategy", "free-tool-strategy", "referral-program", "ab-test-setup",
+        "community-marketing"
+      ]
+    },
+    "head-of-performance": {
+      "owns": [
+        "paid-ads", "google-ads", "google-ads-report", "facebook-ads", "linkedin-ads",
+        "ad-creative", "video-ad-analysis", "cold-email", "sales-enablement"
+      ]
+    },
+    "head-of-seo-geo-aeo": {
+      "owns": [
+        "seo", "seo-audit", "technical-seo-checker", "keyword-research", "seo-cluster",
+        "seo-plan", "ai-seo", "geo-content-optimizer", "geo-query-finder",
+        "entity-optimizer", "schema-markup", "schema-markup-generator",
+        "seo-content", "seo-content-brief", "seo-content-writer", "seo-technical",
+        "seo-sxo", "seo-images", "seo-sitemap", "seo-hreflang", "seo-schema",
+        "seo-backlinks", "backlink-analyzer", "backlink-audit", "domain-authority-auditor",
+        "seo-competitor-pages", "serp-analysis", "serp-analyzer",
+        "internal-linking-optimizer", "meta-tags-optimizer", "on-page-seo-auditor",
+        "programmatic-seo", "seo-programmatic", "seo-ecommerce",
+        "seo-local", "seo-maps", "google-reviews",
+        "seo-firecrawl", "seo-dataforseo", "ahrefs-research", "semrush-research",
+        "search-console", "rank-tracker", "seo-drift",
+        "content-gap-analysis", "content-refresher",
+        "aso-audit", "app-store-optimization",
+        "seo-page", "seo-google"
+      ]
+    },
+    "head-of-content": {
+      "owns": [
+        "content-strategy", "content-creator", "content-production",
+        "content-calendar", "content-repurposing", "content-refresher",
+        "content-humanizer", "content-quality-auditor", "copy-editing",
+        "copywriting", "write-blog", "write-landing",
+        "brand-guidelines", "brand-research", "brand-monitor",
+        "video-content-strategist", "thread-writer",
+        "lead-magnet", "lead-magnets", "newsletter",
+        "ai-image-gen", "stock-images", "podcast-marketing"
+      ]
+    },
+    "head-of-cro": {
+      "owns": [
+        "page-cro", "form-cro", "signup-flow-cro", "onboarding-cro",
+        "paywall-upgrade-cro", "popup-cro", "pricing-strategy",
+        "ab-test-setup", "copywriting", "write-landing", "marketing-psychology"
+      ]
+    },
+    "head-of-analytics": {
+      "owns": [
+        "analytics-tracking", "google-analytics", "search-console",
+        "campaign-analytics", "performance-reporter", "alert-manager",
+        "ab-test-setup", "marketing-ops", "memory-management"
+      ]
+    },
+    "head-of-automation": {
+      "owns": [
+        "email-sequence", "email-subject-lines", "hubspot",
+        "churn-prevention", "cold-email", "apollo-outreach",
+        "lead-magnet", "lead-magnets", "marketing-psychology", "revops"
+      ]
+    },
+    "head-of-brand": {
+      "owns": [
+        "brand-guidelines", "brand-research", "brand-monitor",
+        "icp-builder", "marketing-strategy-pmm", "product-marketing",
+        "product-marketing-context", "customer-research",
+        "competitor-analysis", "competitor-alternatives", "domain-research",
+        "social-content", "social-media-analyzer", "social-media-manager",
+        "linkedin-content", "thread-writer", "x-twitter-growth",
+        "bluesky", "reddit-marketing", "community-marketing", "podcast-marketing",
+        "content-creator"
+      ]
+    }
+  },
+  "cross_cutting": {
+    "available_to_all": [
+      "skills/orchestration/hitl-request.skill.md",
+      "vaival-agentic-marketing-engine/02-agents/cross-cutting/compliance-legal.agent.md",
+      "vaival-agentic-marketing-engine/02-agents/cross-cutting/quality-assurance.agent.md",
+      "vaival-agentic-marketing-engine/02-agents/cross-cutting/feasibility-validator.agent.md",
+      "vaival-agentic-marketing-engine/02-agents/cross-cutting/resource-discovery.agent.md",
+      "vaival-agentic-marketing-engine/02-agents/cross-cutting/recursive-optimizer.agent.md"
+    ]
+  },
+  "routing_rules": [
+    "If a skill is requested but the requesting agent is not in its owners list, the Orchestrator must re-delegate to the correct Head.",
+    "Cross-owned skills (e.g., ab-test-setup, copywriting) are acceptable — the invoking Head is responsible for the quality bar.",
+    "Any skill invocation emits an event to clients/{id}/ledger-events/ with {timestamp, agent, skill, inputs_hash, output_path, rubric_score}."
+  ]
+}

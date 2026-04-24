@@ -1,0 +1,6 @@
+{"ts":"2026-04-23T14:00:00Z","event":"ledger_initialized","by":"cmo-orchestrator","notes":"Onboarding skill populated ledger from fixture archetype. 12 leverage questions answered."}
+{"ts":"2026-04-23T14:02:00Z","event":"okrs_generated","by":"goal-decomposer","artifact":"okrs/2026-q2.md","notes":"4 NSMs + 8 Head objectives + 32 KRs"}
+{"ts":"2026-04-23T14:05:00Z","event":"rubric_gate_passed","by":"quality-assurance","artifact":"icp.md","score":97}
+{"ts":"2026-04-23T14:05:30Z","event":"rubric_gate_passed","by":"quality-assurance","artifact":"positioning.md","score":98}
+{"ts":"2026-04-23T14:06:00Z","event":"rubric_gate_passed","by":"quality-assurance","artifact":"messaging.md","score":97}
+{"ts":"2026-04-23T14:06:30Z","event":"hitl_request_created","by":"head-of-analytics","id":"hitl-001","policy_ref":"CLAUDE.md#governance","why":"BigQuery access blocked; multi-touch attribution deferred","options":["Escalate to CTO","Use fallback W-shaped on HubSpot only","Delay phase 2"],"recommendation":"Escalate + fallback in parallel"}

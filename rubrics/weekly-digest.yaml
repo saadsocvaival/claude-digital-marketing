@@ -1,0 +1,35 @@
+name: Weekly Operator Digest (Orchestrator output)
+criteria:
+  - id: executive_summary
+    weight: 9
+    description: 2–4 sentences; anyone can understand "what's up and what's next."
+    anti_patterns: ["longer than 4 sentences", "buzzword soup"]
+  - id: nsm_status_table
+    weight: 10
+    description: NSM table with target/current/Δ/on-track — uses KPI snapshot data exactly (no divergence).
+    anti_patterns: ["numbers don't match snapshot", "missing NSMs"]
+  - id: per_head_actions
+    weight: 10
+    description: Each of 8 Heads gets top 3 actions for next 7 days, each named + measurable.
+    anti_patterns: ["vague actions", "fewer than 3 per Head"]
+  - id: autonomous_progress
+    weight: 8
+    description: What the system completed without HITL (quantified where possible).
+    anti_patterns: ["inflated claims", "unquantified activity"]
+  - id: hitl_discipline
+    weight: 10
+    description: HITL items ≤ 5, all schema-compliant; more → compressed with count.
+    anti_patterns: [">5 HITL", "unstructured HITL"]
+  - id: risks_governance
+    weight: 8
+    description: Budget burn, policy deviations, brand/legal flags stated.
+    anti_patterns: ["risks hidden", "budget not shown"]
+  - id: honesty
+    weight: 10
+    description: Bad news called out plainly; no green-wash.
+    anti_patterns: ["everything green suspiciously", "no callouts"]
+  - id: length
+    weight: 7
+    description: Operator can read in ≤ 10 minutes.
+    anti_patterns: ["multi-page narrative", "missing data tables"]
+pass_bar: 8

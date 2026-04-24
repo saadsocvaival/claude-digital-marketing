@@ -1,0 +1,43 @@
+name: Weekly KPI Snapshot (Analytics feed)
+criteria:
+  - id: nsm_section_complete
+    weight: 10
+    description: All NSMs shown with target, current, WoW Δ, MTD vs target, RAG status.
+    anti_patterns: ["missing a NSM", "no status color"]
+  - id: funnel_complete
+    weight: 10
+    description: Every stage from sessions → closed-won with this-week, last-week, Δ, 4w avg, target.
+    anti_patterns: ["gaps in funnel", "missing 4w avg"]
+  - id: channel_table
+    weight: 9
+    description: Per-channel table with sessions, leads, CPL, MQL, SQL→won CVR, CAC, ROAS.
+    anti_patterns: ["aggregated-only numbers", "no per-channel view"]
+  - id: top_movers
+    weight: 8
+    description: Top organic movers + top paid campaigns (+/-); top content by sessions AND conversions.
+    anti_patterns: ["only traffic-based movers", "no loss callouts"]
+  - id: experiment_roundup
+    weight: 8
+    description: Experiments concluded this week with readout + decision.
+    anti_patterns: ["results without decision", "no readout"]
+  - id: anomaly_flagging
+    weight: 9
+    description: >2σ or >15% WoW deltas flagged with hypothesis + owner.
+    anti_patterns: ["anomalies unflagged", "flag without owner"]
+  - id: data_quality_notes
+    weight: 8
+    description: Any tracking/data issues disclosed; numbers affected marked.
+    anti_patterns: ["data issues hidden", "unknowns silently filled"]
+  - id: actions_per_head
+    weight: 8
+    description: Each Head gets a list of data-driven recommended actions.
+    anti_patterns: ["snapshot without recommendations"]
+  - id: sourcing
+    weight: 9
+    description: Every number has a data path (GA4 view, GSC query, CRM report) in footnote.
+    anti_patterns: ["unsourced numbers"]
+  - id: readability
+    weight: 6
+    description: Scannable in < 5 min; tables before prose.
+    anti_patterns: ["narrative-heavy", "no tables"]
+pass_bar: 8

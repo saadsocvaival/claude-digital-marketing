@@ -1,0 +1,39 @@
+name: Skill Definition (*.skill.md)
+criteria:
+  - id: purpose_single
+    weight: 10
+    description: One named capability; not a mini-agent with many jobs.
+    anti_patterns: ["multi-job skill", "vague purpose"]
+  - id: inputs_declared
+    weight: 9
+    description: Required inputs + optional inputs + defaults, each typed.
+    anti_patterns: ["freeform inputs"]
+  - id: output_schema
+    weight: 10
+    description: Output shape explicit — file path(s), format, required fields.
+    anti_patterns: ["no output schema"]
+  - id: protocol_steps
+    weight: 9
+    description: Numbered steps, decision branches explicit.
+    anti_patterns: ["prose blob", "no steps"]
+  - id: frameworks_cited
+    weight: 8
+    description: If invoking a framework (Moore, RICE, AARRR, etc.), cited by name.
+    anti_patterns: ["framework reinvented"]
+  - id: failure_modes
+    weight: 8
+    description: What to do when input is missing, ambiguous, or violates policy.
+    anti_patterns: ["no failure handling"]
+  - id: rubric_gate
+    weight: 9
+    description: References the artifact rubric; asserts pass bar.
+    anti_patterns: ["no rubric gate"]
+  - id: idempotence
+    weight: 7
+    description: Running twice with same input produces same output (or deterministic delta).
+    anti_patterns: ["hidden side effects"]
+  - id: invocation_example
+    weight: 7
+    description: Example input + example output provided.
+    anti_patterns: ["no example"]
+pass_bar: 8

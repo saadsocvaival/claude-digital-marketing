@@ -1,0 +1,31 @@
+name: Messaging Framework
+criteria:
+  - id: pillars_crisp
+    weight: 10
+    description: 3 pillar messages, each ≤ 12 words, phrased as benefit (not feature).
+    anti_patterns: ["feature-led phrasing", ">3 pillars (focus loss)"]
+  - id: persona_specific_variants
+    weight: 9
+    description: For each ICP persona, a 1-line headline variant + sub-line that speaks their JTBD.
+    anti_patterns: ["one message for all personas"]
+  - id: proof_stack
+    weight: 9
+    description: Under each pillar, ≥3 ranked proofs (customer outcome > third-party > spec); each sourced.
+    anti_patterns: ["unsourced claims", "spec sheets masquerading as proof"]
+  - id: objection_bank
+    weight: 8
+    description: ≥ 8 objections mapped to a reframe/response + backup proof.
+    anti_patterns: ["fewer than 8 objections", "defensive phrasing"]
+  - id: competitive_context
+    weight: 8
+    description: How our message lands relative to top 3 alternatives; contrast lines provided.
+    anti_patterns: ["no competitive contrast"]
+  - id: usage_by_channel
+    weight: 7
+    description: Guidance for how to adapt the pillars in ad copy vs landing vs email vs sales deck.
+    anti_patterns: ["abstract framework with no application"]
+  - id: test_status
+    weight: 6
+    description: Indicates which pillars are customer-tested vs hypotheses.
+    anti_patterns: ["all claims asserted as proven"]
+pass_bar: 8

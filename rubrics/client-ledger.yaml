@@ -1,0 +1,43 @@
+name: Client Ledger (onboarding output)
+criteria:
+  - id: company_basics
+    weight: 9
+    description: Company, stage, ARR, team size, HQ, product(s), pricing model captured.
+    anti_patterns: ["vague stage", "missing ARR"]
+  - id: goal_specificity
+    weight: 10
+    description: Primary business goal stated as SMART; timeframe + accountable owner named.
+    anti_patterns: ["grow pipeline", "no timeframe"]
+  - id: current_state_honest
+    weight: 10
+    description: Current funnel metrics + budget + team + tools listed with data source.
+    anti_patterns: ["aspirational numbers", "unsourced"]
+  - id: constraints_captured
+    weight: 9
+    description: Budget, headcount, legal/compliance, brand guardrails, geography restrictions stated.
+    anti_patterns: ["no constraints", "unstated compliance context"]
+  - id: stack_inventory
+    weight: 9
+    description: CRM, analytics, CMS, ESP, ad platforms, chat, support — each with access state (granted / pending / blocked).
+    anti_patterns: ["stack unknown", "access state unclear"]
+  - id: icp_seed
+    weight: 8
+    description: Initial ICP hypothesis + 1–3 lookalike won customers cited.
+    anti_patterns: ["no ICP seed"]
+  - id: competitor_seed
+    weight: 7
+    description: 3–5 named competitors + category claims.
+    anti_patterns: ["vague competitive set"]
+  - id: cadence_owners
+    weight: 9
+    description: Operator, approvers, HITL thresholds, digest delivery channel + day.
+    anti_patterns: ["no operator", "no HITL thresholds"]
+  - id: open_questions
+    weight: 9
+    description: Explicit unknowns listed with owner + due date; not silently filled.
+    anti_patterns: ["unknowns filled with assumptions"]
+  - id: secrets_pointer
+    weight: 10
+    description: Credentials referenced by pointer only; no raw secrets in ledger.
+    anti_patterns: ["raw API key", "password in doc"]
+pass_bar: 8

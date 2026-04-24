@@ -1,0 +1,43 @@
+name: 90-Day Execution Plan
+criteria:
+  - id: nsm_selection_defended
+    weight: 10
+    description: 1 primary NSM + 3 supporting; written rationale + rejected alternatives.
+    anti_patterns: ["NSM copy-pasted from template", "no rationale"]
+  - id: funnel_math
+    weight: 10
+    description: Backward math from goal → required TOFU with buffer; assumptions explicit + sourced.
+    anti_patterns: ["goals without funnel math", "unstated assumptions"]
+  - id: okrs_per_vertical
+    weight: 9
+    description: Each of 8 Heads has 1 Objective + 3 KRs with baseline + target + owner + cadence + source.
+    anti_patterns: ["KR without baseline", "unowned KR", "unmeasurable KR"]
+  - id: phases_clear
+    weight: 8
+    description: 3 phases (Foundation, Programs, Compound) with defined exit criteria.
+    anti_patterns: ["uniform 12 weeks of the same", "no exit criteria"]
+  - id: critical_path
+    weight: 9
+    description: Cross-vertical dependencies mapped; critical path named.
+    anti_patterns: ["dependencies unstated", "hidden blockers"]
+  - id: capacity_realism
+    weight: 9
+    description: Plan fits within budget + team capacity from ledger.md §5; overcommit flagged.
+    anti_patterns: ["fantasy scope", "no capacity check"]
+  - id: risk_register
+    weight: 8
+    description: Top 5 risks with likelihood × impact × mitigation + owner.
+    anti_patterns: ["no risk register", "generic 'market risk'"]
+  - id: hitl_pre_flags
+    weight: 7
+    description: Decisions requiring operator input flagged now, not later.
+    anti_patterns: ["hidden HITL"]
+  - id: measurement_plan
+    weight: 8
+    description: Every KR mapped to a specific data source; tracking gaps flagged for Analytics.
+    anti_patterns: ["KR with no data path"]
+  - id: reallocation_rules
+    weight: 7
+    description: How we will move budget/attention between verticals in flight (threshold + process).
+    anti_patterns: ["static plan", "no reallocation logic"]
+pass_bar: 8

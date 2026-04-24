@@ -1,0 +1,39 @@
+name: Ad Copy (single variant)
+criteria:
+  - id: hook_strength
+    weight: 10
+    description: First 5 words earn the next 5; specific not generic.
+    anti_patterns: ["begins with brand name", "generic superlatives"]
+  - id: message_match_to_lp
+    weight: 10
+    description: Ad promise is the LP hero's headline (verbatim or near-verbatim).
+    anti_patterns: ["ad promises thing LP doesn't deliver"]
+  - id: concrete_specificity
+    weight: 9
+    description: Proof/outcome/number where possible; avoids fluff adjectives.
+    anti_patterns: ["powerful", "seamless", "cutting-edge", "revolutionary"]
+  - id: persona_language
+    weight: 9
+    description: Uses words this persona actually uses (from icp.md / customer interviews).
+    anti_patterns: ["jargon persona doesn't use", "corporate-speak"]
+  - id: cta_clarity
+    weight: 9
+    description: One clear CTA; no competing asks.
+    anti_patterns: ["multiple CTAs", "vague 'learn more' as only option"]
+  - id: platform_compliance
+    weight: 8
+    description: Meets platform rules (character limits, restricted claims, image policies).
+    anti_patterns: ["over limit", "banned-category phrasing"]
+  - id: brand_voice_eval
+    weight: 9
+    description: Passes brand-voice.yaml ≥ 8; lexicon respected.
+    anti_patterns: ["off-brand tone", "uses avoid-list words"]
+  - id: variant_differentiation
+    weight: 7
+    description: Different angle from sibling variants (not synonym swaps).
+    anti_patterns: ["variants rephrase same idea"]
+  - id: hypothesis_stated
+    weight: 7
+    description: The variant tests a specific hypothesis (pain vs gain, proof vs promise, etc.).
+    anti_patterns: ["no hypothesis"]
+pass_bar: 8

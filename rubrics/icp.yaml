@@ -1,0 +1,35 @@
+name: ICP — Ideal Customer Profile
+criteria:
+  - id: specificity
+    weight: 10
+    description: Named segments with concrete firmographics (industry, size, geography, tech stack) — not "mid-market companies."
+    anti_patterns: ["generic categories", "no tech stack or intent signals", "overlapping segments"]
+  - id: persona_depth
+    weight: 9
+    description: 2–4 personas per segment with role, seniority, jobs-to-be-done, pains, goals, buying triggers, sources-of-truth they trust.
+    anti_patterns: ["demographics only", "no JTBD", "no buying trigger"]
+  - id: fit_evidence
+    weight: 9
+    description: Each segment/persona backed by customer evidence (closed-won citations, win-rate, expansion propensity) or explicit assumption flags.
+    anti_patterns: ["assumption unstated", "speculation without data path"]
+  - id: anti_icp
+    weight: 8
+    description: Explicit list of segments/personas we DO NOT target and why (waste avoidance).
+    anti_patterns: ["missing anti-ICP", "vague disqualifiers"]
+  - id: activation_mapping
+    weight: 8
+    description: For each persona, the channel(s) most likely to reach them + content format they consume.
+    anti_patterns: ["spray-and-pray", "single channel assumed for all personas"]
+  - id: measurement_linkage
+    weight: 7
+    description: Segment identifiable in CRM/analytics via specific fields so performance can be measured by ICP match.
+    anti_patterns: ["not operationalizable", "no field mapping"]
+  - id: freshness_commitment
+    weight: 6
+    description: Review cadence + calibration plan stated (quarterly minimum).
+    anti_patterns: ["no review cadence"]
+  - id: ethics_and_compliance
+    weight: 6
+    description: No protected-class targeting; GDPR/CCPA considerations noted if EU/CA exposure.
+    anti_patterns: ["discriminatory targeting", "PII handling unaddressed"]
+pass_bar: 8

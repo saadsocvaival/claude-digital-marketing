@@ -1,0 +1,39 @@
+name: Single Email
+criteria:
+  - id: subject_line
+    weight: 10
+    description: ≤50 chars, specific, no spam triggers, matches body promise.
+    anti_patterns: ["spam triggers", "bait-and-switch", "generic"]
+  - id: preheader
+    weight: 8
+    description: Preheader extends subject (doesn't repeat); 60–90 chars.
+    anti_patterns: ["repeats subject", "missing"]
+  - id: opening_hook
+    weight: 9
+    description: First line earns the second; specific not "I hope this finds you well."
+    anti_patterns: ["hope this finds you well", "brand-centric opener"]
+  - id: one_idea
+    weight: 9
+    description: One idea per email; cuttable sentences cut.
+    anti_patterns: ["multi-topic", "padding"]
+  - id: cta_clarity
+    weight: 9
+    description: One primary CTA; verb-object; above fold on mobile.
+    anti_patterns: ["multiple CTAs", "below fold"]
+  - id: brand_voice_eval
+    weight: 9
+    description: Passes brand-voice.yaml ≥ 8.
+    anti_patterns: ["off-brand"]
+  - id: personalization
+    weight: 8
+    description: Personalization is meaningful not cosmetic.
+    anti_patterns: ["{firstname} only"]
+  - id: length
+    weight: 7
+    description: ≤150 words for cold/nurture; longer only if justified.
+    anti_patterns: ["wall of text"]
+  - id: compliance
+    weight: 9
+    description: Unsubscribe + physical address; GDPR/CAN-SPAM compliant.
+    anti_patterns: ["no unsub", "missing address"]
+pass_bar: 8

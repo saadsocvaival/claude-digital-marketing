@@ -1,0 +1,39 @@
+name: Agent Definition (.claude/agents/*.md)
+criteria:
+  - id: remit_clear
+    weight: 10
+    description: One-paragraph remit — what this agent owns, what it doesn't.
+    anti_patterns: ["everything-and-anything remit", "vague scope"]
+  - id: decision_authority
+    weight: 10
+    description: Full-authority / HITL-required / escalate matrix with thresholds.
+    anti_patterns: ["no authority matrix", "permission creep"]
+  - id: skills_bound
+    weight: 9
+    description: Lists skills this agent can invoke (matches skills.manifest.json).
+    anti_patterns: ["invokes skills not in manifest", "no binding"]
+  - id: feeds_declared
+    weight: 9
+    description: What it reads / what it publishes — concrete file paths or feed names.
+    anti_patterns: ["vague 'data'"]
+  - id: kpis_owned
+    weight: 9
+    description: Named KPIs this agent is accountable for; targets referenced.
+    anti_patterns: ["no KPI", "vanity metric only"]
+  - id: hitl_triggers
+    weight: 9
+    description: Explicit conditions that force HITL (budget %, legal, brand, compliance).
+    anti_patterns: ["no HITL triggers"]
+  - id: policy_references
+    weight: 8
+    description: Cites playbook / policy docs for its rules (not invented).
+    anti_patterns: ["policy reinvented", "no citation"]
+  - id: output_formats
+    weight: 8
+    description: Structured output formats (tables, schemas) declared.
+    anti_patterns: ["freeform output"]
+  - id: self_check
+    weight: 7
+    description: Agent includes a self-rubric score or quality-gate statement.
+    anti_patterns: ["no self-check"]
+pass_bar: 8
