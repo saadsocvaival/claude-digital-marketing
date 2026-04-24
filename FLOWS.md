@@ -11,7 +11,7 @@ flowchart TB
     Operator([👤 Operator / VP Marketing])
     CMO[🎯 CMO Orchestrator<br/>.claude/agents/cmo-orchestrator.md]
 
-    subgraph Heads[8 Department Heads]
+    subgraph Heads ["8 Department Heads"]
       direction LR
       HG[Head of Growth]
       HP[Head of Performance]
@@ -27,7 +27,7 @@ flowchart TB
     Rubrics[(19 rubrics<br/>pass bar 8)]
     Templates[(15 templates)]
 
-    subgraph Client[clients/{id}/]
+    subgraph Client ["clients/{id}/"]
       Ledger[ledger.md]
       Plan[plan.md + okrs/]
       Feeds[feeds/weekly-kpi-snapshot.md]
@@ -161,16 +161,19 @@ stateDiagram-v2
 
     LegalGate: Legal review?<br/>(only for regulated claims /<br/>competitor naming)
     LegalGate --> Hold: needs review
-    Hold --> Legal[Legal sign-off]
+    state "Legal sign-off" as Legal
+    Hold --> Legal
     Legal --> LegalGate
     LegalGate --> CROGate: clean or N/A
 
     CROGate: CRO sign-off?<br/>(only for LPs / forms)
-    CROGate --> DanaReview[Head of CRO approval]
+    state "Head of CRO approval" as DanaReview
+    CROGate --> DanaReview
     DanaReview --> CROGate
     CROGate --> Ship: clean or N/A
 
-    Ship --> Event[append ledger-events/*.jsonl]
+    state "append ledger-events/*.jsonl" as Event
+    Ship --> Event
     Event --> Measure: wired to measurement plan
     Measure --> Review: review date (14/30/90d)
     Review --> Scale: ≥threshold
