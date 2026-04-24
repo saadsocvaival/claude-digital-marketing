@@ -1,144 +1,111 @@
 ---
 name: goal-decomposer
-description: Decomposes a top-level growth goal into 4 North-Star metrics, quarterly OKRs (objectives + key results per vertical), and a 90-day execution plan with vertical assignments. Invoke after onboarding completes, or when operator gives a fresh goal against an existing client.
+description: Decomposes a top-level business goal into a metric tree (North Star → L1 input metrics → L2 levers), motion-based OKRs (acquisition / activation / retention), and a 90-day execution plan with per-motion + per-Head assignments. Invoke after onboarding completes, or when operator gives a fresh goal against an existing client.
 invoked_by: cmo-orchestrator
-inputs:
-  - clients/{id}/ledger.md
-  - clients/{id}/icp.md
-  - clients/{id}/positioning.md (if exists)
-  - goal_statement: string
-outputs:
-  - clients/{id}/okrs/{quarter}.md
-  - clients/{id}/plan.md
-  - clients/{id}/vertical-assignments.md
-rubric: rubrics/90-day-plan.yaml
+version: 2.0
+frameworks:
+  - Reforge metric-tree methodology (Amplitude/Brian Balfour)
+  - Elena Verna separate-loop NSM model (acquisition / monetization / retention)
+  - April Dunford positioning inputs
+  - SiriusDecisions demand waterfall (funnel math)
+  - OKR (Doerr) — objectives qualitative, KRs quantitative + time-bound
 ---
 
-# Goal Decomposer Skill
+## Why v2 (metric tree, not flat NSM)
 
-## Purpose
-Translate a fuzzy goal ("Achieve 50% growth") into a rigorous, Playbook-compliant NSM → OKR → 90-day plan with explicit vertical ownership and measurable KRs.
+Flat NSM + 3-supporting is 2018-era. Modern practice: the business runs **multiple loops** (acquisition, activation, retention/expansion) that compete for resources and cannot share one NSM without distorting decisions. The metric tree decomposes the top-of-tree business goal (revenue / ARR / contribution margin) into **input metrics** (what drives it) and **levers** (what we can move this week). Every KR ladders to an input; every experiment ladders to a lever.
 
-## Frameworks applied (non-negotiable)
+## Inputs (schema)
 
-1. **North Star Framework** (Sean Ellis / Amplitude) — pick the single metric that best predicts long-term success, plus 3 supporting NSMs.
-2. **AARRR / Pirate Metrics** (Dave McClure) — categorize KRs across Acquisition, Activation, Retention, Referral, Revenue.
-3. **OKR methodology** (Andy Grove / John Doerr) — Objectives are qualitative and ambitious; KRs are quantitative and time-bound.
-4. **SiriusDecisions Demand Waterfall** (for B2B) — inquiry → MQL → SQL → opp → closed-won conversion ratios drive capacity plan.
-5. **RICE** (Reach × Impact × Confidence / Effort) — for initiative prioritization within the 90-day plan.
-
-## Protocol
-
-### Step 1 — Ground the goal
-Read:
-- `clients/{id}/ledger.md` §1 (revenue stage), §4 (channels, motion), §5 (budget).
-- `clients/{id}/icp.md`.
-- Operator goal statement.
-
-Classify the goal type:
-- **Top-line** (ARR, MRR, revenue) → work backward through funnel.
-- **Pipeline** (MQLs, SQLs, opps) → focus on demand stages.
-- **Efficiency** (CAC, payback, LTV:CAC) → focus on optimization + retention.
-- **Retention** (churn, NDR) → focus on onboarding + lifecycle.
-- **Brand** (awareness, SOV) → focus on Brand + Content + PR mix.
-
-### Step 2 — Select NSMs (max 4, min 3)
-
-Use this template (pick ONE primary + 3 supporting per applicable motion):
-
-| Motion | Primary NSM candidates | Supporting |
-|---|---|---|
-| PLG SaaS | Weekly Active Teams / Activated Accounts | Signups, Activation Rate, D30 Retention, Paid Conversion |
-| Sales-led SaaS | Qualified Pipeline Generated ($) | MQLs, SQL-to-Opp, Win Rate, ACV |
-| Hybrid | Weighted Pipeline + Activated Accounts | Same supporting as motion dominants |
-| DTC / e-com | Net New Customers / month | Sessions, CVR, AOV, Repeat-Purchase Rate |
-| Marketplace | Successful Transactions / Active Participant | Supply liquidity, demand liquidity, take rate |
-| Content/Media | Weekly Active Readers / Paid Subs | Sessions, Time, Email List, Paid Conversion |
-
-Document your choice + the 3 alternatives you rejected with reasons (audit trail).
-
-### Step 3 — Work the funnel backward
-
-Given the 90-day NSM target and historical conversion rates (from ledger or assumptions), compute the required inputs at each stage. Template:
-
-```
-Goal:                 +X NSM units in 90 days
-Current run rate:     Y / 90 days → gap = X - Y
-Stage conversion:     {stage 1 → 2}%, {2 → 3}%, ...
-Required top-of-funnel: Z (with 10–20% buffer for risk)
-Required daily/weekly cadence: …
+```json
+{
+  "client_id": "string",
+  "business_goal": {
+    "metric": "ARR | revenue | contribution_margin | signups",
+    "start_value": "number",
+    "target_value": "number",
+    "horizon_days": "integer",
+    "constraint_budget_usd": "number",
+    "constraint_headcount_fte": "integer"
+  },
+  "client_ledger_path": "string"
+}
 ```
 
-If any conversion rate is unknown, flag as assumption with citation to industry benchmark (cite source; if unavailable use conservative lower bound).
+## Outputs (schema)
 
-### Step 4 — Set Q-level OKRs (per vertical)
-
-For each of the 8 Heads, write:
-- **1 qualitative Objective** aligned to the NSM and 90-day plan theme.
-- **3 quantitative Key Results** — measurable, with baseline + target + deadline.
-
-Objective template:
-> "{Verb} {thing} so that we {outcome linked to NSM}."
-
-KR template:
-> "Move {metric} from {baseline} to {target} by {date}."
-
-Every KR must have a named owner (the Head), a measurement source (from Analytics' kpi-dictionary), and a cadence (weekly/bi-weekly check).
-
-### Step 5 — 90-day plan
-
-Build a 12-week plan with three phases:
-
-- **Weeks 1–3: Foundation & Quick Wins.** Measurement in place, audit baseline, kill obvious waste, ship one visible win per vertical.
-- **Weeks 4–8: Programs & Optimization.** Launch flagship programs per vertical, begin experiments, accumulate data.
-- **Weeks 9–12: Compound & Reallocate.** Double down on winners, retire losers, publish outcomes, set Q+1 direction.
-
-For each week, list:
-- Cross-vertical dependencies (e.g., Analytics must publish tracking plan before Performance launches).
-- Critical-path milestones.
-- Decision gates + HITL flags.
-
-### Step 6 — Vertical assignments
-
-One brief per Head, written to `clients/{id}/vertical-assignments.md`:
-
-```markdown
-## Head of {Vertical}
-- **Objective**: ...
-- **Key Results**: KR1 / KR2 / KR3
-- **Budget envelope**: $...
-- **Dependencies (from)**: {other Heads / upstream}
-- **Feeds to publish**: {list}
-- **Feeds to consume**: {list}
-- **First-week deliverable**: ...
-- **Stop-loss criteria**: ...
+```json
+{
+  "metric_tree": {
+    "north_star": { "name": "string", "definition": "string", "current": "number", "target": "number" },
+    "l1_inputs": [
+      { "name": "string", "formula": "string (how it rolls up)", "current": "number", "target": "number", "owner_motion": "acquisition | activation | retention" }
+    ],
+    "l2_levers": [
+      { "name": "string", "rolls_up_to_l1": "string", "owner_head": "string", "baseline": "number", "target": "number", "mechanism": "string (how we move it)" }
+    ]
+  },
+  "motion_okrs": {
+    "acquisition": { "objective": "string", "key_results": [] },
+    "activation":  { "objective": "string", "key_results": [] },
+    "retention":   { "objective": "string", "key_results": [] }
+  },
+  "head_okrs": [ { "head": "string", "objective": "string", "key_results": [] } ],
+  "ninety_day_plan": {
+    "phases": [ { "name": "string", "weeks": "string", "exit_criteria": [] } ],
+    "critical_path": [],
+    "risk_register": [],
+    "hitl_preflags": []
+  },
+  "rejected_alternatives": [ { "candidate": "string", "reason": "string" } ]
+}
 ```
 
-### Step 7 — Risk register + assumptions log
+## Protocol (7 steps)
 
-List:
-- Top 5 risks with likelihood × impact × mitigation.
-- Every assumption made (conversion rates, market growth, competitive moves).
-- External dependencies (tools, creds, legal).
+1. **Read the ledger.** Extract: business model (PLG vs SLG vs hybrid), stage (pre-PMF / post-PMF / scale), constraints, motion-mix today.
+2. **Pick the North Star.** Rule: must correlate with revenue, must be leading (not lagging), must be movable by marketing+product within the horizon. Log 2–3 rejected candidates with reasons (usually lagging revenue metrics get rejected in favor of their leading indicator).
+3. **Decompose to L1 inputs.** For each, write the explicit formula (e.g., `ARR = new_ARR + expansion_ARR − churned_ARR`). Assign each L1 to a motion (acquisition / activation / retention). Cover the whole revenue equation — gaps mean hidden goals.
+4. **Decompose L1 → L2 levers.** Each lever is something a Head can directly move in ≤90 days (e.g., "paid LinkedIn CPL" rolls up to "qualified-lead volume" rolls up to "new-ARR"). Each lever names an owner Head and a mechanism.
+5. **Funnel math with 1.3× buffer.** Back-solve lever targets from the North Star target. Inflate by 1.3× to absorb shortfall variance. If the math requires >3× current lever performance, flag as implausible and loop back to Step 2 with reduced target or longer horizon.
+6. **Motion OKRs.** Per motion: one Objective (qualitative, inspirational), 3 KRs (quantitative, matching L1 inputs). Then per-Head OKRs that cascade from motion OKRs to Head-owned levers.
+7. **90-day plan.** Phase into `Foundation (wks 1–4) → Scale (wks 5–9) → Compound (wks 10–13)` with exit criteria per phase. Produce risk register (≥5), HITL pre-flags, critical path.
 
-### Step 8 — Self-eval against rubric
+## Failure modes to check for
 
-Score the produced plan against `rubrics/90-day-plan.yaml`. If < 8/10, iterate before returning to Orchestrator.
+- **NSM = revenue.** Lagging. Reject; find the leading input (e.g., qualified pipeline, activated accounts, weekly-active teams).
+- **Gaps in coverage.** If no L1 owns retention/expansion, marketing will over-invest in acquisition. Reject and add.
+- **Lever with no mechanism.** "Increase demo requests" is a metric, not a lever. The lever is "LP conversion rate" or "paid-search CTR." Reject and decompose further.
+- **Funnel math requires >3× lever lift.** Implausible in a quarter. Flag + reset target.
+- **All KRs owned by one motion.** Indicates poor decomposition. Force coverage.
 
-## Anti-patterns to reject
+## Invocation example
 
-- "Increase brand awareness" as an OKR (not measurable).
-- KRs without a baseline (can't evaluate progress).
-- More than 5 objectives per vertical (focus collapse).
-- OKRs that sum to more than the capacity plan supports (fantasy).
-- Skipping the backward-from-NSM math (goals detached from math = wishful).
+```
+Input: { client_id: "loopgate", business_goal: { metric: "ARR", start_value: 2100000, target_value: 4000000, horizon_days: 240, constraint_budget_usd: 600000, constraint_headcount_fte: 8 } }
 
-## Output files
+Output (abbreviated):
+  north_star: weekly_active_teams (leading indicator of net-new + retained ARR)
+  l1_inputs:
+    - new_ARR (acquisition) = deals_won × ACV
+    - expansion_ARR (retention) = expand_accounts × avg_expand_ACV
+    - churned_ARR (retention, negative) = churn_rate × last_quarter_ARR
+  l2_levers (selected):
+    - paid_LinkedIn_MQLs  → Head of Performance, mechanism: ABM audience + creative iteration
+    - PLG_sandbox_activation_rate → Head of CRO + Product, mechanism: guided tour + aha-event
+    - net_revenue_retention → Head of Automation, mechanism: expansion-trigger lifecycle program
+  motion_okrs:
+    acquisition: O=Build repeatable SQL engine; KR1=600 SQLs/qtr, KR2=CPL ≤$180, KR3=paid pipeline $3M
+    activation:  O=Halve time-to-first-value; KR1=TTFV ≤7d, KR2=wk2_retention ≥45%, KR3=activation→SQL ≥8%
+    retention:   O=Expansion > churn; KR1=NRR ≥115%, KR2=gross_churn ≤8%, KR3=expansion_ACV $400k
+```
 
-All three files below must be produced; plan is not complete until all three validate.
+## Rubric gate
+Output gated by `rubrics/metric-tree.yaml` AND `rubrics/90-day-plan.yaml`. Both must score ≥8 on self-rubric AND ≥8 on adversarial-critic pass before plan.md ships.
 
-1. `clients/{id}/okrs/{YYYY-Q}.md` — OKR table, NSM math, alternatives considered.
-2. `clients/{id}/plan.md` — 12-week plan, phases, cross-vertical deps, risks.
-3. `clients/{id}/vertical-assignments.md` — 8 briefs for the 8 Heads.
-
-Self-rubric ≥ 8/10 is required to ship.
+## Output file mapping
+- Metric tree → `clients/{id}/metric-tree.md`
+- Motion OKRs → `clients/{id}/okrs/motion-{qtr}.md`
+- Head OKRs → `clients/{id}/okrs/{head}-{qtr}.md` (per Head)
+- 90-day plan → `clients/{id}/plan.md`
+- Rejected alternatives → appended to `plan.md §Appendix`

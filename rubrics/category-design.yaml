@@ -1,0 +1,35 @@
+name: Category Design / Narrative Thesis
+criteria:
+  - id: shift_named
+    weight: 10
+    description: A specific, currently-felt shift is named — not "AI is coming" but a concrete, datable change.
+    anti_patterns: ["vague shift", "timeless platitude", "undated trend"]
+  - id: stakes_clear
+    weight: 9
+    description: Winners and losers under the shift are defined with profiles.
+    anti_patterns: ["only winners described", "generic stakes"]
+  - id: contrarian_insight
+    weight: 10
+    description: One non-obvious belief a competitor could not credibly claim — the reason we exist.
+    anti_patterns: ["insight any competitor could say", "feature-list disguised as insight"]
+  - id: category_name_usable
+    weight: 8
+    description: 2–4 word noun phrase; peer can repeat after hearing once; distinct from adjacent categories.
+    anti_patterns: ["AI-powered X as category", "renaming existing category"]
+  - id: evidence_of_insight
+    weight: 9
+    description: Customer + data + mechanism proof that the insight is true, not just clever.
+    anti_patterns: ["unsourced claim", "anecdote-only"]
+  - id: kingmaking_plan
+    weight: 9
+    description: Named lightning-strike moment + cadence of POV + analyst plan + community plan.
+    anti_patterns: ["publish-and-pray", "no lightning strike"]
+  - id: honest_gating
+    weight: 10
+    description: Category claim gated on reference customers + analyst validation + imitation signal. Until then, position *into* existing category.
+    anti_patterns: ["premature category claim", "category-of-one with zero proof"]
+  - id: employee_usable
+    weight: 8
+    description: Section 1 (shift) + Section 5 (insight) memorizable by employees; sales uses in first 60 seconds of call.
+    anti_patterns: ["narrative lives in deck only", "exec-jargon"]
+pass_bar: 8

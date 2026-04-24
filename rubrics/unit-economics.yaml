@@ -1,0 +1,39 @@
+name: Unit Economics (CAC / LTV / Payback / Burn)
+criteria:
+  - id: fully_loaded_cac
+    weight: 10
+    description: CAC includes ad spend + S&M headcount + tools + agencies — not just media cost.
+    anti_patterns: ["media-only CAC", "excluding SDR comp"]
+  - id: segmentation_rigor
+    weight: 10
+    description: CAC + LTV + payback reported per segment (SMB/MM/Ent/PLG); blended reported only as context.
+    anti_patterns: ["blended-only reporting", "one segment subsidizing another unnoticed"]
+  - id: ltv_formula_disciplined
+    weight: 9
+    description: LTV = (ACV × gross margin) / (churn − expansion), using actual cohort data ≥12 months where possible; caveats when extrapolating.
+    anti_patterns: ["LTV ignoring margin", "assumed retention with no data", "divergent LTV when expansion>churn unchecked"]
+  - id: payback_on_gross_profit
+    weight: 9
+    description: Payback computed on gross profit, not revenue. Target ≤18 months.
+    anti_patterns: ["revenue-payback masquerading as payback", "no target stated"]
+  - id: ltv_cac_guardrail
+    weight: 9
+    description: LTV:CAC ≥3.0 target; guardrail breaches flagged with action.
+    anti_patterns: ["no guardrail", "breaches unflagged"]
+  - id: burn_multiple
+    weight: 9
+    description: Burn multiple reported (target ≤2.0, elite ≤1.0); magic number reported (≥0.7).
+    anti_patterns: ["no burn multiple", "pre-revenue burn-multiple reported as meaningful"]
+  - id: channel_attribution_honest
+    weight: 8
+    description: Channel CACs sourced from triangulated attribution (see `rubrics/attribution.yaml`), not raw MTA.
+    anti_patterns: ["MTA-only channel CAC", "double-counting across platforms"]
+  - id: decision_queue
+    weight: 9
+    description: Ledger produces explicit reallocate/pause/diagnose actions per segment-channel cell.
+    anti_patterns: ["dashboard with no decisions", "analysis paralysis"]
+  - id: change_log
+    weight: 7
+    description: Methodology changes logged with dates so trend analysis stays valid.
+    anti_patterns: ["silent redefinition", "trend compared across methodology versions"]
+pass_bar: 8

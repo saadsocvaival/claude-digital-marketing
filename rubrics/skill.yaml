@@ -36,4 +36,8 @@ criteria:
     weight: 7
     description: Example input + example output provided.
     anti_patterns: ["no example"]
+  - id: io_contract
+    weight: 9
+    description: "v1.1 — Explicit ## Inputs and ## Outputs JSON-schema blocks so the skill is composable: downstream skills can reliably consume its outputs."
+    anti_patterns: ["prose-only I/O", "undeclared output fields", "no consumer declared"]
 pass_bar: 8

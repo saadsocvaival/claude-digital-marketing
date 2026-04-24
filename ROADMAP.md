@@ -22,8 +22,33 @@ This PR delivers **Stages 0–2**. Stages 3–5 require credentials, time, and/o
 - Each eval: input fixture + expected-shape output + rubric gate (≥8).
 - `run-evals.md` explains how to execute.
 
-## 🚧 Stage 2.5 — External CMO Review (pre-pilot)
-**Gate to Stage 3.** Send the fixture and 3 artifacts (90-day plan, SEO cluster pillar, paid campaign brief) to 2 senior marketing operators for adversarial critique. Incorporate corrections before pilot.
+## ✅ Stage 2.5 — SME-Hardened v1.1 (this PR)
+Senior SME adversarial review flagged 17 methodology gaps in v1.0. v1.1 addresses 15 of 17 as authored artifacts (2 blocked by need for real pipeline data — see Stage 3.5).
+
+**Delivered:**
+- Metric-tree methodology (NSM → L1 input metrics → L2 levers) in rewritten `goal-decomposer`.
+- Triangulated attribution (MTA + MMM + incrementality with decision hierarchy) in `attribution-model.md` + new `incrementality-test.skill.md` with geo-holdout, ghost-ad, synthetic-control designs.
+- Two-phase lead scoring: Phase-1 fit-only, Phase-2 composite gated on n≥2000 closed-won + HITL.
+- Motion-based overlay: `motion-acquisition`, `motion-activation`, `motion-retention` agents owning outcomes across Heads.
+- New `head-of-revops` agent (pipeline hygiene, funnel diagnostic, SLA, CRM data quality).
+- Adversarial-critic pattern: separate critic agent reads artifact + rubric cold; ship gate `min(self, critic) ≥ 8`.
+- Real GEO/AEO methodology: `aeo-citation-audit` + `answer-engine-brief` skills with BMI-LLM metric, entity grounding, canonical answer blocks, schema.org markup.
+- New skills: `distribution-map`, `experiment-program`, `creative-ops`, `unit-economics`, `rubric-calibration`.
+- New templates: category-design, narrative-thesis, creative-test-matrix, pricing-page-brief, plg-conversion-audit, lifecycle-map, behavioral-trigger-catalog, retention-cohort-program, cac-ltv-ledger.
+- New rubrics: metric-tree, attribution, revops-hygiene, category-design, unit-economics. Updated: skill (I/O contract criterion), lead-scoring (phase discipline).
+- CMO digest v1.1: Motion Summary section + Unit Economics standing section + adversarial-critic gate in non-negotiables.
+- Skill manifest v1.1: producer→consumer edges; motion definitions.
+- Fixture regrade: authored `category-design.md`, `narrative-thesis.md`, `lifecycle-map.md`, `cac-ltv-ledger.md` for Loopgate.
+
+## 🚧 Stage 2.6 — External CMO Review (pre-pilot)
+**Gate to Stage 3.** Send v1.1 fixture + 5 strategic artifacts to ≥2 senior marketing operators for truly-external adversarial critique. Incorporate corrections before pilot.
+
+## 🚧 Stage 3.5 — Empirical Attribution Validation
+**Needs: live pilot client + ≥18 months of spend/outcome history OR a running geo-holdout.**
+- MMM coefficient estimation with real priors, adstock, saturation (methodology shipped in v1.1; empirical fit awaits data).
+- Incrementality empirical proof (design shipped; execution needs live traffic).
+- LLM-citation benchmarking against actual engine outputs (methodology + instrumentation shipped; running collection needs live API access).
+- Rubric-calibration first feedback loop (`rubric-calibration.skill.md`) with 90-day outcome data.
 
 ## 🚧 Stage 3 — Real Tool-Calling
 **Needs: sandbox credentials + integration tests.**
