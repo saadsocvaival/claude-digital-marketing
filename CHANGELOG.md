@@ -1,5 +1,44 @@
 # Changelog
 
+## v1.1.1 — VMD Gap-Fill Merge (2026-04-27)
+
+**Theme:** layer the VMD bundle's gap-fill content onto v1.1 without regressing v1.1 work.
+
+### Added — rubrics
+- `rubrics/editorial-calendar.yaml`, `monthly-exec.yaml`, `offer.yaml`, `okr.yaml`, `utm.yaml` — closes 5 long-open rubric gaps.
+
+### Added — workflows
+- `vaival-agentic-marketing-engine/04-workflows/client-onboarding.workflow.md`
+- `daily-stop-loss.workflow.md`
+- `digest-delivery.workflow.md`
+- `kpi-snapshot-pipeline.workflow.md`
+- `learning-loop.workflow.md`
+- `secrets-vault-setup.workflow.md`
+
+### Added — connectors (8)
+- `06-connectors/analytics/bigquery.connector.md`, `segment.connector.md`
+- `06-connectors/email-crm/sendgrid.connector.md`, `resend.connector.md`, `mailgun.connector.md`
+- `06-connectors/ops-collaboration/trello.connector.md`
+- `06-connectors/paid/microsoft-ads.connector.md`
+- `06-connectors/web-dev/wordpress-application-password.connector.md`
+
+### Added — clients
+- `clients/costsage/` — real client scaffold (status: pending-onboarding). CMS WordPress; vertical AI cost optimization SaaS. Blocked on intake + secrets-vault setup before activation.
+
+### Updated — playbook (vaival-agentic-marketing-engine/01-playbook)
+- 7 vertical READMEs filled out: analytics-ops, content-marketing, email-crm, paid-media-ppc, seo-aeo-geo, social-media, website-development (charter / KPIs / cadence / workflows / tools / policies / refusal triggers / artifacts / rubrics).
+- 9 department-level docs refreshed: cross-functional-relationships, decision-rights, governance-cadence, kpis-north-star, policies, role-inventory, structure-org, tool-inventory, vision-mission-purpose.
+- 5 framework docs refreshed: aarrr, ice, jtbd, okr, rice.
+- Source playbook updated: `Final-Playbook-Mid-Size-Team-Marketing-Department.md`.
+
+### Updated — docs
+- `AUDIT.md` — coverage matrix updated; new "v1.1 SME-hardened layer" section enumerates 16 v1.1 capabilities mapped to artifacts and rubrics.
+
+### Notes
+- v1.1 SME-hardened agents/skills (motion overlay, head-of-revops, adversarial-critic, metric-tree goal decomposer, triangulated attribution, two-phase lead scoring, etc.) **preserved unchanged** — VMD's older versions of these files were intentionally NOT pulled in.
+
+---
+
 ## v1.1.0 — SME-Hardened (2026-04-24)
 
 **Theme:** close the methodology gaps flagged in senior SME adversarial review of v1.0. 15 of 17 gaps addressed as authored artifacts; 2 blocked by empirical-data requirements and documented as Stage 3.5 gating.
