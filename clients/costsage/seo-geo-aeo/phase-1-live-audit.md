@@ -88,8 +88,24 @@ Each finding cites the rubric criterion it would fail (`rubrics/seo-brief.yaml`,
 
 ### 🔴 P0 — Crawl traps & policy blockers (ship-stoppers for AEO/GEO)
 
-#### F1. `robots.txt` blocks every major LLM bot
-**Evidence:** `GET /robots.txt` returns Cloudflare-managed block list:
+#### F1. Cloudflare edge is **rewriting** `robots.txt` to block LLM bots — origin is permissive
+**Evidence (updated 2026-04-27 after server access):**
+- Origin `robots.txt` (inside `costsage-web` container at `/usr/share/nginx/html/robots.txt`, also via container port :8090):
+  ```
+  User-agent: *
+  Allow: /
+  Sitemap: https://costsage.ai/sitemap.xml
+  ```
+- Edge (`https://costsage.ai/robots.txt`) returns the long Cloudflare-managed block list with `Disallow: /` for ClaudeBot, GPTBot, Google-Extended, Applebot-Extended, CCBot, Bytespider, Amazonbot, meta-externalagent, plus `Content-Signal: search=yes,ai-train=no`.
+- **Conclusion:** the block is injected by Cloudflare's "AI Bot blocking" toggle at the edge, not by anything in the source. **Fix is a Cloudflare dashboard switch, not a file change.**
+
+**How to fix in Cloudflare dashboard:**
+- Cloudflare → `costsage.ai` zone → **Security → Bots → "AI Scrapers and Crawlers"** (or "Block AI Bots") → toggle to **Off** (Option A) **or** keep training-bot blocks on, allow grounding bots (Option B).
+- Optionally also: zone → **Scrape Shield → "AI Labyrinth"** off, and **WAF managed rules → AI Bots ruleset** disabled/scoped.
+- After flipping, the edge will serve the origin's permissive `robots.txt` directly.
+
+**Original (now-superseded) evidence — kept for traceability:**
+The Cloudflare-injected block list reads:
 ```
 User-agent: ClaudeBot      Disallow: /
 User-agent: GPTBot         Disallow: /
