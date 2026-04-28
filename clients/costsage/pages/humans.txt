@@ -1,0 +1,15 @@
+/* TEAM */
+Founder: [TBD-OPERATOR]
+Site: https://costsage.ai
+Twitter: [TBD]
+Location: [TBD]
+
+/* THANKS */
+Customers who saved real cloud spend with us.
+Open-source maintainers we depend on.
+
+/* SITE */
+Last update: 2026-04-28
+Standards: HTML5, CSS3, JSON-LD schema.org
+Components: nginx, chromium, lighthouse, Cloudflare
+Software: hand-written HTML + agentic AI editorial loop

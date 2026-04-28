@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FinOps for AI Workloads: Controlling GPU and Inference Cost in 2026</title>
+  <meta name="description" content="A practical FinOps guide for AI workloads — GPU rightsizing, inference cost control, training run economics, multi-cloud spend, and how agentic FinOps closes the loop on AI cost waste."/>
+  <link rel="canonical" href="https://costsage.ai/finops-for-ai-workloads"/>
+  <link rel="icon" type="image/png" href="/assets/costsage_ai_project_logos_cropped-cost-sage-logo-dark-01-32x32.png"/>
+  <meta name="robots" content="index,follow"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://costsage.ai/finops-for-ai-workloads"/>
+  <meta property="og:site_name" content="CostSage"/>
+  <meta property="og:title" content="FinOps for AI Workloads: Controlling GPU and Inference Cost in 2026"/>
+  <meta property="og:description" content="GPU spend is the new RDS. A practical FinOps guide for AI workloads — rightsizing, inference economics, training runs, and agentic execution."/>
+  <meta property="og:image" content="https://costsage.ai/assets/costsage_ai_project_logos_cost-sage-logo-dark-01-300x65.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="FinOps for AI Workloads: Controlling GPU and Inference Cost in 2026"/>
+  <meta name="twitter:description" content="GPU spend is the new RDS. A practical FinOps guide for AI workloads."/>
+  <meta name="twitter:image" content="https://costsage.ai/assets/costsage_ai_project_logos_cost-sage-logo-dark-01-300x65.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <!-- sprint2:G17-pillar-finops-ai -->
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","@id":"https://costsage.ai/#website","url":"https://costsage.ai/","name":"CostSage","publisher":{"@id":"https://costsage.ai/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://costsage.ai/?s={search_term_string}","query-input":"required name=search_term_string"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://costsage.ai/#organization","name":"CostSage","url":"https://costsage.ai/","logo":"https://costsage.ai/assets/costsage_ai_project_logos_cost-sage-logo-dark-01-300x65.png"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://costsage.ai/"},
+    {"@type":"ListItem","position":2,"name":"FinOps for AI workloads","item":"https://costsage.ai/finops-for-ai-workloads"}
+  ]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is FinOps for AI workloads?","acceptedAnswer":{"@type":"Answer","text":"FinOps for AI workloads is the practice of managing the financial accountability of AI infrastructure costs — primarily GPU instances, inference endpoints, training runs, vector databases, and managed AI services. It extends classical cloud FinOps with metrics like cost-per-token, cost-per-request, GPU utilisation, and training run unit economics."}},
+    {"@type":"Question","name":"Why is GPU cost different from regular cloud cost?","acceptedAnswer":{"@type":"Answer","text":"GPU instances are 10-50x more expensive per hour than CPU equivalents, idle utilisation is common, and capacity is regional and supply-constrained. Reserved capacity, Spot, and provider-specific savings programmes (Capacity Blocks, Committed Use Discounts) all behave differently from standard EC2 RIs or Azure RIs."}},
+    {"@type":"Question","name":"How do you measure cost per inference?","acceptedAnswer":{"@type":"Answer","text":"Cost per inference (or cost per 1k tokens for LLM workloads) is the total infrastructure spend for an inference workload divided by the number of requests (or tokens) served. It requires tagging at the workload level, time-aligned spend data, and request-volume telemetry. CostSage automates this with workload-level allocation."}},
+    {"@type":"Question","name":"Should training and inference be on the same instances?","acceptedAnswer":{"@type":"Answer","text":"Generally no. Training is bursty and benefits from Spot or short-term reserved capacity. Inference is steady and benefits from on-demand or long-term reservations with autoscaling. Co-location is usually a sign of under-mature MLOps and almost always overspends."}},
+    {"@type":"Question","name":"How does CostSage help with AI workload cost?","acceptedAnswer":{"@type":"Answer","text":"CostSage's AI agents allocate AI spend at the workload and model level, identify idle GPUs and over-provisioned inference fleets, plan reservation coverage for steady inference, and recommend Spot or capacity-block coverage for training. Recommendations are executed under operator approval rather than left as dashboards."}}
+  ]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"FinOps for AI Workloads: Controlling GPU and Inference Cost in 2026","datePublished":"2026-04-28","dateModified":"2026-04-28","author":{"@type":"Organization","name":"CostSage","url":"https://costsage.ai/"},"publisher":{"@id":"https://costsage.ai/#organization"},"mainEntityOfPage":"https://costsage.ai/finops-for-ai-workloads","image":"https://costsage.ai/assets/costsage_ai_project_logos_cost-sage-logo-dark-01-300x65.png"}
+  </script>
+</head>
+<body>
+<article style="max-width:880px;margin:2rem auto;padding:0 1rem;font-family:system-ui,sans-serif;line-height:1.6;color:#1a1a1a">
+
+<nav style="font-size:.85rem;color:#666;margin-bottom:1rem"><a href="/" style="color:#3d7a1f;text-decoration:none">Home</a> &rsaquo; FinOps for AI workloads</nav>
+
+<h1>FinOps for AI Workloads: Controlling GPU and Inference Cost in 2026</h1>
+
+<div style="background:#f4f6f8;border-left:4px solid #7BC04B;padding:1.25rem 1.5rem;border-radius:0 10px 10px 0;margin:1.5rem 0">
+  <strong style="display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:#3d7a1f;margin-bottom:.4rem">TL;DR</strong>
+  <p style="margin:0">AI workloads have broken classical cloud FinOps. GPU instances are 10-50x more expensive per hour than CPU, idle waste is endemic, and reserved-capacity programmes (Capacity Blocks, CUDs) work nothing like EC2 RIs. To control AI cost, treat training and inference as separate economic profiles, allocate spend at the workload and model level, and close the loop with agentic execution rather than yet another dashboard.</p>
+</div>
+
+<h2>Why GPU spend is the new RDS</h2>
+<p>For most engineering organisations, RDS quietly became the largest single line on the AWS bill in the late 2010s — long after the platform team stopped thinking about it. GPUs are following the same trajectory, only faster. A single p5.48xlarge on demand is roughly $98 per hour. A team that fires up four of those for a long-tail experiment and forgets to deprovision burns $9,400 per day. Multiply across a fast-moving AI org, and a year-old ML startup will routinely have GPU as line item #1 — ahead of compute, storage, and managed databases combined.</p>
+<p>Classical FinOps tooling was built for the 2018-2022 cost shape: lots of EC2, lots of S3, lots of RDS. It does not know what an inference endpoint is, cannot read SageMaker training-job metadata, and has no model for Capacity Blocks or Spot capacity tiers. AI workloads need their own primitives.</p>
+
+<h2>The economic profile of training vs inference</h2>
+<p>The single biggest mistake teams make in AI FinOps is treating training and inference as the same workload type. They are not. Their economic profiles are opposites and demand different optimisation strategies.</p>
+
+<h3>Training: bursty, parallelisable, Spot-tolerant</h3>
+<p>Training jobs are bursty by nature — a fine-tuning run might consume 64 H100s for 18 hours, then nothing for a week. Spot instances and Capacity Blocks (AWS), Spot VMs (Azure), or preemptible VMs (GCP) are usually 60-90% cheaper than on-demand and acceptable for training because checkpointing handles preemption. The mature pattern is: checkpoint every N steps, run on Spot, automatically resume on a different instance if preempted.</p>
+<p>The waste pattern in training: leaving expensive on-demand GPUs running between jobs, or oversubscribing to reserved capacity that goes unused. CostSage agents catch the first by detecting GPU idleness with workload-aware thresholds (5 minutes of zero-utilisation on a training instance is suspicious; on an inference endpoint it is normal).</p>
+
+<h3>Inference: steady, latency-sensitive, reservation-friendly</h3>
+<p>Inference is the opposite. Production endpoints serve thousands of requests per minute under tight latency SLOs. They cannot tolerate Spot preemption. They can — and should — be covered by reservations: AWS Savings Plans, EC2 Reserved Instances, Azure Reserved Instances, or GCP Committed Use Discounts. A 1-year RI/SP for steady inference is typically 40-50% cheaper than on-demand.</p>
+<p>The waste pattern in inference: over-provisioned fleets, autoscaling minimums set far above actual minimum load, and cold-but-running endpoints (the model that PM-X launched in October and forgot about). Allocation by model and team is the only way to surface these — without it, every inference fleet looks identical on a cost report.</p>
+
+<h2>Cost per token: the unit metric of LLM workloads</h2>
+<p>Once a team is shipping LLM features at scale, the only useful unit metric is cost per 1,000 tokens (or, for non-LLM ML, cost per inference request). It is the AI equivalent of cost-per-customer or cost-per-transaction in classical FinOps. Without it, finance and engineering have no shared vocabulary.</p>
+<p>Calculating it requires three things to be present and time-aligned:</p>
+<ul>
+  <li><strong>Workload-level cost allocation.</strong> Spend tagged not just to "ml" but to the specific service or model name (e.g. "search-rerank-v2", "support-summariser-prod").</li>
+  <li><strong>Token volume telemetry.</strong> Instrument the inference pathway so every request emits prompt-token and completion-token counts.</li>
+  <li><strong>Time-aligned join.</strong> Daily spend ÷ daily token volume per model. Weekly cost-per-token deltas are where regressions show up — a model upgrade that adds 20% latency usually adds 20% cost-per-token too, and nobody notices for two months.</li>
+</ul>
+<p>For teams using third-party model APIs (OpenAI, Anthropic, Bedrock), the math is simpler — the API gives you token counts directly — but the allocation discipline is harder because the spend is on a single line item and must be split by API key, project, or product feature.</p>
+
+<h2>The seven highest-value AI cost levers</h2>
+<ol>
+  <li><strong>Idle GPU detection with workload context.</strong> Generic "GPU at 0% utilisation" alerts produce false positives on inference servers waiting for traffic. Use workload-aware thresholds.</li>
+  <li><strong>Spot / Capacity Block coverage for training.</strong> Move all checkpointable training to Spot. Use Capacity Blocks for time-critical large runs.</li>
+  <li><strong>Reservations for steady inference.</strong> 1-year SP/RI on the predictable baseline of inference fleets. Stay on-demand for the autoscaling tail.</li>
+  <li><strong>Right-size inference instances.</strong> Most teams default to a single instance family (often p4d/p5) when smaller g5/g6 instances would meet latency SLOs at half the cost.</li>
+  <li><strong>Batch and queue low-priority inference.</strong> Async or batch endpoints amortise GPU minutes across more requests — major savings for non-realtime use cases.</li>
+  <li><strong>Decommission shadow workloads.</strong> The "just an experiment" endpoint that has been running for nine months. Allocation by team and last-traffic-date surfaces these.</li>
+  <li><strong>Cross-cloud arbitrage on training.</strong> If training is location-flexible, GPU prices vary 30-60% between AWS, Azure, GCP, and specialised providers (Lambda, CoreWeave, Crusoe). Multi-cloud allocation makes the comparison concrete.</li>
+</ol>
+
+<h2>Why agentic execution matters for AI FinOps</h2>
+<p>Most AI cost waste is not subtle. The instances are sitting at zero utilisation. The reservations are not bought. The endpoints are over-provisioned by 4x. The reason these problems persist is not lack of detection — it is lack of action. Engineers are shipping features, not chasing cost tickets. Finance has the report but no execution authority.</p>
+<p>This is where agentic FinOps changes the picture. CostSage's AI agents do not just produce a recommendation, they prepare the change — the Terraform diff, the autoscaling policy update, the reservation purchase request — and queue it for one-click operator approval. The latency between detection and execution drops from weeks to minutes. For a workload class that costs $98/hour per idle instance, that latency reduction is the entire savings story.</p>
+
+<h2>Common anti-patterns in AI cost</h2>
+<p>The same mistakes show up across nearly every AI-heavy organisation we look at. Naming them is half the work of avoiding them.</p>
+<ul>
+  <li><strong>"We'll just use the biggest GPU."</strong> Defaulting every workload to p5/p4d or H100 capacity because it's "the AI tier" rather than benchmarking against smaller g5/g6 (A10G, L4) families. Most production inference does not need an H100.</li>
+  <li><strong>Shadow notebooks.</strong> Data scientists spinning up GPU notebooks in their own accounts, attached to no allocation, with no auto-shutdown. By the time anyone looks, the bill is months deep.</li>
+  <li><strong>"It's only running during working hours."</strong> Except weekends. Except holidays. Except after the engineer left the company. A shutdown schedule that nobody enforces is not a shutdown schedule.</li>
+  <li><strong>Reservation paralysis.</strong> Convinced that AI workloads are too dynamic to commit to. Meanwhile, the inference baseline has been steady at 12 H100-equivalents for nine months.</li>
+  <li><strong>Double-billing the same model.</strong> Running a managed Bedrock/Azure OpenAI endpoint for some traffic and a self-hosted equivalent for the rest, with no allocation showing the duplication.</li>
+  <li><strong>Vector DB sprawl.</strong> Pinecone, Weaviate, Qdrant, pgvector, OpenSearch — three of them in production at the same time because three separate projects each picked their own. Vector storage is now its own line-item category and deserves consolidation discipline.</li>
+  <li><strong>Token-blind logging.</strong> Logging full prompt + completion bodies for every request to debug "just in case." At LLM scale, your observability bill will rival your inference bill.</li>
+</ul>
+
+<h2>How to talk about AI cost with finance</h2>
+<p>Finance teams are not equipped to evaluate AI infrastructure decisions in the abstract. The translation work falls on engineering. Three rules that help:</p>
+<ol>
+  <li><strong>Always express AI spend as a unit metric.</strong> Cost-per-token, cost-per-customer-interaction, cost-per-document-processed. Absolute dollar figures invite cuts; unit metrics invite optimisation.</li>
+  <li><strong>Distinguish R&D spend from production spend.</strong> Training experiments and prototypes are R&D — variable by design. Inference for shipped features is production — should be on a budget. Mixing the two on a single line hides both.</li>
+  <li><strong>Bring the savings story.</strong> "We could move this training run to Spot and save 70%" beats "AI cost is going up." Finance partners want to be told the play, not asked to find one.</li>
+</ol>
+
+<h2>Getting started</h2>
+<p>Three steps for a team trying to put AI workload FinOps on a credible footing this quarter:</p>
+<ol>
+  <li><strong>Allocate AI spend at the workload + model level.</strong> Either via tagging discipline or via a tool that does workload-aware allocation (CostSage does this on AWS and Azure).</li>
+  <li><strong>Establish cost-per-token / cost-per-request as a tracked unit metric.</strong> Pick the top three models by spend and report weekly.</li>
+  <li><strong>Pick the highest-value lever from the seven above</strong> that applies to your shape — for most teams it is either idle GPU on training instances or under-bought reservations on steady inference. Ship one fix this month.</li>
+</ol>
+
+<h2>Related reading</h2>
+<ul>
+  <li><a href="/aws">AWS cost optimisation</a> — for general AWS FinOps not specific to AI</li>
+  <li><a href="/azure">Azure cost optimisation</a> — Azure FinOps fundamentals</li>
+  <li><a href="/multi-cloud">Multi-cloud cost management</a> — why allocation across providers matters</li>
+  <li><a href="/finops-agent-vs-dashboard">Why agents beat dashboards for cloud cost</a> — the execution-layer argument</li>
+  <li><a href="/pricing">CostSage pricing</a></li>
+</ul>
+
+<h2>FAQ</h2>
+<h3>What is FinOps for AI workloads?</h3>
+<p>FinOps for AI workloads is the practice of managing the financial accountability of AI infrastructure costs — primarily GPU instances, inference endpoints, training runs, vector databases, and managed AI services. It extends classical cloud FinOps with metrics like cost-per-token, cost-per-request, GPU utilisation, and training run unit economics.</p>
+<h3>Why is GPU cost different from regular cloud cost?</h3>
+<p>GPU instances are 10-50x more expensive per hour than CPU equivalents, idle utilisation is common, and capacity is regional and supply-constrained. Reserved capacity, Spot, and provider-specific savings programmes (Capacity Blocks, Committed Use Discounts) all behave differently from standard EC2 RIs or Azure RIs.</p>
+<h3>How do you measure cost per inference?</h3>
+<p>Cost per inference (or cost per 1k tokens for LLM workloads) is the total infrastructure spend for an inference workload divided by the number of requests (or tokens) served. It requires tagging at the workload level, time-aligned spend data, and request-volume telemetry. CostSage automates this with workload-level allocation.</p>
+<h3>Should training and inference be on the same instances?</h3>
+<p>Generally no. Training is bursty and benefits from Spot or short-term reserved capacity. Inference is steady and benefits from on-demand or long-term reservations with autoscaling. Co-location is usually a sign of under-mature MLOps and almost always overspends.</p>
+<h3>How does CostSage help with AI workload cost?</h3>
+<p>CostSage's AI agents allocate AI spend at the workload and model level, identify idle GPUs and over-provisioned inference fleets, plan reservation coverage for steady inference, and recommend Spot or capacity-block coverage for training. Recommendations are executed under operator approval rather than left as dashboards.</p>
+
+<h2>See CostSage</h2>
+<p>Read <a href="/pricing">published pricing</a>, see <a href="/compare/cloudzero-vs-costsage">CostSage vs CloudZero</a>, or <a href="/contact">contact us</a> to walk through your AI workload cost shape.</p>
+
+<footer style="margin-top:3rem;padding-top:1.25rem;border-top:1px solid #e5e9ee;font-size:.8rem;color:#6b7280">
+  <p>&copy; <span id="dynamic-year">2026</span> CostSage. All rights reserved. Trademarks belong to their respective owners.</p>
+  <script>document.getElementById('dynamic-year').textContent=new Date().getFullYear()</script>
+</footer>
+</article>
+</body>
+</html>

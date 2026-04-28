@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>CostSage Blog</title>
+<link>https://costsage.ai/blog</link>
+<description>FinOps + AI cloud-cost optimization, written for AWS-first SaaS engineering teams.</description>
+<language>en-GB</language>
+<atom:link href="https://costsage.ai/blog/feed.xml" rel="self" type="application/rss+xml"/>
+<lastBuildDate>Tue, 28 Apr 2026 00:00:00 GMT</lastBuildDate>
+<item>
+<title>10 AWS Cost Optimisation Best Practices Every SaaS Company Should Follow in 2026</title>
+<link>https://costsage.ai/blog/aws-cost-optimisation-best-practices</link>
+<guid>https://costsage.ai/blog/aws-cost-optimisation-best-practices</guid>
+<description>A 2026 playbook for AWS cost optimisation across rightsizing, Savings Plans, idle resources, storage, and tagging — written for SaaS teams already past visibility.</description>
+<pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+</item>
+<item>
+<title>Reserved Instances vs Savings Plans: 2026 Update</title>
+<link>https://costsage.ai/blog/ri-vs-savings-plans</link>
+<guid>https://costsage.ai/blog/ri-vs-savings-plans</guid>
+<description>Updated decision framework: when do RIs still beat Savings Plans, when does the reverse hold, and how to model the right mix.</description>
+<pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

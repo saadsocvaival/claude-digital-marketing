@@ -1,0 +1,6 @@
+Contact: mailto:security@costsage.ai
+Expires: 2027-04-28T00:00:00Z
+Preferred-Languages: en
+Canonical: https://costsage.ai/.well-known/security.txt
+Policy: https://costsage.ai/security
+Acknowledgments: https://costsage.ai/security#acknowledgments

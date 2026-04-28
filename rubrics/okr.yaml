@@ -1,0 +1,46 @@
+name: OKR (Objectives & Key Results)
+evaluator_instructions: |
+  Score a single OKR set (Objective + 3–5 Key Results) for a vertical or the department. Pass bar 8/10.
+  OKRs are quarterly per playbook §6.3. Below 8 → recalibrate before quarter starts.
+criteria:
+  - id: objective_qualitative
+    weight: 10
+    description: Objective is qualitative, ambitious, time-bound, and tied to a North-Star metric or a department goal.
+    anti_patterns: ["objective is a number", "vague aspiration", "no NSM linkage"]
+  - id: key_results_measurable
+    weight: 10
+    description: Each KR is a specific, measurable, time-bound number with a baseline and a target — not an activity.
+    anti_patterns: ["KR is a project ('launch X')", "no baseline", "no unit"]
+  - id: ambition_calibration
+    weight: 9
+    description: KRs are ambitious (50–70% expected confidence) but not impossible; baselines from feeds/ledger cited.
+    anti_patterns: ["sandbagging (high confidence)", "fantasy targets", "no baseline source"]
+  - id: kr_count
+    weight: 8
+    description: 3–5 KRs per Objective. More dilutes focus; fewer under-specifies the path.
+    anti_patterns: ["1 KR", "8+ KRs", "KRs collapse to one metric"]
+  - id: ownership_clarity
+    weight: 9
+    description: Single accountable owner per KR (Tier 2 Vertical Lead or Tier 1 Head); contributors enumerated.
+    anti_patterns: ["committee ownership", "no owner", "owner outside accountable tier"]
+  - id: dependency_mapping
+    weight: 8
+    description: Cross-vertical dependencies named explicitly (e.g. SEO KR depends on Content production capacity).
+    anti_patterns: ["dependencies hidden", "circular ownership"]
+  - id: leading_lagging_balance
+    weight: 8
+    description: Mix of leading indicators (controllable inputs) and lagging outcomes — not all lagging.
+    anti_patterns: ["100% lagging KRs", "no controllable input"]
+  - id: alignment_chain
+    weight: 9
+    description: Each KR traces to a parent OKR (vertical → department → company) without orphan KRs.
+    anti_patterns: ["orphan KR", "department goal contradicted", "no parent linkage"]
+  - id: review_cadence
+    weight: 7
+    description: Weekly check-in cadence + mid-quarter recalibration moment defined.
+    anti_patterns: ["no check-in", "review only at quarter end"]
+  - id: governance_compliance
+    weight: 8
+    description: KR thresholds for HITL escalation (e.g. paused-spend, brand-departure) referenced where applicable.
+    anti_patterns: ["KR encourages policy violation", "ignores stop-loss"]
+pass_bar: 8

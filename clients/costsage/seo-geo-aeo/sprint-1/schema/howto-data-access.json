@@ -1,0 +1,44 @@
+{
+  "_comment": "Add to /data-access. Mirrors the existing 4-Step Connection Process H3. Resolves F10.",
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to connect a cloud account to CostSage",
+  "description": "Connect AWS or Azure to CostSage with read-only access in under 4 minutes via a 4-step approval flow.",
+  "totalTime": "PT4M",
+  "supply": [
+    {"@type": "HowToSupply", "name": "AWS account with IAM permission to create roles, OR Azure subscription owner permissions"}
+  ],
+  "tool": [
+    {"@type": "HowToTool", "name": "AWS Console (IAM) or Azure Portal (RBAC)"}
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Sign in to CostSage",
+      "text": "Create a CostSage account at costsage.ai and verify your email. Choose AWS, Azure, or both as the cloud target.",
+      "url": "https://costsage.ai/contact"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Launch the read-only role",
+      "text": "Click the one-click CloudFormation (AWS) or ARM template (Azure) link inside CostSage. The template provisions a least-privilege role: ReadOnly + cost-and-usage scopes. No write access is granted at this step.",
+      "url": "https://costsage.ai/data-access"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Paste the role identifier",
+      "text": "Copy the IAM role ARN (AWS) or service principal ID (Azure) from the deployed template output and paste it into CostSage. The agent verifies access with a single read call before proceeding.",
+      "url": "https://costsage.ai/data-access"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Review your first savings",
+      "text": "Within minutes the agent surfaces the first batch of cost-saving recommendations. Approve any to enable execution; the agent then provisions a separate scoped write role limited to the actions you approved.",
+      "url": "https://costsage.ai/features"
+    }
+  ]
+}

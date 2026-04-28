@@ -1,0 +1,30 @@
+{
+  "ts": "2026-04-28T13:00:00Z",
+  "tool": "lighthouse@13.1.0 + chromium",
+  "url_count": 23,
+  "context": "after Sprint-3 fixes (R1 a11y, R2 CLS, R5 og:image, font-display:optional sitewide, security headers shipped)",
+  "averages": {
+    "perf": 98,
+    "seo": 100,
+    "a11y": 91,
+    "bp": 99
+  },
+  "ranges": {
+    "perf": {
+      "min": 88,
+      "max": 100
+    },
+    "seo": {
+      "min": 100,
+      "max": 100
+    },
+    "a11y": {
+      "min": 87,
+      "max": 97
+    },
+    "bp": {
+      "min": 96,
+      "max": 100
+    }
+  }
+}

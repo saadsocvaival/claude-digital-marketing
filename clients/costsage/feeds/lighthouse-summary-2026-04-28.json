@@ -1,0 +1,29 @@
+{
+  "ts": "2026-04-28",
+  "tool": "lighthouse@13.1.0 + chromium (server-side, no quota)",
+  "url_count": 23,
+  "averages": {
+    "performance": 98,
+    "seo": 100,
+    "accessibility": 90,
+    "best-practices": 99
+  },
+  "ranges": {
+    "performance": {
+      "min": 91,
+      "max": 100
+    },
+    "seo": {
+      "min": 100,
+      "max": 100
+    },
+    "accessibility": {
+      "min": 77,
+      "max": 97
+    },
+    "best-practices": {
+      "min": 96,
+      "max": 100
+    }
+  }
+}

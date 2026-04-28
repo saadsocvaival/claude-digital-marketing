@@ -1,0 +1,46 @@
+name: Editorial Calendar
+evaluator_instructions: |
+  Score the rolling editorial calendar (per vertical and consolidated marketing calendar). Pass bar 8/10.
+  Calendar must be locked by the 27th of the prior month per playbook §12.4 (social) and §11.4 (content).
+criteria:
+  - id: funnel_balance
+    weight: 10
+    description: TOFU / MOFU / BOFU / Retention pieces represented in stated ratio aligned to OKRs (playbook §11.3).
+    anti_patterns: ["all TOFU", "no retention", "imbalance not justified by OKR"]
+  - id: keyword_coverage
+    weight: 9
+    description: Every SEO-targeting piece tied to a keyword cluster + primary keyword from the SEO roadmap; no cannibalization (§9.7).
+    anti_patterns: ["unattached pieces", "duplicate primary keywords", "no cluster mapping"]
+  - id: cadence_realism
+    weight: 9
+    description: Cadence matches team capacity (writer / designer / video producer headcount) — not aspirational.
+    anti_patterns: ["overcommitted week", "no buffer", "weekend-only deadlines"]
+  - id: dependencies_explicit
+    weight: 9
+    description: Each piece names dependencies (SME, designer, paid LP, social asset) with handoff dates and SLAs (§11.4).
+    anti_patterns: ["missing handoffs", "designer 1-day SLA on visuals (<5bd)", "blocking deps unflagged"]
+  - id: distribution_planned
+    weight: 9
+    description: Each major asset has its repurpose plan (≥4 derivative formats per §11.6) and channel publish dates.
+    anti_patterns: ["one-and-done publish", "no email/social plan", "missing UTMs"]
+  - id: refresh_lane
+    weight: 8
+    description: Refresh queue pulls from top-50 pages aging out of 18-month window (§11.5) — not just net-new.
+    anti_patterns: ["100% net-new", "stale top pages ignored"]
+  - id: brand_voice_compliance
+    weight: 8
+    description: All scheduled pieces flagged for brand-voice review against `rubrics/brand-voice.yaml`.
+    anti_patterns: ["no voice review step", "executive bylines unflagged"]
+  - id: legal_review_gates
+    weight: 8
+    description: Customer quotes, competitor comparisons, regulated claims marked for legal review before publish.
+    anti_patterns: ["competitor compare unflagged", "customer quote without approval"]
+  - id: measurement_targets
+    weight: 8
+    description: 30/90-day traffic + MQL targets per piece (§11.4 step 10).
+    anti_patterns: ["no targets", "vanity metrics only"]
+  - id: governance_lock
+    weight: 7
+    description: Calendar approved by Vertical Lead and stamped by 27th of prior month; reactive lane explicitly bounded.
+    anti_patterns: ["unsigned calendar", "reactive lane unbounded", "no version stamp"]
+pass_bar: 8
