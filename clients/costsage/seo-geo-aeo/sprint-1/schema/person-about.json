@@ -1,0 +1,45 @@
+{
+  "_comment": "Person schema for /about. Resolves F8 (E-E-A-T grounding). Founder/team names + roles + bios MUST be operator-confirmed before publishing — placeholders below. Add one Person object per founder/leader. Drop into /about as a JSON-LD <script> alongside the existing Organization + Breadcrumb blocks.",
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://costsage.ai/#organization",
+      "name": "CostSage",
+      "url": "https://costsage.ai",
+      "logo": "https://costsage.ai/assets/costsage_ai_project_logos_cost-sage-logo-dark-01-300x65.png",
+      "founder": [
+        {"@id": "https://costsage.ai/about#founder-1"}
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://costsage.ai/about#founder-1",
+      "name": "TBD-confirm-founder-1-name",
+      "jobTitle": "TBD-confirm-title (e.g. Co-founder & CEO)",
+      "worksFor": {"@id": "https://costsage.ai/#organization"},
+      "knowsAbout": [
+        "FinOps",
+        "AWS cost optimisation",
+        "Azure cost management",
+        "Agentic AI systems",
+        "Cloud infrastructure engineering"
+      ],
+      "sameAs": [
+        "TBD-LinkedIn-URL",
+        "TBD-Twitter-or-X-URL"
+      ],
+      "description": "TBD-confirm-bio (e.g. 'Cloud engineer with 12 years at AWS Premier Partners. Built CostSage after watching dashboards fail to close the loop on cloud waste.')"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://costsage.ai/about#founder-2",
+      "name": "TBD-confirm-founder-2-name",
+      "jobTitle": "TBD-confirm-title (e.g. Co-founder & CTO)",
+      "worksFor": {"@id": "https://costsage.ai/#organization"},
+      "knowsAbout": ["FinOps automation", "Agentic AI", "Cloud security"],
+      "sameAs": ["TBD-LinkedIn-URL"],
+      "description": "TBD-confirm-bio"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "_comment": "Add to /azure to match the existing 'How CostSage Works' section. Resolves F10.",
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to connect Azure to CostSage",
+  "description": "Connect an Azure subscription to CostSage with a Reader RBAC role in under 60 seconds.",
+  "totalTime": "PT1M",
+  "step": [
+    {"@type": "HowToStep", "position": 1, "name": "Sign up for CostSage", "text": "Create a free CostSage account and select Azure as the cloud target."},
+    {"@type": "HowToStep", "position": 2, "name": "Deploy the ARM template", "text": "Click the one-click ARM template link. CostSage provisions a Reader-role service principal scoped to your subscription's cost and resource APIs."},
+    {"@type": "HowToStep", "position": 3, "name": "Paste the service principal ID", "text": "Copy the service principal ID from the ARM output and paste it into CostSage. We never request your Azure account credentials."},
+    {"@type": "HowToStep", "position": 4, "name": "Review your first Azure savings", "text": "The agent surfaces VM rightsizing, idle resources, orphaned disks, and Reserved Instance gaps within minutes. Approve any to execute."}
+  ]
+}

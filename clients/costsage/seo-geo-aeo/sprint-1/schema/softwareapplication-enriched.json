@@ -1,0 +1,58 @@
+{
+  "_comment": "Replaces the existing minimal SoftwareApplication block on the homepage. Resolves F9. Fields marked TBD must be confirmed by operator before publishing — do NOT publish synthetic aggregateRating data.",
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "CostSage",
+  "alternateName": "CostSage FinOps Agent",
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "FinOps / Cloud Cost Optimisation",
+  "operatingSystem": "Web (SaaS)",
+  "url": "https://costsage.ai",
+  "description": "Agentic AI system for FinOps that reasons across AWS and Azure, plans cost optimisations, and executes them autonomously after human approval. Average customer reduces cloud spend by 35%.",
+  "softwareVersion": "TBD-confirm-with-operator",
+  "datePublished": "TBD-confirm-with-operator",
+  "image": "https://costsage.ai/assets/costsage_ai_project_product_images_Group-1171275139@2x.png",
+  "screenshot": [
+    "https://costsage.ai/assets/costsage_ai_project_product_images_Group-1171275139@2x.png"
+  ],
+  "featureList": [
+    "AI rightsizing for EC2, RDS, and Azure VMs",
+    "Idle resource detection and scheduled shutdown",
+    "Reserved Instance and Savings Plan optimisation",
+    "Orphaned disk and snapshot cleanup",
+    "Tagging policy enforcement",
+    "12-month cost forecasting",
+    "Autonomous execution after one human approval",
+    "Read-only IAM / Azure RBAC connection in 60 seconds",
+    "Multi-account AWS Organization and Azure Tenant support",
+    "Audit ledger of every agent action",
+    "ISO 27001 certified data handling"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "category": "Free 14-day trial; outcome-based pricing thereafter",
+    "url": "https://costsage.ai/pricing"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CostSage",
+    "url": "https://costsage.ai",
+    "logo": "https://costsage.ai/assets/costsage_ai_project_logos_cost-sage-logo-dark-01-300x65.png"
+  },
+  "softwareRequirements": "Modern web browser; AWS account with IAM permission to create roles, and/or Azure account with subscription owner permission to assign Reader RBAC role.",
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "FinOps engineers, DevOps leads, CTOs, VP Engineering, cloud cost owners"
+  },
+  "_aggregateRating_TBD": {
+    "_comment": "Add ONLY when ≥10 verified reviews exist on a third-party site (G2, Capterra) or first-party with attribution. Do not synthesize.",
+    "@type": "AggregateRating",
+    "ratingValue": "TBD",
+    "reviewCount": "TBD",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}

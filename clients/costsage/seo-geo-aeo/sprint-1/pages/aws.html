@@ -1,0 +1,229 @@
+<!--
+  /aws — drop-in page mirroring /azure structure
+  Resolves audit finding F3.
+  Replace asset paths with real ones from the existing CostSage CMS/theme.
+  Schema is pre-built (WebPage + HowTo + BreadcrumbList + FAQPage).
+-->
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <title>AWS Cost Optimisation | CostSage Agentic AI for FinOps</title>
+  <meta name="description" content="CostSage is Agentic AI for FinOps, built for AWS. It reasons across EC2, RDS, EBS, S3 and Savings Plans, plans optimisations, and executes them autonomously. First savings in 60 seconds.">
+  <link rel="canonical" href="https://costsage.ai/aws">
+
+  <meta property="og:title" content="AWS Cost Optimisation | CostSage Agentic AI for FinOps">
+  <meta property="og:description" content="CostSage is built for AWS. Connect in 60 seconds and see your first savings recommendations in minutes. Reduce AWS waste by 35%+ on average.">
+  <meta property="og:image" content="https://costsage.ai/assets/costsage_ai_project_logos_cost-sage-logo-dark-01-300x65.png">
+  <meta property="og:url" content="https://costsage.ai/aws">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "AWS Cost Optimisation — CostSage",
+    "description": "CostSage is Agentic AI for FinOps, built for AWS. It reasons across your AWS infrastructure, plans optimisations, and executes them autonomously.",
+    "url": "https://costsage.ai/aws",
+    "inLanguage": "en-GB",
+    "isPartOf": {"@type": "WebSite", "name": "CostSage", "url": "https://costsage.ai"}
+  }
+  </script>
+
+  <!-- BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://costsage.ai/"},
+      {"@type": "ListItem", "position": 2, "name": "AWS Cost Optimisation", "item": "https://costsage.ai/aws"}
+    ]
+  }
+  </script>
+
+  <!-- HowTo: 4-step AWS connection -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to connect AWS to CostSage",
+    "description": "Connect an AWS account to CostSage with a read-only IAM role in under 60 seconds.",
+    "totalTime": "PT1M",
+    "step": [
+      {"@type": "HowToStep", "position": 1, "name": "Sign up for CostSage", "text": "Create a free CostSage account at costsage.ai/contact and verify your email."},
+      {"@type": "HowToStep", "position": 2, "name": "Launch the IAM role", "text": "Click 'Connect AWS' and follow the CloudFormation one-click link to create a read-only IAM role scoped to cost and resource APIs."},
+      {"@type": "HowToStep", "position": 3, "name": "Paste the role ARN", "text": "Copy the IAM role ARN from CloudFormation output and paste it into CostSage."},
+      {"@type": "HowToStep", "position": 4, "name": "Review your first savings", "text": "Within minutes the agent surfaces the first batch of cost-saving recommendations. Approve any to execute."}
+    ]
+  }
+  </script>
+
+  <!-- FAQPage incl. canonical answer -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does CostSage optimise AWS costs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CostSage connects to AWS through a read-only IAM role in under 60 seconds, then continuously analyses EC2, RDS, EBS, S3, and Savings Plan / Reserved Instance coverage across every linked account. It identifies oversized instances, idle resources, orphaned EBS volumes and snapshots, and sub-optimal commitment coverage — typically reducing AWS waste by 35% or more. Execution runs only after explicit operator approval inside a scoped write role."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What AWS services does CostSage cover?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "EC2, RDS, EBS, S3, ElastiCache, EKS, Lambda, CloudFront, NAT Gateways, and Savings Plan / Reserved Instance commitments. Tag hygiene and cost-allocation reports are evaluated across every linked account in your AWS Organization."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can CostSage execute changes on my AWS account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Only after explicit human approval. Analysis runs against a read-only IAM role. Execution requires you to opt into a scoped write role that limits the agent to specific actions (e.g. resize, stop, delete-snapshot) on resources you've pre-approved. Every action is logged in the audit ledger."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is CostSage AWS Marketplace listed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "[TBD — confirm with operator before publishing.] If listed: customers can subscribe via AWS Marketplace and bill against their AWS commit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does CostSage compare to AWS Cost Explorer and Trusted Advisor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cost Explorer and Trusted Advisor surface recommendations as a dashboard. CostSage adds an autonomous execution layer: once you approve a recommendation, the agent applies it across linked accounts, tracks the realised savings, and rolls back if guardrails trip. See /finops-agent-vs-dashboard for the full comparison."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>
+    <span class="line-1">Your AWS bill is hiding thousands.</span>
+    <span class="line-2">We find them — and fix them.</span>
+  </h1>
+  <p class="sub">
+    CostSage is an Agentic AI for FinOps built for AWS. It reasons across EC2,
+    RDS, EBS, S3 and your Savings Plans, plans the savings, and executes them
+    autonomously — once you approve.
+  </p>
+  <p class="cta">
+    <a href="/contact" class="btn-primary">Connect AWS in 60 seconds</a>
+    <a href="/finops-agent-vs-dashboard" class="btn-secondary">See agent vs dashboard</a>
+  </p>
+</section>
+
+<!-- Canonical answer block — F6 -->
+<section class="answer-block" data-question="How does CostSage optimise AWS costs?">
+  <h2>How does CostSage optimise AWS costs?</h2>
+  <p>
+    CostSage connects to AWS through a read-only IAM role in under 60 seconds,
+    then continuously analyses EC2, RDS, EBS, S3, and Savings Plan / Reserved
+    Instance coverage across every linked account. It identifies oversized
+    instances, idle resources, orphaned EBS volumes and snapshots, and
+    sub-optimal commitment coverage — typically reducing AWS waste by 35% or
+    more. Execution runs only after explicit operator approval inside a scoped
+    write role.
+  </p>
+</section>
+
+<!-- Proof of savings -->
+<section>
+  <h2>Proof of Savings</h2>
+  <p>
+    On a representative $250K/month AWS spend, CostSage customers identify and
+    execute on an average $61,000/month in waste — a 24% reduction inside the
+    first 30 days, scaling to 35%+ by month three as Savings Plan coverage
+    optimises.
+  </p>
+  <ul>
+    <li><strong>EC2 rightsizing:</strong> avg 18% line-item reduction.</li>
+    <li><strong>Idle resource shutdown:</strong> avg 6% line-item reduction.</li>
+    <li><strong>RI / Savings Plan optimisation:</strong> avg 9% commitment reduction.</li>
+    <li><strong>Orphaned EBS & snapshot cleanup:</strong> avg 2% storage reduction.</li>
+  </ul>
+</section>
+
+<!-- AWS waste categories -->
+<section>
+  <h2>AWS Waste We Find</h2>
+  <h3>🖥️ Oversized EC2 &amp; RDS</h3>
+  <p>The agent benchmarks utilisation against 14 days of CloudWatch metrics and recommends a target instance class with ≥99.9% headroom guarantee.</p>
+  <h3>⏸️ Idle Resources</h3>
+  <p>EC2, RDS, ElastiCache, NAT Gateways, and load balancers running below thresholds are flagged for stop/terminate with optional weekend/holiday schedules.</p>
+  <h3>💳 Savings Plan / RI Coverage Gaps</h3>
+  <p>Continuous coverage analysis across compute and database commitments. The agent recommends term, payment option, and quantity per the optimal coverage ratio.</p>
+  <h3>💾 Orphaned EBS Volumes &amp; Snapshots</h3>
+  <p>Detached volumes and stale snapshots older than your retention policy are surfaced for deletion after a one-click human approval.</p>
+  <h3>🏷️ Tag Hygiene &amp; Cost Allocation</h3>
+  <p>Untagged or mistagged resources are flagged against your tagging policy. The agent can apply default tags inside a scoped write role.</p>
+</section>
+
+<!-- How it works (HowTo content matches schema above) -->
+<section>
+  <h2>How CostSage Works on AWS</h2>
+  <ol>
+    <li><strong>Sign up</strong> at <a href="/contact">costsage.ai/contact</a>.</li>
+    <li><strong>Launch the IAM role</strong> via the CloudFormation one-click link — read-only, scoped to cost and resource APIs.</li>
+    <li><strong>Paste the role ARN</strong> into CostSage. We never ask for AWS root credentials.</li>
+    <li><strong>Review your first savings</strong> within minutes. Approve any to execute.</li>
+  </ol>
+  <p>Full permission breakdown: <a href="/data-access">/data-access</a>.</p>
+</section>
+
+<!-- Trust & compliance -->
+<section>
+  <h2>AWS Trust &amp; Compliance</h2>
+  <h3>🛡️ Security</h3>
+  <p>ISO 27001 certified. SOC 2 Type II audit in progress. All credentials encrypted at rest with AWS KMS, in transit over TLS 1.3. Read-only by default — execution requires a separate scoped role.</p>
+  <h3>⭐ AWS Coverage</h3>
+  <p>Multi-account AWS Organization support. Native Savings Plan and Reserved Instance optimisation. Compatible with AWS Control Tower and Service Control Policies.</p>
+</section>
+
+<!-- FAQ (mirrors FAQPage schema above) -->
+<section>
+  <h2>AWS-Specific Questions</h2>
+  <details>
+    <summary>What AWS services does CostSage cover?</summary>
+    <p>EC2, RDS, EBS, S3, ElastiCache, EKS, Lambda, CloudFront, NAT Gateways, and Savings Plan / Reserved Instance commitments. Tag hygiene and cost-allocation reports are evaluated across every linked account in your AWS Organization.</p>
+  </details>
+  <details>
+    <summary>Can CostSage execute changes on my AWS account?</summary>
+    <p>Only after explicit human approval. Analysis runs against a read-only IAM role. Execution requires you to opt into a scoped write role that limits the agent to specific actions on resources you've pre-approved. Every action is logged.</p>
+  </details>
+  <details>
+    <summary>Is CostSage AWS Marketplace listed?</summary>
+    <p>[TBD — confirm with operator before publishing.]</p>
+  </details>
+  <details>
+    <summary>How does CostSage compare to AWS Cost Explorer and Trusted Advisor?</summary>
+    <p>Cost Explorer and Trusted Advisor surface recommendations as a dashboard. CostSage adds an autonomous execution layer. See <a href="/finops-agent-vs-dashboard">/finops-agent-vs-dashboard</a> for the full comparison.</p>
+  </details>
+</section>
+
+<!-- Final CTA -->
+<section class="cta-final">
+  <h2>Find your AWS savings</h2>
+  <p>Connect AWS in 60 seconds. See your first savings recommendations in minutes. Free 14-day trial — no credit card required.</p>
+  <a href="/contact" class="btn-primary">Start free trial</a>
+</section>
+
+</body>
+</html>
