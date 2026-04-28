@@ -28,6 +28,8 @@
 
 > **Provisioning note (2026-04-27):** Operator delivered a credential bundle via Google Sheet ("Marketing Simulatory Credentials for Agentic Workflow Testing"). Per `SECURITY.md`, raw values are NOT in this repo. SaaS web-logins ≠ programmatic API access — for Semrush/Ahrefs/Surfer/ATP/Trello/OpenAI/Gemini/Perplexity an operator must (a) sign in, (b) generate an API key in Settings → API, (c) write the value to the vault path above. See `seo-geo-aeo/API-KEY-EXTRACTION-RUNBOOK.md` for per-platform 30-second walkthroughs. Google services (GA4/GSC/GTM) require a one-time OAuth grant flow.
 
+> **Validation note (2026-04-28):** Bundle re-tested against costsage.ai. Honest result: 0/16 credentials granted programmatic access today without operator browser action. WordPress credential `tayyabnaqvi` does NOT match any user in the WP container reachable on this host — that container is "CostSage Local Mirror" (a dev mirror with `siteurl=10.16.140.59:8080`, sole admin = `shiraz`); the live costsage.ai domain serves a separate static container, and `costsage.ai/wp-admin/` returns 404 publicly. Email mismatch flagged: bundle = `shiraz.iqbal@vaivaltech.com`, WP DB = `shiraz.iqbal@vaival.com`. Full evidence in `operations/CREDENTIALS-VALIDATION-REPORT.md`. Net: bundle is raw material, not unblocker; the 35-min `API-KEY-EXTRACTION-RUNBOOK.md` pass is what converts it.
+
 ## Migration runbook
 1. Operator delivers the existing credential spreadsheet via secure channel — never to this repo.
 2. Run `04-workflows/secrets-vault-setup.workflow.md`:
