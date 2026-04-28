@@ -1,0 +1,2070 @@
+{
+  "swept_at": "2026-04-28T12:34:59Z",
+  "url_count": 23,
+  "tool": "audit-sweep.py v1.0 (curl + python regex + json.loads)",
+  "summary": {
+    "urls_returning_200_to_mozilla": 0,
+    "urls_with_body": 23,
+    "total_jsonld_blocks": 92,
+    "total_jsonld_valid": 92,
+    "total_jsonld_invalid": 0,
+    "schema_types_present": [
+      "AggregateRating",
+      "Answer",
+      "Article",
+      "Audience",
+      "BreadcrumbList",
+      "ContactPage",
+      "ContactPoint",
+      "FAQPage",
+      "HowTo",
+      "HowToStep",
+      "ImageObject",
+      "ItemList",
+      "ListItem",
+      "Offer",
+      "Organization",
+      "Question",
+      "SearchAction",
+      "SoftwareApplication",
+      "VideoObject",
+      "WebPage",
+      "WebSite"
+    ],
+    "avg_word_count": 1186,
+    "total_words": 27281,
+    "total_internal_links": 97,
+    "total_external_links": 25,
+    "total_imgs_no_alt": 0,
+    "total_imgs_lazy": 58,
+    "h2_question_form_total": 28,
+    "missing_canonical": [],
+    "canonical_mismatches": [],
+    "missing_og_image": [
+      "https://costsage.ai/blog/aws-cost-optimisation-best-practices",
+      "https://costsage.ai/blog/ri-vs-savings-plans"
+    ],
+    "missing_security_hsts": [
+      "https://costsage.ai/",
+      "https://costsage.ai/about",
+      "https://costsage.ai/features",
+      "https://costsage.ai/pricing",
+      "https://costsage.ai/contact",
+      "https://costsage.ai/azure",
+      "https://costsage.ai/aws",
+      "https://costsage.ai/data-access",
+      "https://costsage.ai/finops-agent-vs-dashboard",
+      "https://costsage.ai/nops-alternative",
+      "https://costsage.ai/cloudzero-alternative",
+      "https://costsage.ai/blog",
+      "https://costsage.ai/blog/aws-cost-optimisation-best-practices",
+      "https://costsage.ai/blog/ri-vs-savings-plans",
+      "https://costsage.ai/finops-for-ai-workloads",
+      "https://costsage.ai/azure-cost-optimization",
+      "https://costsage.ai/multi-cloud",
+      "https://costsage.ai/alternatives/vantage",
+      "https://costsage.ai/alternatives/prosperops",
+      "https://costsage.ai/compare/cloudzero-vs-costsage",
+      "https://costsage.ai/compare/nops-vs-costsage",
+      "https://costsage.ai/privacy",
+      "https://costsage.ai/terms"
+    ],
+    "missing_security_csp": [
+      "https://costsage.ai/",
+      "https://costsage.ai/about",
+      "https://costsage.ai/features",
+      "https://costsage.ai/pricing",
+      "https://costsage.ai/contact",
+      "https://costsage.ai/azure",
+      "https://costsage.ai/aws",
+      "https://costsage.ai/data-access",
+      "https://costsage.ai/finops-agent-vs-dashboard",
+      "https://costsage.ai/nops-alternative",
+      "https://costsage.ai/cloudzero-alternative",
+      "https://costsage.ai/blog",
+      "https://costsage.ai/blog/aws-cost-optimisation-best-practices",
+      "https://costsage.ai/blog/ri-vs-savings-plans",
+      "https://costsage.ai/finops-for-ai-workloads",
+      "https://costsage.ai/azure-cost-optimization",
+      "https://costsage.ai/multi-cloud",
+      "https://costsage.ai/alternatives/vantage",
+      "https://costsage.ai/alternatives/prosperops",
+      "https://costsage.ai/compare/cloudzero-vs-costsage",
+      "https://costsage.ai/compare/nops-vs-costsage",
+      "https://costsage.ai/privacy",
+      "https://costsage.ai/terms"
+    ],
+    "missing_security_xfo": []
+  },
+  "results": [
+    {
+      "url": "https://costsage.ai/",
+      "ts": 1777379677,
+      "status_by_ua": {
+        "Mozilla": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "Googlebot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "ClaudeBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "GPTBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "PerplexityBot": {
+          "status": "",
+          "x-robots-tag": ""
+        }
+      },
+      "security_headers": {
+        "strict-transport-security": "",
+        "content-security-policy": "",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "",
+        "x-xss-protection": ""
+      },
+      "headers": {
+        "server": "cloudflare",
+        "cache-control": "",
+        "content-type": "text/html",
+        "cf-cache-status": "DYNAMIC",
+        "content-encoding": ""
+      },
+      "analysis": {
+        "url": "https://costsage.ai/",
+        "title": "CostSage \u2014 Agentic AI for FinOps | Cut Cloud Bills by 35%",
+        "title_len": 57,
+        "desc": "CostSage is an Agentic AI system for FinOps. It reasons across your AWS &amp; Azure infrastructure, plans cost optimisations, and executes them autonomously. First savings in under 60 seconds.",
+        "desc_len": 192,
+        "canonical": "https://costsage.ai/",
+        "canonical_matches_url": true,
+        "lang": "en-GB",
+        "h1_count": 1,
+        "h1_first": "Your cloud bill is hidingthousands. We find them.",
+        "h2_count": 7,
+        "h3_count": 9,
+        "h2_question_form": 0,
+        "links_total": 43,
+        "links_internal": 1,
+        "links_external": 5,
+        "links_anchor_only": 0,
+        "img_count": 16,
+        "img_no_alt": 0,
+        "img_lazy": 15,
+        "word_count": 1645,
+        "og_title": true,
+        "og_desc": true,
+        "og_image": true,
+        "tw_card": true,
+        "jsonld_blocks": 7,
+        "jsonld_valid": 7,
+        "jsonld_invalid": 0,
+        "jsonld_types": [
+          "AggregateRating",
+          "Answer",
+          "Audience",
+          "ContactPoint",
+          "FAQPage",
+          "Offer",
+          "Organization",
+          "Question",
+          "SearchAction",
+          "SoftwareApplication",
+          "VideoObject",
+          "WebSite"
+        ],
+        "external_links_sample": [
+          "https://www.youtube.com/watch?v=GWRw-qED7Q4",
+          "https://www.g2.com/products/costsage/reviews"
+        ]
+      },
+      "body_size": 84765
+    },
+    {
+      "url": "https://costsage.ai/about",
+      "ts": 1777379677,
+      "status_by_ua": {
+        "Mozilla": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "Googlebot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "ClaudeBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "GPTBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "PerplexityBot": {
+          "status": "",
+          "x-robots-tag": ""
+        }
+      },
+      "security_headers": {
+        "strict-transport-security": "",
+        "content-security-policy": "",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "",
+        "x-xss-protection": ""
+      },
+      "headers": {
+        "server": "cloudflare",
+        "cache-control": "",
+        "content-type": "text/html",
+        "cf-cache-status": "DYNAMIC",
+        "content-encoding": ""
+      },
+      "analysis": {
+        "url": "https://costsage.ai/about",
+        "title": "About CostSage \u2014 AI FinOps Agent Built by Cloud Engineers",
+        "title_len": 57,
+        "desc": "CostSage was built by cloud engineers who got tired of dashboards that don",
+        "desc_len": 74,
+        "canonical": "https://costsage.ai/about",
+        "canonical_matches_url": true,
+        "lang": "en-GB",
+        "h1_count": 1,
+        "h1_first": "We built the Agentic AI for FinOpswe wished we had",
+        "h2_count": 6,
+        "h3_count": 6,
+        "h2_question_form": 0,
+        "links_total": 21,
+        "links_internal": 1,
+        "links_external": 3,
+        "links_anchor_only": 0,
+        "img_count": 8,
+        "img_no_alt": 0,
+        "img_lazy": 7,
+        "word_count": 926,
+        "og_title": true,
+        "og_desc": true,
+        "og_image": true,
+        "tw_card": true,
+        "jsonld_blocks": 3,
+        "jsonld_valid": 3,
+        "jsonld_invalid": 0,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ContactPoint",
+          "ListItem",
+          "Organization",
+          "SearchAction",
+          "WebSite"
+        ],
+        "external_links_sample": [
+          "https://www.g2.com/products/costsage/reviews",
+          "https://www.youtube.com/watch?v=xdAfmVyLT1g"
+        ]
+      },
+      "body_size": 35975
+    },
+    {
+      "url": "https://costsage.ai/features",
+      "ts": 1777379677,
+      "status_by_ua": {
+        "Mozilla": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "Googlebot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "ClaudeBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "GPTBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "PerplexityBot": {
+          "status": "",
+          "x-robots-tag": ""
+        }
+      },
+      "security_headers": {
+        "strict-transport-security": "",
+        "content-security-policy": "",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "",
+        "x-xss-protection": ""
+      },
+      "headers": {
+        "server": "cloudflare",
+        "cache-control": "",
+        "content-type": "text/html",
+        "cf-cache-status": "DYNAMIC",
+        "content-encoding": ""
+      },
+      "analysis": {
+        "url": "https://costsage.ai/features",
+        "title": "CostSage Features \u2014 AI-Powered FinOps Automation",
+        "title_len": 48,
+        "desc": "CostSage is Agentic AI for FinOps \u2014 it reasons, plans, and executes cloud cost savings. Not a dashboard. Not a copilot. See every capability.",
+        "desc_len": 141,
+        "canonical": "https://costsage.ai/features",
+        "canonical_matches_url": true,
+        "lang": "en-GB",
+        "h1_count": 1,
+        "h1_first": "Built to reason, plan,and execute",
+        "h2_count": 6,
+        "h3_count": 0,
+        "h2_question_form": 1,
+        "links_total": 22,
+        "links_internal": 1,
+        "links_external": 2,
+        "links_anchor_only": 1,
+        "img_count": 9,
+        "img_no_alt": 0,
+        "img_lazy": 8,
+        "word_count": 791,
+        "og_title": true,
+        "og_desc": true,
+        "og_image": true,
+        "tw_card": true,
+        "jsonld_blocks": 3,
+        "jsonld_valid": 3,
+        "jsonld_invalid": 0,
+        "jsonld_types": [
+          "Answer",
+          "BreadcrumbList",
+          "FAQPage",
+          "ListItem",
+          "Question",
+          "SearchAction",
+          "WebPage",
+          "WebSite"
+        ],
+        "external_links_sample": [
+          "https://www.g2.com/products/costsage/reviews"
+        ]
+      },
+      "body_size": 29920
+    },
+    {
+      "url": "https://costsage.ai/pricing",
+      "ts": 1777379677,
+      "status_by_ua": {
+        "Mozilla": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "Googlebot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "ClaudeBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "GPTBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "PerplexityBot": {
+          "status": "",
+          "x-robots-tag": ""
+        }
+      },
+      "security_headers": {
+        "strict-transport-security": "",
+        "content-security-policy": "",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "",
+        "x-xss-protection": ""
+      },
+      "headers": {
+        "server": "cloudflare",
+        "cache-control": "",
+        "content-type": "text/html",
+        "cf-cache-status": "DYNAMIC",
+        "content-encoding": ""
+      },
+      "analysis": {
+        "url": "https://costsage.ai/pricing",
+        "title": "CostSage Pricing \u2014 Pays for Itself in Week 1",
+        "title_len": 44,
+        "desc": "Simple pricing that pays for itself. CostSage Agentic AI identifies and executes an average of $61K/month in cloud savings. Free 14-day trial \u2014 no credit card required.",
+        "desc_len": 168,
+        "canonical": "https://costsage.ai/pricing",
+        "canonical_matches_url": true,
+        "lang": "en-GB",
+        "h1_count": 1,
+        "h1_first": "We only winwhen you save.",
+        "h2_count": 4,
+        "h3_count": 1,
+        "h2_question_form": 1,
+        "links_total": 26,
+        "links_internal": 5,
+        "links_external": 2,
+        "links_anchor_only": 3,
+        "img_count": 5,
+        "img_no_alt": 0,
+        "img_lazy": 4,
+        "word_count": 1192,
+        "og_title": true,
+        "og_desc": true,
+        "og_image": true,
+        "tw_card": true,
+        "jsonld_blocks": 3,
+        "jsonld_valid": 3,
+        "jsonld_invalid": 0,
+        "jsonld_types": [
+          "Answer",
+          "BreadcrumbList",
+          "FAQPage",
+          "ListItem",
+          "Question",
+          "SearchAction",
+          "WebSite"
+        ],
+        "external_links_sample": [
+          "https://www.g2.com/products/costsage/reviews"
+        ]
+      },
+      "body_size": 53170
+    },
+    {
+      "url": "https://costsage.ai/contact",
+      "ts": 1777379677,
+      "status_by_ua": {
+        "Mozilla": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "Googlebot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "ClaudeBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "GPTBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "PerplexityBot": {
+          "status": "",
+          "x-robots-tag": ""
+        }
+      },
+      "security_headers": {
+        "strict-transport-security": "",
+        "content-security-policy": "",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "",
+        "x-xss-protection": ""
+      },
+      "headers": {
+        "server": "cloudflare",
+        "cache-control": "",
+        "content-type": "text/html",
+        "cf-cache-status": "DYNAMIC",
+        "content-encoding": ""
+      },
+      "analysis": {
+        "url": "https://costsage.ai/contact",
+        "title": "Contact CostSage \u2014 Talk to a FinOps Expert",
+        "title_len": 42,
+        "desc": "Book a 30-minute demo with a FinOps engineer or start your free trial. CostSage FinOps Agent \u2014 no contracts, no pressure.",
+        "desc_len": 121,
+        "canonical": "https://costsage.ai/contact",
+        "canonical_matches_url": true,
+        "lang": "en-GB",
+        "h1_count": 1,
+        "h1_first": "Talk to a FinOps expert",
+        "h2_count": 3,
+        "h3_count": 3,
+        "h2_question_form": 0,
+        "links_total": 21,
+        "links_internal": 2,
+        "links_external": 4,
+        "links_anchor_only": 1,
+        "img_count": 5,
+        "img_no_alt": 0,
+        "img_lazy": 4,
+        "word_count": 470,
+        "og_title": true,
+        "og_desc": true,
+        "og_image": true,
+        "tw_card": true,
+        "jsonld_blocks": 3,
+        "jsonld_valid": 3,
+        "jsonld_invalid": 0,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ContactPage",
+          "ListItem",
+          "SearchAction",
+          "WebSite"
+        ],
+        "external_links_sample": [
+          "https://www.youtube.com/watch?v=GWRw-qED7Q4",
+          "https://calendly.com/costsage/demo",
+          "https://www.g2.com/products/costsage/reviews"
+        ]
+      },
+      "body_size": 25174
+    },
+    {
+      "url": "https://costsage.ai/azure",
+      "ts": 1777379677,
+      "status_by_ua": {
+        "Mozilla": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "Googlebot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "ClaudeBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "GPTBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "PerplexityBot": {
+          "status": "",
+          "x-robots-tag": ""
+        }
+      },
+      "security_headers": {
+        "strict-transport-security": "",
+        "content-security-policy": "",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "",
+        "x-xss-protection": ""
+      },
+      "headers": {
+        "server": "cloudflare",
+        "cache-control": "",
+        "content-type": "text/html",
+        "cf-cache-status": "DYNAMIC",
+        "content-encoding": ""
+      },
+      "analysis": {
+        "url": "https://costsage.ai/azure",
+        "title": "Azure Cost Optimisation | CostSage Agentic AI for FinOps",
+        "title_len": 56,
+        "desc": "CostSage is Agentic AI for FinOps, built for Azure. It reasons across your Azure infrastructure, plans optimisations, and executes them autonomously. First savings in 60 seconds.",
+        "desc_len": 178,
+        "canonical": "https://costsage.ai/azure",
+        "canonical_matches_url": true,
+        "lang": "en-GB",
+        "h1_count": 1,
+        "h1_first": "Your Azure bill is hiding thousands. We find them \u2014 and fix them.",
+        "h2_count": 6,
+        "h3_count": 6,
+        "h2_question_form": 0,
+        "links_total": 18,
+        "links_internal": 1,
+        "links_external": 1,
+        "links_anchor_only": 0,
+        "img_count": 4,
+        "img_no_alt": 0,
+        "img_lazy": 3,
+        "word_count": 623,
+        "og_title": true,
+        "og_desc": true,
+        "og_image": true,
+        "tw_card": true,
+        "jsonld_blocks": 6,
+        "jsonld_valid": 6,
+        "jsonld_invalid": 0,
+        "jsonld_types": [
+          "Answer",
+          "BreadcrumbList",
+          "FAQPage",
+          "HowTo",
+          "HowToStep",
+          "ListItem",
+          "Question",
+          "SearchAction",
+          "WebPage",
+          "WebSite"
+        ],
+        "external_links_sample": [
+          "https://www.g2.com/products/costsage/reviews"
+        ]
+      },
+      "body_size": 30070
+    },
+    {
+      "url": "https://costsage.ai/aws",
+      "ts": 1777379677,
+      "status_by_ua": {
+        "Mozilla": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "Googlebot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "ClaudeBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "GPTBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "PerplexityBot": {
+          "status": "",
+          "x-robots-tag": ""
+        }
+      },
+      "security_headers": {
+        "strict-transport-security": "",
+        "content-security-policy": "",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "",
+        "x-xss-protection": ""
+      },
+      "headers": {
+        "server": "cloudflare",
+        "cache-control": "",
+        "content-type": "text/html",
+        "cf-cache-status": "DYNAMIC",
+        "content-encoding": ""
+      },
+      "analysis": {
+        "url": "https://costsage.ai/aws",
+        "title": "AWS Cost Optimisation | CostSage Agentic AI for FinOps",
+        "title_len": 54,
+        "desc": "CostSage is Agentic AI for FinOps, built for AWS. It reasons across EC2, RDS, EBS, S3 and Savings Plans, plans optimisations, and executes them autonomously. First savings in 60 seconds.",
+        "desc_len": 186,
+        "canonical": "https://costsage.ai/aws",
+        "canonical_matches_url": true,
+        "lang": "en-GB",
+        "h1_count": 1,
+        "h1_first": "Your AWS bill is hiding thousands.\n    We find them \u2014 and fix them.",
+        "h2_count": 7,
+        "h3_count": 7,
+        "h2_question_form": 1,
+        "links_total": 6,
+        "links_internal": 6,
+        "links_external": 0,
+        "links_anchor_only": 0,
+        "img_count": 0,
+        "img_no_alt": 0,
+        "img_lazy": 0,
+        "word_count": 640,
+        "og_title": true,
+        "og_desc": true,
+        "og_image": true,
+        "tw_card": true,
+        "jsonld_blocks": 5,
+        "jsonld_valid": 5,
+        "jsonld_invalid": 0,
+        "jsonld_types": [
+          "Answer",
+          "BreadcrumbList",
+          "FAQPage",
+          "HowTo",
+          "HowToStep",
+          "ListItem",
+          "Question",
+          "SearchAction",
+          "WebPage",
+          "WebSite"
+        ],
+        "external_links_sample": []
+      },
+      "body_size": 12396
+    },
+    {
+      "url": "https://costsage.ai/data-access",
+      "ts": 1777379677,
+      "status_by_ua": {
+        "Mozilla": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "Googlebot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "ClaudeBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "GPTBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "PerplexityBot": {
+          "status": "",
+          "x-robots-tag": ""
+        }
+      },
+      "security_headers": {
+        "strict-transport-security": "",
+        "content-security-policy": "",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "",
+        "x-xss-protection": ""
+      },
+      "headers": {
+        "server": "cloudflare",
+        "cache-control": "",
+        "content-type": "text/html",
+        "cf-cache-status": "DYNAMIC",
+        "content-encoding": ""
+      },
+      "analysis": {
+        "url": "https://costsage.ai/data-access",
+        "title": "What Data Does CostSage Access? | Security & Permissions",
+        "title_len": 56,
+        "desc": "We ask for the minimum permissions needed. See exactly what CostSage reads, writes, and never touches. ISO 27001 certified. Fully transparent.",
+        "desc_len": 142,
+        "canonical": "https://costsage.ai/data-access",
+        "canonical_matches_url": true,
+        "lang": "en-GB",
+        "h1_count": 1,
+        "h1_first": "What data does CostSage access?",
+        "h2_count": 7,
+        "h3_count": 8,
+        "h2_question_form": 0,
+        "links_total": 17,
+        "links_internal": 1,
+        "links_external": 1,
+        "links_anchor_only": 0,
+        "img_count": 4,
+        "img_no_alt": 0,
+        "img_lazy": 3,
+        "word_count": 757,
+        "og_title": true,
+        "og_desc": true,
+        "og_image": true,
+        "tw_card": true,
+        "jsonld_blocks": 3,
+        "jsonld_valid": 3,
+        "jsonld_invalid": 0,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "HowTo",
+          "HowToStep",
+          "ListItem",
+          "SearchAction",
+          "WebPage",
+          "WebSite"
+        ],
+        "external_links_sample": [
+          "https://www.g2.com/products/costsage/reviews"
+        ]
+      },
+      "body_size": 28026
+    },
+    {
+      "url": "https://costsage.ai/finops-agent-vs-dashboard",
+      "ts": 1777379685,
+      "status_by_ua": {
+        "Mozilla": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "Googlebot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "ClaudeBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "GPTBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "PerplexityBot": {
+          "status": "",
+          "x-robots-tag": ""
+        }
+      },
+      "security_headers": {
+        "strict-transport-security": "",
+        "content-security-policy": "",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "",
+        "x-xss-protection": ""
+      },
+      "headers": {
+        "server": "cloudflare",
+        "cache-control": "",
+        "content-type": "text/html",
+        "cf-cache-status": "DYNAMIC",
+        "content-encoding": ""
+      },
+      "analysis": {
+        "url": "https://costsage.ai/finops-agent-vs-dashboard",
+        "title": "FinOps Agent vs Dashboard: Why Visibility Fails | CostSage",
+        "title_len": 58,
+        "desc": "FinOps dashboards show you the problem. FinOps agents fix it. We break down the fundamental difference \u2014 and why the shift to agentic FinOps is happening now.",
+        "desc_len": 158,
+        "canonical": "https://costsage.ai/finops-agent-vs-dashboard",
+        "canonical_matches_url": true,
+        "lang": "en-GB",
+        "h1_count": 1,
+        "h1_first": "FinOps Agent vs Dashboard: Why Visibility Alone Won't Cut Your Cloud Bill",
+        "h2_count": 13,
+        "h3_count": 15,
+        "h2_question_form": 11,
+        "links_total": 42,
+        "links_internal": 3,
+        "links_external": 1,
+        "links_anchor_only": 10,
+        "img_count": 2,
+        "img_no_alt": 0,
+        "img_lazy": 1,
+        "word_count": 2936,
+        "og_title": true,
+        "og_desc": true,
+        "og_image": true,
+        "tw_card": true,
+        "jsonld_blocks": 3,
+        "jsonld_valid": 3,
+        "jsonld_invalid": 0,
+        "jsonld_types": [
+          "Article",
+          "BreadcrumbList",
+          "ImageObject",
+          "ListItem",
+          "Organization",
+          "SearchAction",
+          "WebPage",
+          "WebSite"
+        ],
+        "external_links_sample": [
+          "https://www.youtube.com/watch?v=GWRw-qED7Q4"
+        ]
+      },
+      "body_size": 44593
+    },
+    {
+      "url": "https://costsage.ai/nops-alternative",
+      "ts": 1777379685,
+      "status_by_ua": {
+        "Mozilla": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "Googlebot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "ClaudeBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "GPTBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "PerplexityBot": {
+          "status": "",
+          "x-robots-tag": ""
+        }
+      },
+      "security_headers": {
+        "strict-transport-security": "",
+        "content-security-policy": "",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "",
+        "x-xss-protection": ""
+      },
+      "headers": {
+        "server": "cloudflare",
+        "cache-control": "",
+        "content-type": "text/html",
+        "cf-cache-status": "DYNAMIC",
+        "content-encoding": ""
+      },
+      "analysis": {
+        "url": "https://costsage.ai/nops-alternative",
+        "title": "nOps Alternative: CostSage Executes Savings Automatically",
+        "title_len": 57,
+        "desc": "Looking for an nOps alternative? CostSage is Agentic AI for FinOps \u2014 it reasons, plans, and executes savings autonomously. Not just a dashboard. Free trial.",
+        "desc_len": 156,
+        "canonical": "https://costsage.ai/nops-alternative",
+        "canonical_matches_url": true,
+        "lang": "en-GB",
+        "h1_count": 1,
+        "h1_first": "There's a Better nOps Alternative.One That Actually Executes.",
+        "h2_count": 6,
+        "h3_count": 3,
+        "h2_question_form": 1,
+        "links_total": 20,
+        "links_internal": 2,
+        "links_external": 1,
+        "links_anchor_only": 0,
+        "img_count": 2,
+        "img_no_alt": 0,
+        "img_lazy": 1,
+        "word_count": 1166,
+        "og_title": true,
+        "og_desc": true,
+        "og_image": true,
+        "tw_card": true,
+        "jsonld_blocks": 3,
+        "jsonld_valid": 3,
+        "jsonld_invalid": 0,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ItemList",
+          "ListItem",
+          "Offer",
+          "SearchAction",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "external_links_sample": [
+          "https://www.youtube.com/watch?v=GWRw-qED7Q4"
+        ]
+      },
+      "body_size": 34032
+    },
+    {
+      "url": "https://costsage.ai/cloudzero-alternative",
+      "ts": 1777379685,
+      "status_by_ua": {
+        "Mozilla": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "Googlebot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "ClaudeBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "GPTBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "PerplexityBot": {
+          "status": "",
+          "x-robots-tag": ""
+        }
+      },
+      "security_headers": {
+        "strict-transport-security": "",
+        "content-security-policy": "",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "",
+        "x-xss-protection": ""
+      },
+      "headers": {
+        "server": "cloudflare",
+        "cache-control": "",
+        "content-type": "text/html",
+        "cf-cache-status": "DYNAMIC",
+        "content-encoding": ""
+      },
+      "analysis": {
+        "url": "https://costsage.ai/cloudzero-alternative",
+        "title": "CloudZero Alternative: Automated FinOps Execution | CostSage",
+        "title_len": 60,
+        "desc": "CloudZero excels at unit cost allocation and cost intelligence. CostSage is Agentic AI for FinOps \u2014 it reasons, plans, and executes savings autonomously. Compare both.",
+        "desc_len": 167,
+        "canonical": "https://costsage.ai/cloudzero-alternative",
+        "canonical_matches_url": true,
+        "lang": "en-GB",
+        "h1_count": 1,
+        "h1_first": "CloudZero Shows You Unit Costs.CostSage Reduces Them \u2014 Automatically.",
+        "h2_count": 7,
+        "h3_count": 5,
+        "h2_question_form": 1,
+        "links_total": 20,
+        "links_internal": 2,
+        "links_external": 1,
+        "links_anchor_only": 0,
+        "img_count": 2,
+        "img_no_alt": 0,
+        "img_lazy": 1,
+        "word_count": 1510,
+        "og_title": true,
+        "og_desc": true,
+        "og_image": true,
+        "tw_card": true,
+        "jsonld_blocks": 3,
+        "jsonld_valid": 3,
+        "jsonld_invalid": 0,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ItemList",
+          "ListItem",
+          "Offer",
+          "SearchAction",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "external_links_sample": [
+          "https://www.youtube.com/watch?v=GWRw-qED7Q4"
+        ]
+      },
+      "body_size": 38668
+    },
+    {
+      "url": "https://costsage.ai/blog",
+      "ts": 1777379685,
+      "status_by_ua": {
+        "Mozilla": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "Googlebot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "ClaudeBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "GPTBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "PerplexityBot": {
+          "status": "",
+          "x-robots-tag": ""
+        }
+      },
+      "security_headers": {
+        "strict-transport-security": "",
+        "content-security-policy": "",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "",
+        "x-xss-protection": ""
+      },
+      "headers": {
+        "server": "cloudflare",
+        "cache-control": "",
+        "content-type": "text/html",
+        "cf-cache-status": "DYNAMIC",
+        "content-encoding": ""
+      },
+      "analysis": {
+        "url": "https://costsage.ai/blog",
+        "title": "CostSage Blog \u2014 FinOps & Cloud Cost Insights",
+        "title_len": 44,
+        "desc": "Deep dives, case studies, and best practices on cloud cost optimization and FinOps automation from the CostSage team.",
+        "desc_len": 117,
+        "canonical": "https://costsage.ai/blog",
+        "canonical_matches_url": true,
+        "lang": "en-GB",
+        "h1_count": 1,
+        "h1_first": "The FinOps Agent Blog",
+        "h2_count": 2,
+        "h3_count": 2,
+        "h2_question_form": 0,
+        "links_total": 33,
+        "links_internal": 1,
+        "links_external": 0,
+        "links_anchor_only": 9,
+        "img_count": 7,
+        "img_no_alt": 0,
+        "img_lazy": 5,
+        "word_count": 622,
+        "og_title": true,
+        "og_desc": true,
+        "og_image": true,
+        "tw_card": true,
+        "jsonld_blocks": 2,
+        "jsonld_valid": 2,
+        "jsonld_invalid": 0,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "SearchAction",
+          "WebSite"
+        ],
+        "external_links_sample": []
+      },
+      "body_size": 26131
+    },
+    {
+      "url": "https://costsage.ai/blog/aws-cost-optimisation-best-practices",
+      "ts": 1777379685,
+      "status_by_ua": {
+        "Mozilla": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "Googlebot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "ClaudeBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "GPTBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "PerplexityBot": {
+          "status": "",
+          "x-robots-tag": ""
+        }
+      },
+      "security_headers": {
+        "strict-transport-security": "",
+        "content-security-policy": "",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "",
+        "x-xss-protection": ""
+      },
+      "headers": {
+        "server": "cloudflare",
+        "cache-control": "",
+        "content-type": "text/html",
+        "cf-cache-status": "DYNAMIC",
+        "content-encoding": ""
+      },
+      "analysis": {
+        "url": "https://costsage.ai/blog/aws-cost-optimisation-best-practices",
+        "title": "10 AWS Cost Optimisation Best Practices Every SaaS Company Should Follow in 2026",
+        "title_len": 80,
+        "desc": "A 2026 playbook for AWS cost optimisation across rightsizing, Savings Plans, idle resources, storage, and tagging \u2014 written for SaaS teams already past visibility.",
+        "desc_len": 163,
+        "canonical": "https://costsage.ai/blog/aws-cost-optimisation-best-practices",
+        "canonical_matches_url": true,
+        "lang": "en-GB",
+        "h1_count": 1,
+        "h1_first": "10 AWS Cost Optimisation Best Practices Every SaaS Company Should Follow in 2026",
+        "h2_count": 13,
+        "h3_count": 0,
+        "h2_question_form": 0,
+        "links_total": 8,
+        "links_internal": 8,
+        "links_external": 0,
+        "links_anchor_only": 0,
+        "img_count": 0,
+        "img_no_alt": 0,
+        "img_lazy": 0,
+        "word_count": 1421,
+        "og_title": false,
+        "og_desc": false,
+        "og_image": false,
+        "tw_card": false,
+        "jsonld_blocks": 2,
+        "jsonld_valid": 2,
+        "jsonld_invalid": 0,
+        "jsonld_types": [
+          "Article",
+          "ImageObject",
+          "Organization",
+          "SearchAction",
+          "WebSite"
+        ],
+        "external_links_sample": []
+      },
+      "body_size": 12647
+    },
+    {
+      "url": "https://costsage.ai/blog/ri-vs-savings-plans",
+      "ts": 1777379685,
+      "status_by_ua": {
+        "Mozilla": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "Googlebot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "ClaudeBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "GPTBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "PerplexityBot": {
+          "status": "",
+          "x-robots-tag": ""
+        }
+      },
+      "security_headers": {
+        "strict-transport-security": "",
+        "content-security-policy": "",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "",
+        "x-xss-protection": ""
+      },
+      "headers": {
+        "server": "cloudflare",
+        "cache-control": "",
+        "content-type": "text/html",
+        "cf-cache-status": "DYNAMIC",
+        "content-encoding": ""
+      },
+      "analysis": {
+        "url": "https://costsage.ai/blog/ri-vs-savings-plans",
+        "title": "Reserved Instances vs Savings Plans \u2014 How to Choose (and How an Agent Decides for You)",
+        "title_len": 86,
+        "desc": "A practical 2026 guide to choosing between AWS Reserved Instances and Savings Plans, with the math, the trade-offs, and how an agent automates the decision.",
+        "desc_len": 156,
+        "canonical": "https://costsage.ai/blog/ri-vs-savings-plans",
+        "canonical_matches_url": true,
+        "lang": "en-GB",
+        "h1_count": 1,
+        "h1_first": "Reserved Instances vs Savings Plans: How to Choose (and How an Agent Decides for You)",
+        "h2_count": 8,
+        "h3_count": 4,
+        "h2_question_form": 0,
+        "links_total": 4,
+        "links_internal": 4,
+        "links_external": 0,
+        "links_anchor_only": 0,
+        "img_count": 0,
+        "img_no_alt": 0,
+        "img_lazy": 0,
+        "word_count": 1184,
+        "og_title": false,
+        "og_desc": false,
+        "og_image": false,
+        "tw_card": false,
+        "jsonld_blocks": 3,
+        "jsonld_valid": 3,
+        "jsonld_invalid": 0,
+        "jsonld_types": [
+          "Answer",
+          "Article",
+          "FAQPage",
+          "ImageObject",
+          "Organization",
+          "Question",
+          "SearchAction",
+          "WebSite"
+        ],
+        "external_links_sample": []
+      },
+      "body_size": 12986
+    },
+    {
+      "url": "https://costsage.ai/finops-for-ai-workloads",
+      "ts": 1777379685,
+      "status_by_ua": {
+        "Mozilla": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "Googlebot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "ClaudeBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "GPTBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "PerplexityBot": {
+          "status": "",
+          "x-robots-tag": ""
+        }
+      },
+      "security_headers": {
+        "strict-transport-security": "",
+        "content-security-policy": "",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "",
+        "x-xss-protection": ""
+      },
+      "headers": {
+        "server": "cloudflare",
+        "cache-control": "",
+        "content-type": "text/html",
+        "cf-cache-status": "DYNAMIC",
+        "content-encoding": ""
+      },
+      "analysis": {
+        "url": "https://costsage.ai/finops-for-ai-workloads",
+        "title": "FinOps for AI Workloads: Controlling GPU and Inference Cost in 2026",
+        "title_len": 67,
+        "desc": "A practical FinOps guide for AI workloads \u2014 GPU rightsizing, inference cost control, training run economics, multi-cloud spend, and how agentic FinOps closes the loop on AI cost waste.",
+        "desc_len": 184,
+        "canonical": "https://costsage.ai/finops-for-ai-workloads",
+        "canonical_matches_url": true,
+        "lang": "en-GB",
+        "h1_count": 1,
+        "h1_first": "FinOps for AI Workloads: Controlling GPU and Inference Cost in 2026",
+        "h2_count": 11,
+        "h3_count": 7,
+        "h2_question_form": 0,
+        "links_total": 9,
+        "links_internal": 9,
+        "links_external": 0,
+        "links_anchor_only": 0,
+        "img_count": 0,
+        "img_no_alt": 0,
+        "img_lazy": 0,
+        "word_count": 1892,
+        "og_title": true,
+        "og_desc": true,
+        "og_image": true,
+        "tw_card": true,
+        "jsonld_blocks": 5,
+        "jsonld_valid": 5,
+        "jsonld_invalid": 0,
+        "jsonld_types": [
+          "Answer",
+          "Article",
+          "BreadcrumbList",
+          "FAQPage",
+          "ListItem",
+          "Organization",
+          "Question",
+          "SearchAction",
+          "WebSite"
+        ],
+        "external_links_sample": []
+      },
+      "body_size": 19747
+    },
+    {
+      "url": "https://costsage.ai/azure-cost-optimization",
+      "ts": 1777379685,
+      "status_by_ua": {
+        "Mozilla": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "Googlebot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "ClaudeBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "GPTBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "PerplexityBot": {
+          "status": "",
+          "x-robots-tag": ""
+        }
+      },
+      "security_headers": {
+        "strict-transport-security": "",
+        "content-security-policy": "",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "",
+        "x-xss-protection": ""
+      },
+      "headers": {
+        "server": "cloudflare",
+        "cache-control": "",
+        "content-type": "text/html",
+        "cf-cache-status": "DYNAMIC",
+        "content-encoding": ""
+      },
+      "analysis": {
+        "url": "https://costsage.ai/azure-cost-optimization",
+        "title": "Azure Cost Optimization: A 2026 FinOps Playbook",
+        "title_len": 47,
+        "desc": "A practical Azure cost optimisation playbook \u2014 Azure Reservations, Savings Plans for compute, Hybrid Benefit, right-sizing, idle resources, and how agentic FinOps closes the loop on Azure waste.",
+        "desc_len": 194,
+        "canonical": "https://costsage.ai/azure-cost-optimization",
+        "canonical_matches_url": true,
+        "lang": "en-GB",
+        "h1_count": 1,
+        "h1_first": "Azure Cost Optimization: A 2026 FinOps Playbook",
+        "h2_count": 14,
+        "h3_count": 5,
+        "h2_question_form": 0,
+        "links_total": 10,
+        "links_internal": 10,
+        "links_external": 0,
+        "links_anchor_only": 0,
+        "img_count": 0,
+        "img_no_alt": 0,
+        "img_lazy": 0,
+        "word_count": 1651,
+        "og_title": true,
+        "og_desc": true,
+        "og_image": true,
+        "tw_card": true,
+        "jsonld_blocks": 5,
+        "jsonld_valid": 5,
+        "jsonld_invalid": 0,
+        "jsonld_types": [
+          "Answer",
+          "Article",
+          "BreadcrumbList",
+          "FAQPage",
+          "ListItem",
+          "Organization",
+          "Question",
+          "SearchAction",
+          "WebSite"
+        ],
+        "external_links_sample": []
+      },
+      "body_size": 17716
+    },
+    {
+      "url": "https://costsage.ai/multi-cloud",
+      "ts": 1777379691,
+      "status_by_ua": {
+        "Mozilla": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "Googlebot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "ClaudeBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "GPTBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "PerplexityBot": {
+          "status": "",
+          "x-robots-tag": ""
+        }
+      },
+      "security_headers": {
+        "strict-transport-security": "",
+        "content-security-policy": "",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "",
+        "x-xss-protection": ""
+      },
+      "headers": {
+        "server": "cloudflare",
+        "cache-control": "",
+        "content-type": "text/html",
+        "cf-cache-status": "DYNAMIC",
+        "content-encoding": ""
+      },
+      "analysis": {
+        "url": "https://costsage.ai/multi-cloud",
+        "title": "Multi-Cloud Cost Management: A 2026 FinOps Guide",
+        "title_len": 48,
+        "desc": "A practical multi-cloud cost management guide \u2014 allocation, normalisation, cross-cloud unit economics, governance, and how agentic FinOps closes the loop on AWS + Azure spend.",
+        "desc_len": 175,
+        "canonical": "https://costsage.ai/multi-cloud",
+        "canonical_matches_url": true,
+        "lang": "en-GB",
+        "h1_count": 1,
+        "h1_first": "Multi-Cloud Cost Management: A 2026 FinOps Guide",
+        "h2_count": 12,
+        "h3_count": 13,
+        "h2_question_form": 0,
+        "links_total": 11,
+        "links_internal": 11,
+        "links_external": 0,
+        "links_anchor_only": 0,
+        "img_count": 0,
+        "img_no_alt": 0,
+        "img_lazy": 0,
+        "word_count": 1643,
+        "og_title": true,
+        "og_desc": true,
+        "og_image": true,
+        "tw_card": true,
+        "jsonld_blocks": 5,
+        "jsonld_valid": 5,
+        "jsonld_invalid": 0,
+        "jsonld_types": [
+          "Answer",
+          "Article",
+          "BreadcrumbList",
+          "FAQPage",
+          "ListItem",
+          "Organization",
+          "Question",
+          "SearchAction",
+          "WebSite"
+        ],
+        "external_links_sample": []
+      },
+      "body_size": 18631
+    },
+    {
+      "url": "https://costsage.ai/alternatives/vantage",
+      "ts": 1777379691,
+      "status_by_ua": {
+        "Mozilla": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "Googlebot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "ClaudeBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "GPTBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "PerplexityBot": {
+          "status": "",
+          "x-robots-tag": ""
+        }
+      },
+      "security_headers": {
+        "strict-transport-security": "",
+        "content-security-policy": "",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "",
+        "x-xss-protection": ""
+      },
+      "headers": {
+        "server": "cloudflare",
+        "cache-control": "",
+        "content-type": "text/html",
+        "cf-cache-status": "DYNAMIC",
+        "content-encoding": ""
+      },
+      "analysis": {
+        "url": "https://costsage.ai/alternatives/vantage",
+        "title": "Vantage Alternative: CostSage vs Vantage 2026 Comparison",
+        "title_len": 56,
+        "desc": "A Vantage alternative compared honestly: agentic AI execution vs cost visibility platform, multi-cloud reach, pricing, and which buyer each fits.",
+        "desc_len": 145,
+        "canonical": "https://costsage.ai/alternatives/vantage",
+        "canonical_matches_url": true,
+        "lang": "en-GB",
+        "h1_count": 1,
+        "h1_first": "Vantage Alternative: CostSage vs Vantage",
+        "h2_count": 7,
+        "h3_count": 4,
+        "h2_question_form": 3,
+        "links_total": 7,
+        "links_internal": 6,
+        "links_external": 1,
+        "links_anchor_only": 0,
+        "img_count": 0,
+        "img_no_alt": 0,
+        "img_lazy": 0,
+        "word_count": 796,
+        "og_title": true,
+        "og_desc": true,
+        "og_image": true,
+        "tw_card": true,
+        "jsonld_blocks": 6,
+        "jsonld_valid": 6,
+        "jsonld_invalid": 0,
+        "jsonld_types": [
+          "Answer",
+          "Article",
+          "BreadcrumbList",
+          "FAQPage",
+          "ItemList",
+          "ListItem",
+          "Offer",
+          "Organization",
+          "Question",
+          "SearchAction",
+          "SoftwareApplication",
+          "WebSite"
+        ],
+        "external_links_sample": [
+          "https://aws.amazon.com/marketplace"
+        ]
+      },
+      "body_size": 14141
+    },
+    {
+      "url": "https://costsage.ai/alternatives/prosperops",
+      "ts": 1777379692,
+      "status_by_ua": {
+        "Mozilla": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "Googlebot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "ClaudeBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "GPTBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "PerplexityBot": {
+          "status": "",
+          "x-robots-tag": ""
+        }
+      },
+      "security_headers": {
+        "strict-transport-security": "",
+        "content-security-policy": "",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "",
+        "x-xss-protection": ""
+      },
+      "headers": {
+        "server": "cloudflare",
+        "cache-control": "",
+        "content-type": "text/html",
+        "cf-cache-status": "DYNAMIC",
+        "content-encoding": ""
+      },
+      "analysis": {
+        "url": "https://costsage.ai/alternatives/prosperops",
+        "title": "ProsperOps Alternative: CostSage vs ProsperOps 2026 Comparison",
+        "title_len": 62,
+        "desc": "A ProsperOps alternative compared honestly: agentic AI FinOps with full execution surface vs autonomous Savings Plan / RI management, scope, pricing, and which buyer each fits.",
+        "desc_len": 176,
+        "canonical": "https://costsage.ai/alternatives/prosperops",
+        "canonical_matches_url": true,
+        "lang": "en-GB",
+        "h1_count": 1,
+        "h1_first": "ProsperOps Alternative: CostSage vs ProsperOps",
+        "h2_count": 7,
+        "h3_count": 4,
+        "h2_question_form": 3,
+        "links_total": 6,
+        "links_internal": 5,
+        "links_external": 1,
+        "links_anchor_only": 0,
+        "img_count": 0,
+        "img_no_alt": 0,
+        "img_lazy": 0,
+        "word_count": 778,
+        "og_title": true,
+        "og_desc": true,
+        "og_image": true,
+        "tw_card": true,
+        "jsonld_blocks": 6,
+        "jsonld_valid": 6,
+        "jsonld_invalid": 0,
+        "jsonld_types": [
+          "Answer",
+          "Article",
+          "BreadcrumbList",
+          "FAQPage",
+          "ItemList",
+          "ListItem",
+          "Offer",
+          "Organization",
+          "Question",
+          "SearchAction",
+          "SoftwareApplication",
+          "WebSite"
+        ],
+        "external_links_sample": [
+          "https://aws.amazon.com/marketplace"
+        ]
+      },
+      "body_size": 14590
+    },
+    {
+      "url": "https://costsage.ai/compare/cloudzero-vs-costsage",
+      "ts": 1777379692,
+      "status_by_ua": {
+        "Mozilla": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "Googlebot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "ClaudeBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "GPTBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "PerplexityBot": {
+          "status": "",
+          "x-robots-tag": ""
+        }
+      },
+      "security_headers": {
+        "strict-transport-security": "",
+        "content-security-policy": "",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "",
+        "x-xss-protection": ""
+      },
+      "headers": {
+        "server": "cloudflare",
+        "cache-control": "",
+        "content-type": "text/html",
+        "cf-cache-status": "DYNAMIC",
+        "content-encoding": ""
+      },
+      "analysis": {
+        "url": "https://costsage.ai/compare/cloudzero-vs-costsage",
+        "title": "CostSage vs CloudZero: Honest 2026 Comparison",
+        "title_len": 45,
+        "desc": "CostSage vs CloudZero compared honestly: agentic AI execution vs cost intelligence dashboards, pricing transparency, multi-cloud reach, SOC-2, and ideal buyer.",
+        "desc_len": 159,
+        "canonical": "https://costsage.ai/compare/cloudzero-vs-costsage",
+        "canonical_matches_url": true,
+        "lang": "en-GB",
+        "h1_count": 1,
+        "h1_first": "CostSage vs CloudZero: which AI FinOps platform fits your team?",
+        "h2_count": 7,
+        "h3_count": 4,
+        "h2_question_form": 3,
+        "links_total": 6,
+        "links_internal": 5,
+        "links_external": 1,
+        "links_anchor_only": 0,
+        "img_count": 0,
+        "img_no_alt": 0,
+        "img_lazy": 0,
+        "word_count": 771,
+        "og_title": true,
+        "og_desc": true,
+        "og_image": true,
+        "tw_card": true,
+        "jsonld_blocks": 6,
+        "jsonld_valid": 6,
+        "jsonld_invalid": 0,
+        "jsonld_types": [
+          "Answer",
+          "Article",
+          "BreadcrumbList",
+          "FAQPage",
+          "ItemList",
+          "ListItem",
+          "Offer",
+          "Organization",
+          "Question",
+          "SearchAction",
+          "SoftwareApplication",
+          "WebSite"
+        ],
+        "external_links_sample": [
+          "https://aws.amazon.com/marketplace"
+        ]
+      },
+      "body_size": 13403
+    },
+    {
+      "url": "https://costsage.ai/compare/nops-vs-costsage",
+      "ts": 1777379692,
+      "status_by_ua": {
+        "Mozilla": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "Googlebot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "ClaudeBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "GPTBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "PerplexityBot": {
+          "status": "",
+          "x-robots-tag": ""
+        }
+      },
+      "security_headers": {
+        "strict-transport-security": "",
+        "content-security-policy": "",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "",
+        "x-xss-protection": ""
+      },
+      "headers": {
+        "server": "cloudflare",
+        "cache-control": "",
+        "content-type": "text/html",
+        "cf-cache-status": "DYNAMIC",
+        "content-encoding": ""
+      },
+      "analysis": {
+        "url": "https://costsage.ai/compare/nops-vs-costsage",
+        "title": "CostSage vs nOps: Honest 2026 Comparison",
+        "title_len": 40,
+        "desc": "CostSage vs nOps compared honestly: agentic FinOps execution, Compute Copilot for spot and RI, AWS-only vs multi-cloud, free tiers, SOC-2, and best-fit buyer.",
+        "desc_len": 158,
+        "canonical": "https://costsage.ai/compare/nops-vs-costsage",
+        "canonical_matches_url": true,
+        "lang": "en-GB",
+        "h1_count": 1,
+        "h1_first": "CostSage vs nOps: which AI FinOps platform fits your team?",
+        "h2_count": 7,
+        "h3_count": 4,
+        "h2_question_form": 3,
+        "links_total": 7,
+        "links_internal": 6,
+        "links_external": 1,
+        "links_anchor_only": 0,
+        "img_count": 0,
+        "img_no_alt": 0,
+        "img_lazy": 0,
+        "word_count": 714,
+        "og_title": true,
+        "og_desc": true,
+        "og_image": true,
+        "tw_card": true,
+        "jsonld_blocks": 6,
+        "jsonld_valid": 6,
+        "jsonld_invalid": 0,
+        "jsonld_types": [
+          "Answer",
+          "Article",
+          "BreadcrumbList",
+          "FAQPage",
+          "ItemList",
+          "ListItem",
+          "Offer",
+          "Organization",
+          "Question",
+          "SearchAction",
+          "SoftwareApplication",
+          "WebSite"
+        ],
+        "external_links_sample": [
+          "https://aws.amazon.com/marketplace"
+        ]
+      },
+      "body_size": 12777
+    },
+    {
+      "url": "https://costsage.ai/privacy",
+      "ts": 1777379692,
+      "status_by_ua": {
+        "Mozilla": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "Googlebot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "ClaudeBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "GPTBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "PerplexityBot": {
+          "status": "",
+          "x-robots-tag": ""
+        }
+      },
+      "security_headers": {
+        "strict-transport-security": "",
+        "content-security-policy": "",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "",
+        "x-xss-protection": ""
+      },
+      "headers": {
+        "server": "cloudflare",
+        "cache-control": "",
+        "content-type": "text/html",
+        "cf-cache-status": "DYNAMIC",
+        "content-encoding": ""
+      },
+      "analysis": {
+        "url": "https://costsage.ai/privacy",
+        "title": "Privacy Policy \u2014 CostSage FinOps Agent",
+        "title_len": 38,
+        "desc": "CostSage privacy policy. Learn how we protect your data and respect your privacy.",
+        "desc_len": 81,
+        "canonical": "https://costsage.ai/privacy",
+        "canonical_matches_url": true,
+        "lang": "en-GB",
+        "h1_count": 1,
+        "h1_first": "Privacy Policy",
+        "h2_count": 9,
+        "h3_count": 34,
+        "h2_question_form": 0,
+        "links_total": 27,
+        "links_internal": 3,
+        "links_external": 0,
+        "links_anchor_only": 9,
+        "img_count": 4,
+        "img_no_alt": 0,
+        "img_lazy": 3,
+        "word_count": 1555,
+        "og_title": true,
+        "og_desc": true,
+        "og_image": true,
+        "tw_card": true,
+        "jsonld_blocks": 2,
+        "jsonld_valid": 2,
+        "jsonld_invalid": 0,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "SearchAction",
+          "WebSite"
+        ],
+        "external_links_sample": []
+      },
+      "body_size": 26547
+    },
+    {
+      "url": "https://costsage.ai/terms",
+      "ts": 1777379692,
+      "status_by_ua": {
+        "Mozilla": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "Googlebot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "ClaudeBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "GPTBot": {
+          "status": "",
+          "x-robots-tag": ""
+        },
+        "PerplexityBot": {
+          "status": "",
+          "x-robots-tag": ""
+        }
+      },
+      "security_headers": {
+        "strict-transport-security": "",
+        "content-security-policy": "",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "",
+        "x-xss-protection": ""
+      },
+      "headers": {
+        "server": "cloudflare",
+        "cache-control": "",
+        "content-type": "text/html",
+        "cf-cache-status": "DYNAMIC",
+        "content-encoding": ""
+      },
+      "analysis": {
+        "url": "https://costsage.ai/terms",
+        "title": "Terms of Service \u2014 CostSage FinOps Agent",
+        "title_len": 40,
+        "desc": "CostSage Terms of Service. Read the agreement for using our FinOps platform.",
+        "desc_len": 76,
+        "canonical": "https://costsage.ai/terms",
+        "canonical_matches_url": true,
+        "lang": "en-GB",
+        "h1_count": 1,
+        "h1_first": "Terms of Service",
+        "h2_count": 12,
+        "h3_count": 27,
+        "h2_question_form": 0,
+        "links_total": 31,
+        "links_internal": 4,
+        "links_external": 0,
+        "links_anchor_only": 12,
+        "img_count": 4,
+        "img_no_alt": 0,
+        "img_lazy": 3,
+        "word_count": 1598,
+        "og_title": true,
+        "og_desc": true,
+        "og_image": true,
+        "tw_card": true,
+        "jsonld_blocks": 2,
+        "jsonld_valid": 2,
+        "jsonld_invalid": 0,
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "SearchAction",
+          "WebSite"
+        ],
+        "external_links_sample": []
+      },
+      "body_size": 25701
+    }
+  ]
+}
