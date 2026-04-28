@@ -1,0 +1,46 @@
+name: Monthly Executive Marketing Report
+evaluator_instructions: |
+  Score the monthly executive marketing report (CMO/CEO audience). Pass bar 8/10.
+  Cadence + audience per playbook §14.3 B. Report consumed by leadership; brevity + accuracy critical.
+criteria:
+  - id: north_star_status
+    weight: 10
+    description: Each NSM (4 per CLAUDE.md) shown with target, current, delta, on-track flag, and 3-month trend.
+    anti_patterns: ["NSM missing", "no trend", "no on-track flag"]
+  - id: okr_progress
+    weight: 10
+    description: Per-vertical OKR scoreboard (KR-by-KR % to target, owner, status); on-track / at-risk / off-track.
+    anti_patterns: ["missing KRs", "ownership absent", "status colors without rationale"]
+  - id: pipeline_funnel
+    weight: 9
+    description: MQL → SQL → Opp → Closed funnel with conversion rates, channel mix, and MoM delta.
+    anti_patterns: ["no funnel", "MQL number without downstream", "channel mix missing"]
+  - id: spend_efficiency
+    weight: 9
+    description: Spend by channel + CAC + blended ROAS + paid CPL with budget pacing vs plan (95–105% target).
+    anti_patterns: ["spend without efficiency", "no pacing", "ROAS mis-defined"]
+  - id: attribution_explained
+    weight: 8
+    description: Top 3 channel contributions tied to attribution model (DDA + supplementals); discrepancy notes if >10%.
+    anti_patterns: ["attribution model unclear", "channels rank without method", "discrepancy hidden"]
+  - id: wins_and_losses
+    weight: 8
+    description: 3 wins + 3 losses + the lessons learned, written specifically (named campaigns/assets, not generic).
+    anti_patterns: ["all wins", "vague losses", "no lessons"]
+  - id: risks_and_governance
+    weight: 9
+    description: Active risks (budget, brand, legal, deliverability, attribution drift) + mitigations + ledger references.
+    anti_patterns: ["no risks listed", "mitigations missing", "policy violations unflagged"]
+  - id: hitl_register
+    weight: 8
+    description: Open HITL items with owner, deadline, blast radius. Closed items summarized with decisions.
+    anti_patterns: ["HITL register absent", "no deadlines", "decisions undocumented"]
+  - id: next_period_plan
+    weight: 9
+    description: Top 5 actions for next period with vertical, owner, expected impact, and dependencies.
+    anti_patterns: [">10 actions (no priority)", "no owners", "impact unstated"]
+  - id: brevity_and_clarity
+    weight: 8
+    description: Executive summary (≤6 sentences), tables over walls of text, charts where helpful, no jargon without definition.
+    anti_patterns: ["wall of text", "no exec summary", "jargon spam"]
+pass_bar: 8

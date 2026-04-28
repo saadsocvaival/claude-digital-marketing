@@ -1,0 +1,47 @@
+name: Offer
+evaluator_instructions: |
+  Score the offer artifact (`offer.md`) against the criteria below. Each criterion is independent.
+  Pass bar 8/10 weighted-average. Below 8 → iterate; do not ship to landing page or paid spend.
+  Refuse to grade if the offer makes claims unverifiable from the client ledger or evidence files.
+criteria:
+  - id: value_specificity
+    weight: 10
+    description: Concrete promised outcome with measurable units (e.g. "cut cloud spend 22% in 60 days") — not "save money" or "boost ROI."
+    anti_patterns: ["vague benefit", "no unit", "outcome not falsifiable"]
+  - id: target_segment_fit
+    weight: 10
+    description: Names the ICP segment + persona this offer is built for; ties to ICP rubric file.
+    anti_patterns: ["generic 'businesses'", "no segment match", "contradicts ICP"]
+  - id: proof_strength
+    weight: 9
+    description: ≥3 distinct proof types (case study with numbers, customer quote with name+role, benchmark, third-party validation, methodology citation).
+    anti_patterns: ["no proof", "stock testimonial", "self-reference only"]
+  - id: risk_reversal
+    weight: 9
+    description: Explicit guarantee, free trial, money-back, or pilot scope reduces buyer risk; trigger + redress documented.
+    anti_patterns: ["no risk reversal where buyer expects one", "fake guarantee with no enforcement"]
+  - id: price_clarity
+    weight: 9
+    description: Price (or pricing model) is stated, or clear path to it; bundle inclusions/exclusions explicit.
+    anti_patterns: ["hidden price with no path", "tier confusion", "bundle ambiguity"]
+  - id: differentiation
+    weight: 9
+    description: One sentence answering "why us, not them" referencing battlecard for the top competitor.
+    anti_patterns: ["me-too pitch", "no competitor reference", "feature parity claim"]
+  - id: urgency_scarcity_honest
+    weight: 7
+    description: If urgency/scarcity is used, it is real (cohort cap, deadline, supply limit). No fabricated countdowns.
+    anti_patterns: ["fake countdown", "evergreen 'limited time'", "scarcity without basis"]
+  - id: cta_specificity
+    weight: 9
+    description: Single primary CTA verb, repeated consistently across LP, ad, and email touchpoints.
+    anti_patterns: ["multiple competing CTAs", "verb drift", "passive CTA"]
+  - id: legal_brand_safe
+    weight: 9
+    description: No unsupported superlatives, no protected-class targeting, no FDA/finance/legal claims unvetted; brand-voice rubric ≥8.
+    anti_patterns: ["#1 / 'best' without source", "superlative claim unvetted", "off-brand voice"]
+  - id: measurement_plan
+    weight: 8
+    description: Conversion event, attribution path, and success threshold defined before launch.
+    anti_patterns: ["no measurement plan", "vanity metric only"]
+pass_bar: 8

@@ -1,0 +1,46 @@
+name: UTM Taxonomy & Compliance
+evaluator_instructions: |
+  Score the published UTM taxonomy AND the most recent weekly compliance audit. Pass bar 8/10.
+  Non-compliance blocks campaign launch (playbook §10.4 Workflow A step 4, §14.3 C, §14.4).
+criteria:
+  - id: taxonomy_documented
+    weight: 10
+    description: Published, version-controlled doc covering source / medium / campaign / content / term with allowed values.
+    anti_patterns: ["no doc", "tribal knowledge", "values free-form"]
+  - id: source_medium_canonical
+    weight: 10
+    description: Source + medium values are a closed enumeration matching channel grouping; no free-text.
+    anti_patterns: ["fb / facebook / Facebook drift", "lowercase/uppercase mix", "synonyms allowed"]
+  - id: campaign_naming_convention
+    weight: 9
+    description: Campaign value follows `{yyyymm}-{vertical}-{program}-{variant}` (or equivalent) with a published parser.
+    anti_patterns: ["no convention", "spaces in values", "human-readable but unparseable"]
+  - id: content_term_purpose
+    weight: 8
+    description: utm_content used for creative variant; utm_term reserved for paid-search keyword (or unused). Roles do not overlap.
+    anti_patterns: ["content + term used interchangeably", "creative variant in campaign field"]
+  - id: tagging_at_creation
+    weight: 9
+    description: UTM applied at the source of truth (ad-platform link, email tool, social scheduler) — not appended manually.
+    anti_patterns: ["manual append", "UTMs added post-launch", "links shipped without UTMs"]
+  - id: link_shortener_safe
+    weight: 8
+    description: Shorteners preserve UTMs; redirect chain audited for parameter drop.
+    anti_patterns: ["shortener strips UTMs", "no redirect audit"]
+  - id: compliance_rate
+    weight: 10
+    description: ≥99% of active paid links pass weekly audit (§14.4 KPI: 100% target).
+    anti_patterns: ["compliance <95%", "no weekly audit", "broken-UTM tickets unresolved"]
+  - id: deprecation_handling
+    weight: 7
+    description: Retired sources/campaigns archived with sunset date; old links 301'd or marked.
+    anti_patterns: ["zombie campaign values", "no sunset"]
+  - id: enforcement_path
+    weight: 9
+    description: Non-compliant link is a blocking issue: campaign cannot launch; tracked in Analytics-Ops queue.
+    anti_patterns: ["soft warning only", "non-compliance ignored"]
+  - id: cross_tool_consistency
+    weight: 8
+    description: Same taxonomy enforced across Google Ads, LinkedIn, Meta, email, social tool, native QR campaigns.
+    anti_patterns: ["per-tool taxonomy", "social tool free-form"]
+pass_bar: 8
