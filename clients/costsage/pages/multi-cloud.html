@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multi-Cloud Cost Management: A 2026 FinOps Guide</title>
+  <meta name="description" content="A practical multi-cloud cost management guide — allocation, normalisation, cross-cloud unit economics, governance, and how agentic FinOps closes the loop on AWS + Azure spend."/>
+  <link rel="canonical" href="https://costsage.ai/multi-cloud"/>
+  <link rel="icon" type="image/png" href="/assets/costsage_ai_project_logos_cropped-cost-sage-logo-dark-01-32x32.png"/>
+  <meta name="robots" content="index,follow"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://costsage.ai/multi-cloud"/>
+  <meta property="og:site_name" content="CostSage"/>
+  <meta property="og:title" content="Multi-Cloud Cost Management: A 2026 FinOps Guide"/>
+  <meta property="og:description" content="Allocation, normalisation, cross-cloud unit economics. Practical multi-cloud FinOps for AWS + Azure."/>
+  <meta property="og:image" content="https://costsage.ai/assets/costsage_ai_project_logos_cost-sage-logo-dark-01-300x65.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Multi-Cloud Cost Management: A 2026 FinOps Guide"/>
+  <meta name="twitter:description" content="Allocation, normalisation, cross-cloud unit economics. Practical multi-cloud FinOps."/>
+  <meta name="twitter:image" content="https://costsage.ai/assets/costsage_ai_project_logos_cost-sage-logo-dark-01-300x65.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <!-- sprint2:G17-pillar-multicloud -->
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","@id":"https://costsage.ai/#website","url":"https://costsage.ai/","name":"CostSage","publisher":{"@id":"https://costsage.ai/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://costsage.ai/?s={search_term_string}","query-input":"required name=search_term_string"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://costsage.ai/#organization","name":"CostSage","url":"https://costsage.ai/","logo":"https://costsage.ai/assets/costsage_ai_project_logos_cost-sage-logo-dark-01-300x65.png"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://costsage.ai/"},
+    {"@type":"ListItem","position":2,"name":"Multi-cloud","item":"https://costsage.ai/multi-cloud"}
+  ]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is multi-cloud cost management?","acceptedAnswer":{"@type":"Answer","text":"Multi-cloud cost management is the practice of allocating, optimising, and reporting cloud spend across two or more providers (typically AWS and Azure, sometimes plus GCP) under a single financial model. It requires data normalisation, consistent tagging, cross-cloud unit metrics, and provider-specific optimisation playbooks."}},
+    {"@type":"Question","name":"Why is multi-cloud harder than single-cloud FinOps?","acceptedAnswer":{"@type":"Answer","text":"Each provider has its own cost taxonomy, billing format, discount programmes, and reservation primitives. AWS Savings Plans are not directly comparable to Azure Reservations. Cross-cloud workload allocation requires normalising data into a shared schema (FOCUS is the emerging standard) and reconciling currency, timezone, and tag-policy differences."}},
+    {"@type":"Question","name":"What is FOCUS?","acceptedAnswer":{"@type":"Answer","text":"FOCUS (FinOps Open Cost and Usage Specification) is an open standard maintained by the FinOps Foundation that defines a common schema for cloud cost and usage data across AWS, Azure, GCP, and others. It enables true apples-to-apples reporting in multi-cloud environments."}},
+    {"@type":"Question","name":"Should every team go multi-cloud?","acceptedAnswer":{"@type":"Answer","text":"No. Multi-cloud has real costs in operational complexity and FinOps overhead. It is justified by genuine business drivers — regulatory data residency, vendor risk diversification, workload-specific cost or performance advantages, customer requirements — not by abstract preference. Many teams running on multiple clouds are doing so by accident, not design."}},
+    {"@type":"Question","name":"Does CostSage support multi-cloud?","acceptedAnswer":{"@type":"Answer","text":"Yes. CostSage supports AWS and Azure today with multi-cloud allocation. GCP support is on the roadmap. The platform's agentic execution layer applies provider-specific optimisations (AWS Savings Plans, Azure Reservations, Hybrid Benefit, idle cleanup) under a single operator approval flow."}}
+  ]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Multi-Cloud Cost Management: A 2026 FinOps Guide","datePublished":"2026-04-28","dateModified":"2026-04-28","author":{"@type":"Organization","name":"CostSage","url":"https://costsage.ai/"},"publisher":{"@id":"https://costsage.ai/#organization"},"mainEntityOfPage":"https://costsage.ai/multi-cloud","image":"https://costsage.ai/assets/costsage_ai_project_logos_cost-sage-logo-dark-01-300x65.png"}
+  </script>
+</head>
+<body>
+<article style="max-width:880px;margin:2rem auto;padding:0 1rem;font-family:system-ui,sans-serif;line-height:1.6;color:#1a1a1a">
+
+<nav style="font-size:.85rem;color:#666;margin-bottom:1rem"><a href="/" style="color:#3d7a1f;text-decoration:none">Home</a> &rsaquo; Multi-cloud</nav>
+
+<h1>Multi-Cloud Cost Management: A 2026 FinOps Guide</h1>
+
+<div style="background:#f4f6f8;border-left:4px solid #7BC04B;padding:1.25rem 1.5rem;border-radius:0 10px 10px 0;margin:1.5rem 0">
+  <strong style="display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:#3d7a1f;margin-bottom:.4rem">TL;DR</strong>
+  <p style="margin:0">Most multi-cloud cost problems are not really about multi-cloud — they are about lack of allocation, missing tag policy, and dashboard sprawl. The fix is a normalised data model (FOCUS), provider-specific optimisation playbooks (each cloud's reservation/discount surface is genuinely different), and an execution layer that closes the loop instead of producing more reports.</p>
+</div>
+
+<h2>Why companies end up multi-cloud</h2>
+<p>Three reasons account for nearly all real-world multi-cloud:</p>
+<ol>
+  <li><strong>Acquisition.</strong> Company A is on AWS, acquires Company B on Azure. The integration plan said "consolidate within 18 months." Three years later both are still running.</li>
+  <li><strong>Workload-specific advantage.</strong> Microsoft estate runs on Azure for licence reasons (Hybrid Benefit, AD integration). Data engineering or ML chooses AWS for service depth. A specific workload runs on GCP for BigQuery.</li>
+  <li><strong>Regulatory or customer requirement.</strong> EU data residency, government cloud, or a customer contract specifying a particular provider.</li>
+</ol>
+<p>"Strategic optionality" is rarely a real reason. Multi-cloud-by-default is usually multi-cloud-by-accident. That doesn't mean the cost has to be high — but it does mean someone has to actively manage it.</p>
+
+<h2>The four hard problems of multi-cloud cost</h2>
+
+<h3>1. Data normalisation</h3>
+<p>AWS, Azure, and GCP each emit cost data in different schemas, with different granularities, in different time zones, in different currencies, and with different definitions of basic concepts like "service" and "region." Until this is normalised, no real comparison is possible. The emerging standard is <strong>FOCUS</strong> (FinOps Open Cost and Usage Specification), maintained by the FinOps Foundation. All three major clouds have FOCUS-format export options as of 2025-2026.</p>
+
+<h3>2. Cross-cloud allocation</h3>
+<p>A single product or team often spans clouds. The "search" team may run inference on AWS and storage on Azure. To make sensible engineering decisions, both lines need to roll up into a single product cost. Tag policy alone is insufficient — you also need a normalisation layer that maps AWS tags + Azure tags + GCP labels into a single allocation taxonomy.</p>
+
+<h3>3. Provider-specific optimisation</h3>
+<p>Each provider's discount surface is genuinely different. AWS Savings Plans (compute and EC2-flex) are not the same instrument as Azure Reservations or Azure Savings Plans for compute. GCP Committed Use Discounts behave differently again. Anyone who tells you "we'll just buy commitments" without specifying which provider's instrument and which workload they apply to is not running real FinOps.</p>
+
+<h3>4. Decision-making latency</h3>
+<p>The more places spend lives, the longer it takes to act on a finding. This is the failure mode of dashboards-only multi-cloud tools — they show the problem in three places at once but don't help anyone do anything about it.</p>
+
+<h2>A practical operating model</h2>
+
+<h3>Step 1: Establish allocation across all clouds</h3>
+<p>Pick one allocation taxonomy (CostCenter, Product, Environment, Owner is a defensible default). Enforce it on each cloud via that cloud's policy engine — AWS Service Control Policies and Tag Policies, Azure Policy, GCP Organization Policy. Backfill historical resources where possible; for the rest, accept fuzzy mapping by name patterns or workload signatures.</p>
+
+<h3>Step 2: Land all cost data in one place via FOCUS</h3>
+<p>Configure each cloud's billing export to FOCUS format and land it in a single store (S3, ADLS, BigQuery). Build one set of dashboards and one anomaly-detection model on top of the unified table. This is where 80% of "we're missing visibility" complaints come from in multi-cloud — not from missing data, but from data living in three separate places.</p>
+
+<h3>Step 3: Run provider-specific optimisation playbooks</h3>
+<p>Each cloud has its own playbook:</p>
+<ul>
+  <li><strong>AWS:</strong> Savings Plans for compute, Reserved Instances for stable services, Spot for tolerant workloads, S3 lifecycle policies, idle cleanup, right-sizing. See our <a href="/aws">AWS</a> page.</li>
+  <li><strong>Azure:</strong> Reservations, Savings Plans for compute, Hybrid Benefit, right-sizing, idle cleanup, Spot VMs. See our <a href="/azure-cost-optimization">Azure cost optimization</a> playbook.</li>
+  <li><strong>GCP (out of scope for CostSage today):</strong> Committed Use Discounts, Sustained Use Discounts, custom machine types, preemptible VMs.</li>
+</ul>
+
+<h3>Step 4: Close the loop with execution</h3>
+<p>The point of FinOps is the change, not the report. CostSage agents prepare changes — the Savings Plan purchase, the Reservation, the resize plan, the deletion list — across both AWS and Azure under a unified operator approval flow. The same approval, the same audit trail, the same allocation taxonomy.</p>
+
+<h2>Tag policy across clouds</h2>
+<p>The single most important precondition for multi-cloud cost control is a consistent tag taxonomy enforced on every cloud. Recommended minimum:</p>
+<ul>
+  <li><strong>CostCenter</strong> — finance code or department</li>
+  <li><strong>Product</strong> — internal product or service name</li>
+  <li><strong>Environment</strong> — production / staging / development</li>
+  <li><strong>Owner</strong> — team or individual accountable</li>
+  <li><strong>DataClassification</strong> — public / internal / confidential / regulated (separate driver, but worth co-locating)</li>
+</ul>
+<p>Enforcement on each cloud:</p>
+<ul>
+  <li><strong>AWS:</strong> Service Control Policies on the organisation, Tag Policies for the standard, plus aws-config rules to flag drift</li>
+  <li><strong>Azure:</strong> Azure Policy with deny-on-create when required tags are missing; Resource Graph queries for audit</li>
+  <li><strong>GCP:</strong> Organization Policy + label inheritance from folders/projects</li>
+</ul>
+<p>The pragmatic policy: deny on creation for production environments, audit-only on dev/test (so engineers don't fight the policy when prototyping). Backfill once via a tag-cleanup sprint, then never let drift accumulate again.</p>
+
+<h2>Anomaly detection across clouds</h2>
+<p>Multi-cloud anomaly detection is fundamentally harder than single-cloud because each provider has its own day-of-month billing curve, its own service-level cost shapes, and its own end-of-month true-ups. A naïve "yesterday vs the day before" alert fires constantly on Azure on the 1st of the month when the support fee posts.</p>
+<p>The right approach: build the anomaly model on the FOCUS-normalised table, segment by provider and service, and use a 28-day rolling window so weekly seasonality is captured. False-positive rate matters more than detection rate — a noisy anomaly system is worse than no anomaly system because the alerts get muted.</p>
+
+<h2>Cross-cloud unit economics</h2>
+<p>A multi-cloud product team needs unit metrics that span clouds — cost-per-customer, cost-per-transaction, cost-per-API-call — that aggregate across the providers running the workload. This is only possible after Steps 1-2 are done. Once you have it, the value is enormous: a single number that lets engineering, finance, and product reason about the same business problem.</p>
+
+<h2>The multi-cloud RACI</h2>
+<p>Multi-cloud cost only works when ownership is explicit. The recommended split:</p>
+<ul>
+  <li><strong>Platform/SRE team</strong> — Responsible for tag policy enforcement, billing-export pipelines, FOCUS table, anomaly detection. Accountable for tooling availability.</li>
+  <li><strong>FinOps lead (or designated engineer if no dedicated role)</strong> — Responsible for reservation/SP coverage decisions, monthly review cadence, savings reporting. Accountable for delivered savings.</li>
+  <li><strong>Product / engineering teams</strong> — Responsible for tagging their own resources correctly and acting on right-sizing or cleanup tickets. Accountable for their product's unit economics.</li>
+  <li><strong>Finance</strong> — Consulted on commitment purchases >$X. Informed on monthly variance.</li>
+  <li><strong>Security</strong> — Consulted on data-residency-driven cost decisions. Informed on cross-region/cross-cloud transfers.</li>
+</ul>
+<p>Without explicit RACI, multi-cloud cost work either becomes a single hero's full-time job (and stops when they leave) or evaporates because nobody owns it.</p>
+
+<h2>Tooling consolidation</h2>
+<p>One of the more common failure modes in multi-cloud FinOps is tooling sprawl: AWS Cost Explorer + AWS Compute Optimizer + Azure Cost Management + Azure Advisor + a third-party visualisation tool + a homegrown spreadsheet. Each is good at something narrow; together they create more reconciliation work than insight. Consolidate where possible. CostSage is built to be the single execution layer across AWS and Azure, eliminating the need for separate per-cloud rightsizing/idle/anomaly tooling. Provider-native tools remain useful as ground truth for billing reconciliation but stop being the daily operating surface.</p>
+
+<h2>When multi-cloud doesn't make sense</h2>
+<p>Be honest with yourself. Multi-cloud is only justified by:</p>
+<ul>
+  <li>Regulatory data residency or sovereignty requirements</li>
+  <li>Customer contract requirements</li>
+  <li>Workload-specific cost or performance advantages that materially outweigh the operational cost</li>
+  <li>Genuine vendor-risk diversification at sufficient scale</li>
+</ul>
+<p>If none of those apply, consolidating onto one provider is almost always cheaper, faster, and simpler. Multi-cloud is a means to an end — never the end itself.</p>
+
+<h2>Related reading</h2>
+<ul>
+  <li><a href="/aws">AWS cost optimisation</a></li>
+  <li><a href="/azure-cost-optimization">Azure cost optimization playbook</a></li>
+  <li><a href="/finops-for-ai-workloads">FinOps for AI workloads</a></li>
+  <li><a href="/finops-agent-vs-dashboard">Why agents beat dashboards</a></li>
+  <li><a href="/compare/cloudzero-vs-costsage">CostSage vs CloudZero</a></li>
+  <li><a href="/pricing">CostSage pricing</a></li>
+</ul>
+
+<h2>FAQ</h2>
+<h3>What is multi-cloud cost management?</h3>
+<p>Multi-cloud cost management is the practice of allocating, optimising, and reporting cloud spend across two or more providers (typically AWS and Azure, sometimes plus GCP) under a single financial model. It requires data normalisation, consistent tagging, cross-cloud unit metrics, and provider-specific optimisation playbooks.</p>
+<h3>Why is multi-cloud harder than single-cloud FinOps?</h3>
+<p>Each provider has its own cost taxonomy, billing format, discount programmes, and reservation primitives. AWS Savings Plans are not directly comparable to Azure Reservations. Cross-cloud workload allocation requires normalising data into a shared schema (FOCUS is the emerging standard) and reconciling currency, timezone, and tag-policy differences.</p>
+<h3>What is FOCUS?</h3>
+<p>FOCUS (FinOps Open Cost and Usage Specification) is an open standard maintained by the FinOps Foundation that defines a common schema for cloud cost and usage data across AWS, Azure, GCP, and others. It enables true apples-to-apples reporting in multi-cloud environments.</p>
+<h3>Should every team go multi-cloud?</h3>
+<p>No. Multi-cloud has real costs in operational complexity and FinOps overhead. It is justified by genuine business drivers — regulatory data residency, vendor risk diversification, workload-specific cost or performance advantages, customer requirements — not by abstract preference.</p>
+<h3>Does CostSage support multi-cloud?</h3>
+<p>Yes. CostSage supports AWS and Azure today with multi-cloud allocation. GCP support is on the roadmap. The platform's agentic execution layer applies provider-specific optimisations under a single operator approval flow.</p>
+
+<h2>See CostSage</h2>
+<p>Read <a href="/pricing">published pricing</a>, or <a href="/contact">contact us</a> to walk through your multi-cloud spend shape.</p>
+
+<footer style="margin-top:3rem;padding-top:1.25rem;border-top:1px solid #e5e9ee;font-size:.8rem;color:#6b7280">
+  <p>&copy; <span id="dynamic-year">2026</span> CostSage. All rights reserved. Trademarks belong to their respective owners.</p>
+  <script>document.getElementById('dynamic-year').textContent=new Date().getFullYear()</script>
+</footer>
+</article>
+</body>
+</html>

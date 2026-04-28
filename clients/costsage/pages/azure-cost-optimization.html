@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Azure Cost Optimization: A 2026 FinOps Playbook</title>
+  <meta name="description" content="A practical Azure cost optimisation playbook — Azure Reservations, Savings Plans for compute, Hybrid Benefit, right-sizing, idle resources, and how agentic FinOps closes the loop on Azure waste."/>
+  <link rel="canonical" href="https://costsage.ai/azure-cost-optimization"/>
+  <link rel="icon" type="image/png" href="/assets/costsage_ai_project_logos_cropped-cost-sage-logo-dark-01-32x32.png"/>
+  <meta name="robots" content="index,follow"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://costsage.ai/azure-cost-optimization"/>
+  <meta property="og:site_name" content="CostSage"/>
+  <meta property="og:title" content="Azure Cost Optimization: A 2026 FinOps Playbook"/>
+  <meta property="og:description" content="Reservations, Savings Plans, Hybrid Benefit, right-sizing, idle cleanup. Practical Azure FinOps."/>
+  <meta property="og:image" content="https://costsage.ai/assets/costsage_ai_project_logos_cost-sage-logo-dark-01-300x65.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Azure Cost Optimization: A 2026 FinOps Playbook"/>
+  <meta name="twitter:description" content="Reservations, Savings Plans, Hybrid Benefit, right-sizing. Practical Azure FinOps."/>
+  <meta name="twitter:image" content="https://costsage.ai/assets/costsage_ai_project_logos_cost-sage-logo-dark-01-300x65.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <!-- sprint2:G17-pillar-azure -->
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","@id":"https://costsage.ai/#website","url":"https://costsage.ai/","name":"CostSage","publisher":{"@id":"https://costsage.ai/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://costsage.ai/?s={search_term_string}","query-input":"required name=search_term_string"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://costsage.ai/#organization","name":"CostSage","url":"https://costsage.ai/","logo":"https://costsage.ai/assets/costsage_ai_project_logos_cost-sage-logo-dark-01-300x65.png"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://costsage.ai/"},
+    {"@type":"ListItem","position":2,"name":"Azure cost optimization","item":"https://costsage.ai/azure-cost-optimization"}
+  ]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is Azure cost optimization?","acceptedAnswer":{"@type":"Answer","text":"Azure cost optimization is the discipline of reducing Microsoft Azure spend without harming reliability or performance. Core levers include Azure Reservations, Savings Plans for compute, Azure Hybrid Benefit, right-sizing virtual machines, decommissioning idle resources, and applying Spot VMs to interruption-tolerant workloads."}},
+    {"@type":"Question","name":"What is the difference between Azure Reservations and Savings Plans?","acceptedAnswer":{"@type":"Answer","text":"Reservations commit to a specific VM size or service for 1 or 3 years and offer the deepest discounts (up to 72%) but require workload stability. Savings Plans for compute commit to a $/hour spend across compute services and provide flexibility (up to 65%) — useful when VM sizes change frequently."}},
+    {"@type":"Question","name":"What is Azure Hybrid Benefit?","acceptedAnswer":{"@type":"Answer","text":"Azure Hybrid Benefit lets customers apply existing on-premises Windows Server and SQL Server licences (with Software Assurance) to Azure VMs and SQL services, reducing the Azure rate by removing the licence component. It is one of the largest single discounts available on Azure for migrated workloads."}},
+    {"@type":"Question","name":"How do I find idle resources on Azure?","acceptedAnswer":{"@type":"Answer","text":"Use Azure Advisor's cost recommendations, Cost Management's anomaly detection, and Resource Graph queries that surface VMs at low CPU and network for over 14 days, unattached managed disks, idle public IPs, and orphaned snapshots. CostSage automates this across subscriptions and queues actions for operator approval."}},
+    {"@type":"Question","name":"Are Spot VMs reliable for production?","acceptedAnswer":{"@type":"Answer","text":"Spot VMs offer 60-90% discounts but can be evicted with 30 seconds' notice. They are appropriate for batch processing, build agents, dev/test, and stateless workloads with checkpointing. They are not appropriate for stateful production services."}}
+  ]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Azure Cost Optimization: A 2026 FinOps Playbook","datePublished":"2026-04-28","dateModified":"2026-04-28","author":{"@type":"Organization","name":"CostSage","url":"https://costsage.ai/"},"publisher":{"@id":"https://costsage.ai/#organization"},"mainEntityOfPage":"https://costsage.ai/azure-cost-optimization","image":"https://costsage.ai/assets/costsage_ai_project_logos_cost-sage-logo-dark-01-300x65.png"}
+  </script>
+</head>
+<body>
+<article style="max-width:880px;margin:2rem auto;padding:0 1rem;font-family:system-ui,sans-serif;line-height:1.6;color:#1a1a1a">
+
+<nav style="font-size:.85rem;color:#666;margin-bottom:1rem"><a href="/" style="color:#3d7a1f;text-decoration:none">Home</a> &rsaquo; Azure cost optimization</nav>
+
+<h1>Azure Cost Optimization: A 2026 FinOps Playbook</h1>
+
+<div style="background:#f4f6f8;border-left:4px solid #7BC04B;padding:1.25rem 1.5rem;border-radius:0 10px 10px 0;margin:1.5rem 0">
+  <strong style="display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:#3d7a1f;margin-bottom:.4rem">TL;DR</strong>
+  <p style="margin:0">Azure has six high-leverage cost levers: Reservations, Savings Plans for compute, Azure Hybrid Benefit, right-sizing, idle cleanup, and Spot. Most engineering teams use one or two and leave 30-50% of possible savings on the table. The fix is not another report — it is closed-loop execution that ties detection to action under operator approval.</p>
+</div>
+
+<h2>Why Azure cost is harder than it looks</h2>
+<p>Azure has the deepest discount surface of any major cloud provider — and arguably the most fragmented. Customers can stack Reservations, Savings Plans, Hybrid Benefit, dev/test pricing, Enterprise Agreements, and Azure-specific commitments into a single bill that few finance teams can fully decompose. The complexity is the entire reason Azure cost overshoots happen so often: the discount the team thought they were getting is not the discount actually applied.</p>
+<p>This playbook walks through the six levers in order of typical savings impact and shows how to operate each one in 2026.</p>
+
+<h2>Lever 1: Azure Reservations</h2>
+<p>Azure Reservations are 1-year or 3-year commitments to a specific instance size, region, and (optionally) operating system. Discounts range from 40% to 72% off pay-as-you-go. Reservations cover VMs, SQL Database, Cosmos DB, Synapse, App Service, and a handful of other services.</p>
+<p>The right way to operate them: cover the steady, predictable base of your workload — never the autoscaling tail. Most teams err on the side of caution and end up under-bought; a smaller minority over-buy and end up paying for unused commitments. The middle path is to reserve only what has been steady for 6+ months at the instance size you're confident will not change.</p>
+<p>CostSage models reservation coverage by workload and runs a what-if planner — what does my bill look like at 60% coverage vs 80% — before any commitment is made.</p>
+
+<h2>Lever 2: Savings Plans for compute</h2>
+<p>Azure Savings Plans (introduced in 2022) are a $/hour commitment that applies across VM families, regions, and OS types. Discounts are smaller than Reservations (up to 65%) but the flexibility is much higher — useful for engineering teams that frequently change VM sizes.</p>
+<p>Decision rule: if your VM mix is stable, use Reservations. If your VM mix changes more than quarterly, use Savings Plans. Many mature Azure customers run a hybrid: Reservations on the most stable workloads (e.g. SQL servers, AD controllers) and Savings Plans on everything else.</p>
+
+<h2>Lever 3: Azure Hybrid Benefit</h2>
+<p>Azure Hybrid Benefit (AHB) is the largest single discount available on Azure for migrated workloads. Customers with on-premises Windows Server and SQL Server licences (with active Software Assurance) can apply those licences to Azure VMs and SQL resources — Azure removes the licence component from the rate. Combined with a 3-year Reservation, AHB can drive total savings on a Windows VM to over 80%.</p>
+<p>The operational gap: many customers own AHB-eligible licences and forget to apply them. The Azure portal does not aggressively surface this. Audit every Windows VM and SQL resource quarterly for AHB applicability — CostSage runs this check on every refresh.</p>
+
+<h2>Lever 4: Right-sizing</h2>
+<p>Right-sizing is the discipline of matching VM size to actual usage. Azure Advisor surfaces basic recommendations, but it has a conservative threshold — many opportunities are not flagged. A more aggressive operating rule: any VM under 40% peak CPU and under 30% peak memory over 14 days is a candidate to drop one tier or move to a Bs-series burstable family.</p>
+<p>Right-sizing is the single highest-leverage lever for newer Azure tenants where reservation coverage hasn't been built yet. It also stacks: a right-sized VM under a Savings Plan or Reservation compounds savings.</p>
+
+<h2>Lever 5: Idle resource cleanup</h2>
+<p>Common idle waste on Azure:</p>
+<ul>
+  <li>Unattached managed disks (created during VM resize, never reattached)</li>
+  <li>Static public IPs reserved but not assigned</li>
+  <li>VMs in stopped (not deallocated) state — still billing for compute</li>
+  <li>Empty App Service plans</li>
+  <li>Orphaned NSGs, NICs, and snapshots</li>
+  <li>Dev/test VMs left running over weekends</li>
+  <li>Old ASE (App Service Environment) instances</li>
+</ul>
+<p>None of this is sophisticated, but the cumulative cost is large. A medium-sized Azure tenant typically carries 5-12% of monthly spend in pure idle waste. Run an idle audit monthly. CostSage runs it continuously and queues a deletion plan for operator approval.</p>
+
+<h2>Lever 6: Spot VMs</h2>
+<p>Azure Spot Virtual Machines offer up to 90% off pay-as-you-go in exchange for the right to evict with 30 seconds' notice. Suitable workloads: batch processing, build/CI agents, dev/test environments, big-data jobs with checkpointing, and stateless workloads behind a queue.</p>
+<p>Not suitable: stateful databases, customer-facing web tiers, anything with strict uptime SLOs. Pair Spot with VMSS (scale sets) and a max-eviction-rate policy to balance savings against availability.</p>
+
+<h2>Allocation: the precondition for everything</h2>
+<p>Every lever above depends on knowing what each Azure resource costs and which team or product owns it. The Azure tagging story is workable but requires discipline: enforce a tag policy (Azure Policy) that requires CostCenter, Product, Environment, and Owner on every resource. Without this, all the cost recommendations in the world end up as orphaned tickets nobody owns.</p>
+<p>CostSage augments tag-based allocation with workload-aware grouping — useful when historical resources are tagless and rebuilding tags is impractical.</p>
+
+<h2>Common Azure cost mistakes</h2>
+<ul>
+  <li><strong>Running VMs in the wrong region.</strong> Azure prices vary materially between regions for the same VM size. East US 2 is generally cheaper than UK South for equivalent compute. If latency permits, region choice can shave 10-20% off baseline cost.</li>
+  <li><strong>Premium SSD by default.</strong> Standard SSD is sufficient for most workloads. Premium SSD costs 2-3x and is reflexively chosen when "production." Audit disk SKUs against actual IOPS need.</li>
+  <li><strong>Forgotten dev/test subscriptions.</strong> The dev environment that never got cleaned up after a project was cancelled. Tag-policy + monthly idle review catches this.</li>
+  <li><strong>Egress surprises.</strong> Cross-region replication, AKS pulling images from another region, ExpressRoute mis-configuration. Network egress on Azure is one of the least-tracked cost categories.</li>
+  <li><strong>App Service over-provisioning.</strong> Premium v3 plans assigned to low-traffic web apps. Often a single P1v3 covers what was previously distributed across multiple S1 plans — without a downgrade audit, the savings never materialise.</li>
+  <li><strong>SQL DTU vs vCore mis-match.</strong> The older DTU model and the newer vCore model price differently for the same workload. Re-evaluate annually.</li>
+</ul>
+
+<h2>Reservations vs Savings Plans: a worked example</h2>
+<p>Consider a team running a mix of D-series and E-series VMs that totals ~$12,000/month on Azure compute. Suppose 70% of that is steady production and 30% is dev/test that fluctuates with project mix.</p>
+<ul>
+  <li><strong>Pure on-demand:</strong> $12,000/month. No discount.</li>
+  <li><strong>3-year RIs covering the steady 70%:</strong> ~$8,400 baseline at ~55% discount → $3,780, plus the dev/test 30% on demand at $3,600 → ~$7,380/month. Caveat: requires VM mix to remain stable; if D-series flips to E-series mid-term, RI flexibility helps but cross-family conversion has limits.</li>
+  <li><strong>3-year Savings Plan covering ~70% of compute spend:</strong> ~$8,400 at ~55% discount → ~$3,780, plus the variable 30% on demand at $3,600 → ~$7,380/month. Same total, but with significantly more flexibility on VM-size/family changes.</li>
+</ul>
+<p>The choice between RI and SP is not about absolute savings (often similar) — it's about how much the VM mix is expected to shift. Most teams over-estimate stability and under-buy SPs.</p>
+
+<h2>Operating model: from report to action</h2>
+<p>Most Azure FinOps tools stop at producing a report. The hard part is execution — opening the change ticket, deciding the cutover window, getting platform-team approval, applying the Terraform diff. CostSage's approach is to prepare the change (the reservation purchase, the resize plan, the disk-deletion list, the AHB application) and queue it for one-click operator approval. The latency between detection and execution is what determines actual savings — not the quality of the recommendation.</p>
+
+<h2>Related reading</h2>
+<ul>
+  <li><a href="/aws">AWS cost optimisation</a></li>
+  <li><a href="/multi-cloud">Multi-cloud cost management</a></li>
+  <li><a href="/finops-for-ai-workloads">FinOps for AI workloads</a></li>
+  <li><a href="/finops-agent-vs-dashboard">Why agents beat dashboards</a></li>
+  <li><a href="/azure">CostSage for Azure</a></li>
+  <li><a href="/pricing">CostSage pricing</a></li>
+</ul>
+
+<h2>FAQ</h2>
+<h3>What is Azure cost optimization?</h3>
+<p>Azure cost optimization is the discipline of reducing Microsoft Azure spend without harming reliability or performance. Core levers include Azure Reservations, Savings Plans for compute, Azure Hybrid Benefit, right-sizing virtual machines, decommissioning idle resources, and applying Spot VMs to interruption-tolerant workloads.</p>
+<h3>What is the difference between Azure Reservations and Savings Plans?</h3>
+<p>Reservations commit to a specific VM size or service for 1 or 3 years and offer the deepest discounts (up to 72%) but require workload stability. Savings Plans for compute commit to a $/hour spend across compute services and provide flexibility (up to 65%) — useful when VM sizes change frequently.</p>
+<h3>What is Azure Hybrid Benefit?</h3>
+<p>Azure Hybrid Benefit lets customers apply existing on-premises Windows Server and SQL Server licences (with Software Assurance) to Azure VMs and SQL services, reducing the Azure rate by removing the licence component. It is one of the largest single discounts available on Azure for migrated workloads.</p>
+<h3>How do I find idle resources on Azure?</h3>
+<p>Use Azure Advisor's cost recommendations, Cost Management's anomaly detection, and Resource Graph queries that surface VMs at low CPU and network for over 14 days, unattached managed disks, idle public IPs, and orphaned snapshots. CostSage automates this across subscriptions and queues actions for operator approval.</p>
+<h3>Are Spot VMs reliable for production?</h3>
+<p>Spot VMs offer 60-90% discounts but can be evicted with 30 seconds' notice. They are appropriate for batch processing, build agents, dev/test, and stateless workloads with checkpointing. They are not appropriate for stateful production services.</p>
+
+<h2>See CostSage for Azure</h2>
+<p>Read <a href="/pricing">published pricing</a>, see the <a href="/azure">Azure connector</a>, or <a href="/contact">contact us</a> to walk through your Azure spend shape.</p>
+
+<footer style="margin-top:3rem;padding-top:1.25rem;border-top:1px solid #e5e9ee;font-size:.8rem;color:#6b7280">
+  <p>&copy; <span id="dynamic-year">2026</span> CostSage. All rights reserved. Trademarks belong to their respective owners.</p>
+  <script>document.getElementById('dynamic-year').textContent=new Date().getFullYear()</script>
+</footer>
+</article>
+</body>
+</html>
