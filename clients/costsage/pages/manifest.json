@@ -1,0 +1,21 @@
+{
+  "name": "CostSage",
+  "short_name": "CostSage",
+  "description": "AI-native FinOps platform for cloud cost optimization",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0070f3",
+  "icons": [
+    {
+      "src": "/assets/costsage_ai_project_logos_cropped-cost-sage-logo-dark-01-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/costsage_ai_project_logos_cost-sage-logo-dark-01-300x65.png",
+      "sizes": "300x65",
+      "type": "image/png"
+    }
+  ]
+}
