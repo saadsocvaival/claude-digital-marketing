@@ -1,0 +1,264 @@
+{
+  "ts": "2026-04-28T13:22:56Z",
+  "url_count_crawled": 23,
+  "unique_link_targets": 39,
+  "internal_count": 34,
+  "external_count": 5,
+  "broken_count": 6,
+  "broken_by_code": {
+    "404": [
+      {
+        "target": "https://calendly.com/costsage/demo",
+        "sources": [
+          "https://costsage.ai/contact"
+        ]
+      },
+      {
+        "target": "https://costsage.ai/cdn-cgi/l/email-protection",
+        "sources": [
+          "https://costsage.ai/contact",
+          "https://costsage.ai/privacy",
+          "https://costsage.ai/privacy",
+          "https://costsage.ai/terms",
+          "https://costsage.ai/terms",
+          "https://costsage.ai/terms"
+        ]
+      }
+    ],
+    "403": [
+      {
+        "target": "https://costsage.ai/alternatives",
+        "sources": [
+          "https://costsage.ai/alternatives/vantage",
+          "https://costsage.ai/alternatives/prosperops"
+        ]
+      },
+      {
+        "target": "https://costsage.ai/compare",
+        "sources": [
+          "https://costsage.ai/compare/cloudzero-vs-costsage",
+          "https://costsage.ai/compare/nops-vs-costsage"
+        ]
+      },
+      {
+        "target": "https://twitter.com/intent/tweet?url=https://costsage.ai/finops-agent-vs-dashboard.html&text=FinOps+Agent+vs+Dashboard+-+Why+Visibility+Alone+Won%27t+Cut+Your+Cloud+Bill+%40CostSageAI",
+        "sources": [
+          "https://costsage.ai/finops-agent-vs-dashboard"
+        ]
+      },
+      {
+        "target": "https://www.g2.com/products/costsage/reviews",
+        "sources": [
+          "https://costsage.ai/",
+          "https://costsage.ai/",
+          "https://costsage.ai/about",
+          "https://costsage.ai/about",
+          "https://costsage.ai/features",
+          "https://costsage.ai/features",
+          "https://costsage.ai/pricing",
+          "https://costsage.ai/pricing",
+          "https://costsage.ai/contact",
+          "https://costsage.ai/azure",
+          "https://costsage.ai/data-access"
+        ]
+      }
+    ]
+  },
+  "all_targets": {
+    "https://costsage.ai/pricing.html": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 13
+    },
+    "https://costsage.ai/index.html": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 13
+    },
+    "https://costsage.ai/features.html": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 13
+    },
+    "https://costsage.ai/blog.html": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 13
+    },
+    "https://costsage.ai/about.html": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 13
+    },
+    "https://app.costsage.ai/": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 13
+    },
+    "https://www.youtube.com/watch?v=GWRw-qED7Q4": {
+      "kind": "external",
+      "status": "200",
+      "sources_count": 5
+    },
+    "https://www.g2.com/products/costsage/reviews": {
+      "kind": "external",
+      "status": "403",
+      "sources_count": 7
+    },
+    "https://costsage.ai/contact.html": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 13
+    },
+    "https://costsage.ai/privacy.html": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 13
+    },
+    "https://costsage.ai/terms.html": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 13
+    },
+    "https://costsage.ai/pricing.html?spend=50k": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 1
+    },
+    "https://costsage.ai/pricing.html?spend=100k": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 1
+    },
+    "https://costsage.ai/pricing.html?spend=200k": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 1
+    },
+    "https://www.youtube.com/watch?v=xdAfmVyLT1g": {
+      "kind": "external",
+      "status": "200",
+      "sources_count": 1
+    },
+    "https://calendly.com/costsage/demo": {
+      "kind": "external",
+      "status": "404",
+      "sources_count": 1
+    },
+    "https://costsage.ai/cdn-cgi/l/email-protection": {
+      "kind": "internal",
+      "status": "404",
+      "sources_count": 3
+    },
+    "https://costsage.ai/contact": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 8
+    },
+    "https://costsage.ai/finops-agent-vs-dashboard": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 6
+    },
+    "https://costsage.ai/data-access": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 1
+    },
+    "https://www.linkedin.com/shareArticle?mini=true&url=https://costsage.ai/finops-agent-vs-dashboard.html&title=FinOps+Agent+vs+Dashboard": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 1
+    },
+    "https://twitter.com/intent/tweet?url=https://costsage.ai/finops-agent-vs-dashboard.html&text=FinOps+Agent+vs+Dashboard+-+Why+Visibility+Alone+Won%27t+Cut+Your+Cloud+Bill+%40CostSageAI": {
+      "kind": "internal",
+      "status": "403",
+      "sources_count": 1
+    },
+    "https://costsage.ai/nops-alternative.html": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 2
+    },
+    "https://costsage.ai/cloudzero-alternative.html": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 2
+    },
+    "https://costsage.ai/finops-agent-vs-dashboard.html": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 1
+    },
+    "https://costsage.ai/aws": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 5
+    },
+    "https://costsage.ai/blog/ri-vs-savings-plans": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 1
+    },
+    "https://costsage.ai/features": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 2
+    },
+    "https://costsage.ai/pricing": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 8
+    },
+    "https://costsage.ai/azure": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 3
+    },
+    "https://costsage.ai/blog/aws-cost-optimisation-best-practices": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 1
+    },
+    "https://costsage.ai/": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 7
+    },
+    "https://costsage.ai/multi-cloud": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 2
+    },
+    "https://costsage.ai/compare/cloudzero-vs-costsage": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 2
+    },
+    "https://costsage.ai/finops-for-ai-workloads": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 3
+    },
+    "https://costsage.ai/azure-cost-optimization": {
+      "kind": "internal",
+      "status": "200",
+      "sources_count": 1
+    },
+    "https://costsage.ai/alternatives": {
+      "kind": "internal",
+      "status": "403",
+      "sources_count": 2
+    },
+    "https://aws.amazon.com/marketplace": {
+      "kind": "external",
+      "status": "200",
+      "sources_count": 4
+    },
+    "https://costsage.ai/compare": {
+      "kind": "internal",
+      "status": "403",
+      "sources_count": 2
+    }
+  }
+}
