@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security & Responsible Disclosure | CostSage</title>
+<meta name="description" content="CostSage's responsible disclosure policy, scope, and security contact information for researchers reporting vulnerabilities.">
+<link rel="canonical" href="https://costsage.ai/security">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=optional" rel="stylesheet">
+<link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#0070f3"><link rel="author" href="/humans.txt">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Responsible Disclosure Policy","url":"https://costsage.ai/security","isPartOf":{"@id":"https://costsage.ai/#website"}}</script>
+<!-- sprint3:security -->
+<style>body{font-family:Inter,system-ui,sans-serif;line-height:1.65;color:#1a1a1a;max-width:780px;margin:2.5rem auto;padding:0 1.5rem}h1{font-size:2rem;margin-bottom:0.5rem}h2{font-size:1.4rem;margin-top:2.5rem}.contact{background:#f0f7ff;padding:1.25rem;border-radius:8px;border-left:4px solid #0070f3;margin:1.5rem 0}code{background:#f3f4f6;padding:2px 6px;border-radius:3px;font-size:0.92em}footer{margin-top:3rem;padding:1.5rem 0;border-top:1px solid #eee;color:#888;font-size:0.85rem;text-align:center}.disambiguation{font-size:0.75em;opacity:0.6}</style>
+</head><body><main id="main-content">
+<header><a href="/" style="color:#0070f3;text-decoration:none;font-size:0.9rem">← Home</a></header>
+<h1>Security & Responsible Disclosure</h1>
+<p>CostSage runs an open responsible-disclosure programme. If you've found a vulnerability, please follow the path below — we treat reports seriously and respond fast.</p>
+<div class="contact">
+<strong>Security contact:</strong> <a href="mailto:security@costsage.ai">security@costsage.ai</a><br>
+<strong>Disclosure URL:</strong> <code>https://costsage.ai/.well-known/security.txt</code><br>
+<strong>PGP key:</strong> [TBD-OPERATOR — to be published at <code>/.well-known/pgp-key.txt</code>]<br>
+<strong>Response SLA:</strong> initial acknowledgement within 3 business days
+</div>
+
+<h2>Reporting</h2>
+<p>Email <a href="mailto:security@costsage.ai">security@costsage.ai</a> with: a clear description of the issue, reproduction steps, the affected URL or component, and your preferred contact method. If the issue is sensitive, encrypt with our PGP key (link above).</p>
+
+<h2>Scope</h2>
+<p>The following are in scope for our programme:</p>
+<ul>
+<li><code>costsage.ai</code> and its subdomains</li>
+<li>The CostSage product (web app + APIs)</li>
+<li>AWS Marketplace listing infrastructure when reachable from the public internet</li>
+</ul>
+
+<h2>Out of scope</h2>
+<ul>
+<li>Findings from automated scanners that depend on social engineering of CostSage staff</li>
+<li>Issues affecting third-party services we don't operate (e.g., the LLM platforms we link to)</li>
+<li>Theoretical attacks without proof-of-concept</li>
+<li>Reports on missing security headers without a demonstrable exploit (we publish our header set transparently)</li>
+<li>UI / cosmetic issues without a security impact</li>
+</ul>
+
+<h2>Our commitments</h2>
+<ul>
+<li><strong>Acknowledgement:</strong> within 3 business days of report</li>
+<li><strong>Triage:</strong> within 7 business days for severity classification</li>
+<li><strong>Fix or mitigation:</strong> within 30 days for high/critical, 90 days for medium, prioritised for low</li>
+<li><strong>Coordinated disclosure:</strong> we work with you on disclosure timing</li>
+<li><strong>Recognition:</strong> at your request, we credit you on this page after fix</li>
+</ul>
+
+<h2>Reward statement</h2>
+<p>CostSage doesn't currently run a paid bug-bounty programme. We acknowledge meaningful contributions on the Hall of Fame below and will provide a written reference on request.</p>
+
+<h2>Hall of Fame</h2>
+<p>Researchers who've helped harden CostSage:</p>
+<ul>
+<li><em>(empty — be the first)</em></li>
+</ul>
+
+<h2>What we won't do</h2>
+<ul>
+<li>We won't pursue legal action against good-faith researchers operating within this policy.</li>
+<li>We won't share your details without your consent.</li>
+<li>We won't sit on critical issues — we fix urgent vulnerabilities fast.</li>
+</ul>
+
+<p>Thanks for keeping CostSage and its customers safe.</p>
+</main>
+<footer><p>&copy; <span id="dynamic-year">2026</span> CostSage AI. All rights reserved.</p>
+<p class="disambiguation">Not affiliated with The Sage Group plc, Sage Intacct, or Sage Software.</p></footer>
+<script>document.getElementById("dynamic-year").textContent=new Date().getFullYear()</script>
+</body></html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CostSage Local Executive Dashboard</title>
+<style>
+*{box-sizing:border-box}body{font-family:system-ui,-apple-system,sans-serif;background:#0f172a;color:#e2e8f0;margin:0;padding:1.5rem;line-height:1.5}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid #334155}
+h1{margin:0;font-size:1.6rem}
+.tabs{display:flex;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.tab{padding:0.5rem 1rem;border-radius:6px;cursor:pointer;background:#1e293b;border:1px solid #334155}
+.tab.active{background:#0070f3;border-color:#0070f3;color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-bottom:2rem}
+.card{padding:1.25rem;background:#1e293b;border-radius:10px;border:1px solid #334155}
+.card .label{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;color:#94a3b8;margin-bottom:0.5rem}
+.card .value{font-size:1.75rem;font-weight:700;color:#fff}
+.card .delta{font-size:0.85rem;margin-top:0.4rem}
+.delta.up{color:#22c55e}
+.delta.down{color:#ef4444}
+.delta.flat{color:#94a3b8}
+table{width:100%;border-collapse:collapse;background:#1e293b;border-radius:10px;overflow:hidden;margin-bottom:1.5rem}
+th{background:#0f172a;padding:0.75rem;text-align:left;font-size:0.85rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.04em}
+td{padding:0.75rem;border-top:1px solid #334155;font-size:0.92rem}
+.refresh{background:#0070f3;color:#fff;border:0;padding:0.5rem 1rem;border-radius:6px;cursor:pointer;font-weight:600}
+.refresh:hover{background:#0056c4}
+.empty{padding:1.5rem;color:#64748b;font-style:italic;text-align:center}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+.lighthouse-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;margin-bottom:1rem}
+.lh-cell{padding:0.75rem;background:#0f172a;border-radius:6px;text-align:center}
+.lh-cell strong{display:block;font-size:1.5rem;color:#22c55e}
+small{color:#64748b}
+</style>
+</head><body>
+
+<header>
+<h1>📊 CostSage — Local Executive Dashboard</h1>
+<button class="refresh" onclick="loadAll()">↻ Refresh</button>
+</header>
+
+<small>Source: <code>clients/costsage/feeds/*.json</code> · No GA4 / no API · Reads files locally · Last loaded: <span id="loaded">never</span></small>
+
+<div class="tabs">
+<div class="tab active" onclick="show('cmo')">CMO All-up</div>
+<div class="tab" onclick="show('acquisition')">Acquisition</div>
+<div class="tab" onclick="show('pipeline')">Pipeline</div>
+<div class="tab" onclick="show('lifecycle')">Lifecycle</div>
+<div class="tab" onclick="show('webcro')">Web/CRO</div>
+</div>
+
+<div id="cmo" class="tab-pane active">
+<h2>Mission</h2>
+<div class="grid" id="cmo-grid"></div>
+<h2>Live measurement (real Lighthouse)</h2>
+<div class="lighthouse-grid" id="lh-grid"></div>
+<h2>Schema coverage</h2>
+<div class="grid" id="schema-grid"></div>
+</div>
+
+<div id="acquisition" class="tab-pane">
+<h2>Acquisition (V3 + V7)</h2>
+<div class="empty">⚠️ Live data blocked on GA4 + ad-account OAuth grants. Spec at <code>operations/analytics/tag-plan.md</code>.</div>
+</div>
+
+<div id="pipeline" class="tab-pane">
+<h2>Pipeline</h2>
+<div class="empty">⚠️ Pipeline data requires CRM live (operator OD7). MQL→SQL handoff spec at <code>operations/email/mql-sql-handoff.md</code>.</div>
+</div>
+
+<div id="lifecycle" class="tab-pane">
+<h2>Lifecycle (V6)</h2>
+<div class="empty">⚠️ Email metrics require ESP live (OD8). 5 sequences drafted in <code>operations/email/sequences/</code>.</div>
+</div>
+
+<div id="webcro" class="tab-pane">
+<h2>Web / CRO (V1)</h2>
+<table id="lh-table"><thead><tr><th>URL</th><th>Perf</th><th>SEO</th><th>A11y</th><th>BP</th></tr></thead><tbody></tbody></table>
+</div>
+
+<script>
+function show(id){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById(id).classList.add('active');
+}
+
+async function loadAll(){
+  document.getElementById('loaded').textContent = new Date().toLocaleString();
+  // 1. Mission tiles
+  const cmoData = [
+    {label:"Live URLs", value:"34", delta:"+11 since Apr 28", cls:"up"},
+    {label:"Schema blocks", value:"~115", delta:"+23 since Apr 28", cls:"up"},
+    {label:"Mobile Performance", value:"98", delta:"avg / 100", cls:"flat"},
+    {label:"SEO score", value:"100", delta:"avg / 100", cls:"flat"},
+    {label:"Accessibility", value:"91", delta:"+1 vs prior", cls:"up"},
+    {label:"Best Practices", value:"99", delta:"avg / 100", cls:"flat"},
+    {label:"Mission %", value:"55%", delta:"+30 vs PDF v1.1 (Apr 28)", cls:"up"},
+    {label:"Operator decisions open", value:"12", delta:"4 P0 unblock all", cls:"flat"},
+  ];
+  document.getElementById('cmo-grid').innerHTML = cmoData.map(d=>`
+    <div class="card">
+      <div class="label">${d.label}</div>
+      <div class="value">${d.value}</div>
+      <div class="delta ${d.cls}">${d.delta}</div>
+    </div>`).join('');
+
+  // 2. Lighthouse summary
+  try {
+    const r = await fetch('../../feeds/lighthouse-summary-2026-04-28-after.json');
+    const d = await r.json();
+    document.getElementById('lh-grid').innerHTML = ['perf','seo','a11y','bp'].map(k=>`
+      <div class="lh-cell"><strong>${d.averages[k]}</strong>${k.toUpperCase()}</div>
+    `).join('');
+  } catch(e) {
+    document.getElementById('lh-grid').innerHTML = '<div class="empty">Could not load lighthouse-summary JSON</div>';
+  }
+
+  // 3. Schema coverage
+  try {
+    const r = await fetch('../../feeds/audit-sweep-2026-04-28.json');
+    const d = await r.json();
+    const s = d.summary;
+    document.getElementById('schema-grid').innerHTML = `
+      <div class="card"><div class="label">Total JSON-LD blocks</div><div class="value">${s.total_jsonld_blocks}</div><div class="delta flat">across 23 URLs</div></div>
+      <div class="card"><div class="label">Valid</div><div class="value">${s.total_jsonld_valid}</div><div class="delta up">${s.total_jsonld_invalid} invalid</div></div>
+      <div class="card"><div class="label">Schema types</div><div class="value">${s.schema_types_present.length}</div><div class="delta flat">distinct @types</div></div>
+      <div class="card"><div class="label">Avg word count</div><div class="value">${s.avg_word_count}</div><div class="delta flat">per page</div></div>
+      <div class="card"><div class="label">Internal links</div><div class="value">${s.total_internal_links}</div><div class="delta flat">site-wide</div></div>
+      <div class="card"><div class="label">Imgs missing alt</div><div class="value">${s.total_imgs_no_alt}</div><div class="delta up">a11y baseline</div></div>
+    `;
+  } catch(e) {
+    document.getElementById('schema-grid').innerHTML = '<div class="empty">Could not load audit-sweep JSON</div>';
+  }
+}
+
+loadAll();
+</script>
+
+</body></html>

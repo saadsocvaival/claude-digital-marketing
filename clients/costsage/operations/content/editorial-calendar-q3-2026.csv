@@ -1,0 +1,25 @@
+Week,Slot,Date,Type,Title,Target Keyword,Owner,Distribution,Status
+W01,A,2026-07-06,pillar,FinOps for AI workloads,finops for ai workloads,Head of Content,LinkedIn+X+newsletter,LIVE
+W01,B,2026-07-09,how-to,How to audit AWS Reserved Instance utilization in 30 minutes,aws ri utilization audit,Head of Content,LinkedIn+newsletter,DRAFT
+W02,A,2026-07-13,how-to,Multi-cloud tag schema in 5 patterns,multi-cloud tag schema,Head of Content,LinkedIn+sales-enablement,BRIEF
+W02,B,2026-07-16,blog,The hidden cost of bad tagging (issue 03),cost of bad tagging,Head of Content,LinkedIn+X+newsletter,LIVE
+W03,A,2026-07-20,pillar,AWS Reserved Instances 2026 buyer's guide,aws reserved instances 2026,Head of Content,LinkedIn+X+newsletter+sales,BRIEF
+W03,B,2026-07-23,comparison,CostSage vs Spot by NetApp,spot.io alternative,Head of Content,LinkedIn,LIVE
+W04,A,2026-07-27,how-to,Azure Hybrid Benefit ROI calculator,azure hybrid benefit,Head of Content,LinkedIn+newsletter,BRIEF
+W04,B,2026-07-30,blog,RI vs Savings Plans: 2026 update,ri vs savings plans 2026,Head of Content,LinkedIn+X+newsletter,LIVE
+W05,A,2026-08-03,pillar,GCP committed use discounts vs Savings Plans,gcp cuds vs savings plans,Head of Content,LinkedIn+X+newsletter,BRIEF
+W05,B,2026-08-06,how-to,5 things to audit before your next AWS commit,aws commit audit,Head of Content,LinkedIn+sales,IDEA
+W06,A,2026-08-10,customer,[Customer story — TBD-OPERATOR],customer-story,Head of Content,LinkedIn+sales+newsletter,IDEA
+W06,B,2026-08-13,how-to,Multi-cloud cost allocation patterns,multi-cloud cost allocation,Head of Content,LinkedIn+newsletter,BRIEF
+W07,A,2026-08-17,pillar,FinOps maturity model 2026,finops maturity model,Head of Content,LinkedIn+X+newsletter,IDEA
+W07,B,2026-08-20,blog,Why dashboards alone won't cut your cloud bill,visibility-only finops,Head of Content,LinkedIn+X+sales,IDEA
+W08,A,2026-08-24,newsletter,Issue 04 — TBD theme,newsletter-issue-04,Head of Content,Email,IDEA
+W08,B,2026-08-27,how-to,How to right-size a Kubernetes cluster (without breaking prod),kubernetes rightsizing,Head of Content,LinkedIn+sales,IDEA
+W09,A,2026-08-31,pillar,Cost optimization for AI inference workloads,ai inference cost optimization,Head of Content,LinkedIn+X+newsletter,IDEA
+W09,B,2026-09-03,comparison,CostSage vs Cast AI,cast ai alternative,Head of Content,LinkedIn,LIVE
+W10,A,2026-09-07,how-to,EC2 idle resource cleanup playbook,ec2 idle cleanup,Head of Content,LinkedIn+sales,IDEA
+W10,B,2026-09-10,blog,The economics of agentic FinOps,agentic finops economics,Head of Content,LinkedIn+X+newsletter,IDEA
+W11,A,2026-09-14,pillar,FinOps for Kubernetes — going beyond Kubecost,kubernetes finops,Head of Content,LinkedIn+X+newsletter,IDEA
+W11,B,2026-09-17,customer,[Customer story — TBD-OPERATOR],customer-story,Head of Content,LinkedIn+sales,IDEA
+W12,A,2026-09-21,newsletter,Issue 05 — Q3 retrospective,newsletter-issue-05,Head of Content,Email,IDEA
+W12,B,2026-09-24,blog,Q3 2026 in cloud cost: what changed,cloud cost q3 2026,Head of Content,LinkedIn+X+newsletter,IDEA

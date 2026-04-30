@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AWS-First SaaS FinOps Playbook — CostSage Whitepaper 2026</title>
+<meta name="description" content="The 7-chapter FinOps playbook for AWS-first SaaS teams. Covers visibility, rightsizing, RI/SP portfolio, tagging governance, idle cleanup, AI workloads, and culture.">
+<link rel="canonical" href="https://costsage.ai/whitepaper/aws-first-saas-finops">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The AWS-First SaaS FinOps Playbook">
+<meta property="og:description" content="The 7-chapter playbook for AWS-first SaaS teams who want their cloud bill to actually go down.">
+<meta property="og:image" content="https://costsage.ai/assets/costsage_ai_project_logos_cost-sage-logo-dark-01-300x65.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=optional" rel="stylesheet">
+<link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#0070f3"><link rel="author" href="/humans.txt">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"The AWS-First SaaS FinOps Playbook","description":"The 7-chapter FinOps playbook for AWS-first SaaS teams.","datePublished":"2026-04-30","dateModified":"2026-04-30","author":{"@type":"Organization","name":"CostSage","url":"https://costsage.ai/"},"publisher":{"@id":"https://costsage.ai/#organization"},"mainEntityOfPage":"https://costsage.ai/whitepaper/aws-first-saas-finops","articleSection":"FinOps","keywords":"finops,aws,cloud cost optimization,saas"}
+</script>
+<!-- sprint3:whitepaper -->
+<style>body{font-family:Inter,system-ui,sans-serif;max-width:800px;margin:2.5rem auto;padding:0 1.5rem;line-height:1.7;color:#1a1a1a}h1{font-size:2.4rem;line-height:1.15;margin:0.5rem 0 1rem}.subhead{font-size:1.15rem;color:#555;margin-bottom:2rem}h2{font-size:1.6rem;margin-top:3rem;border-top:1px solid #eee;padding-top:1.5rem}h3{font-size:1.2rem;margin-top:1.5rem}.toc{background:#f0f7ff;padding:1.25rem 1.5rem;border-radius:8px;margin:1.5rem 0;border-left:4px solid #0070f3}.toc ol{margin:0.5rem 0 0 1.2rem}blockquote{border-left:3px solid #0070f3;padding-left:1rem;color:#555;font-style:italic}table{width:100%;border-collapse:collapse;margin:1.5rem 0}th,td{padding:0.6rem 0.8rem;border:1px solid #e5e7eb;text-align:left}th{background:#f9fafb}.cta{background:#0070f3;color:#fff;padding:0.85rem 1.75rem;border-radius:0.5rem;text-decoration:none;font-weight:600;display:inline-block;margin-top:1rem}footer{margin-top:3rem;padding:1.5rem 0;border-top:1px solid #eee;color:#888;font-size:0.85rem;text-align:center}.disambiguation{font-size:0.75em;opacity:0.6}</style>
+</head>
+<body>
+<header><a href="/" style="color:#0070f3;text-decoration:none;font-size:0.9rem">← Home</a></header>
+
+<h1>The AWS-First SaaS FinOps Playbook</h1>
+<p class="subhead">Seven chapters for engineering leaders who already have visibility tools and still aren't seeing the bill go down.</p>
+
+<div class="toc">
+<strong>Contents</strong>
+<ol>
+<li><a href="#ch1">Why visibility-first FinOps stalls</a></li>
+<li><a href="#ch2">The five waste categories that matter</a></li>
+<li><a href="#ch3">Reserved Instances + Savings Plans portfolio strategy</a></li>
+<li><a href="#ch4">Idle resource cleanup that doesn't break production</a></li>
+<li><a href="#ch5">Tagging governance: from chaos to chargeback in 90 days</a></li>
+<li><a href="#ch6">FinOps for AI workloads (the new frontier)</a></li>
+<li><a href="#ch7">Building the culture: engineers as cost owners</a></li>
+</ol>
+</div>
+
+<h2 id="ch1">Chapter 1: Why visibility-first FinOps stalls</h2>
+<p>The 2020s gave SaaS teams the best cloud-cost dashboards in history. AWS Cost Explorer, third-party tools like Vantage, CloudZero, and Finout — all surface waste with depth and clarity. And yet, surveys consistently find SaaS engineering teams reporting <em>more</em> wasted cloud spend year-over-year, not less.</p>
+<p>The math is simple. Visibility tools tell you where the leak is. Closing the leak still requires an engineer to: read the report, prioritise the fix against feature work, schedule the change, deploy it, and validate the result. That work doesn't happen, because engineers are paid to ship features, not to fix dashboards.</p>
+<p>The first chapter of this playbook is therefore a confession: <strong>visibility is necessary, but not sufficient</strong>. Until something or someone closes the loop between "we know there's waste" and "the waste is fixed", FinOps stays a dashboard-staring exercise.</p>
+<blockquote>"We knew we had $40K/month of idle EC2. We knew it for nine months. We never had time to clean it up." — Engineering manager, AWS-first SaaS, 2025</blockquote>
+
+<h2 id="ch2">Chapter 2: The five waste categories that matter</h2>
+<p>For AWS-first SaaS teams between $10K and $500K monthly cloud spend, five waste categories typically account for 80% of recoverable savings:</p>
+<ol>
+<li><strong>Compute rightsizing</strong> — EC2 / RDS / containers running at &lt;30% utilization</li>
+<li><strong>Reserved Instance / Savings Plan misalignment</strong> — commitments locked to deprecated instance families, or no commitments where workload is predictable</li>
+<li><strong>Idle resources</strong> — unattached EBS, idle Elastic IPs, dormant load balancers, unused snapshots</li>
+<li><strong>Storage tier mismatches</strong> — Hot tier for data accessed once a year</li>
+<li><strong>Tagging gaps</strong> — untagged spend that can't be allocated to a team or product</li>
+</ol>
+<p>Each is a known engineering problem with a known engineering solution. The work to fix them is repetitive, well-understood, and reversible — the perfect fit for an agentic AI system.</p>
+
+<h2 id="ch3">Chapter 3: Reserved Instances + Savings Plans portfolio strategy</h2>
+<p>RIs and Savings Plans are AWS's two main commitment products. Per AWS public pricing, RIs offer up to 72% off list for 3-year all-upfront purchases; Savings Plans offer up to 66% with more flexibility on instance family.</p>
+
+<h3>The decision framework</h3>
+<table>
+<tr><th>Workload pattern</th><th>Best instrument</th><th>Reasoning</th></tr>
+<tr><td>Steady-state production, instance family stable</td><td>3-year Standard RI</td><td>Deepest discount, lowest risk</td></tr>
+<tr><td>Steady-state production, family may evolve</td><td>3-year Convertible RI</td><td>Discount is shallower but you can swap families</td></tr>
+<tr><td>Variable compute, family unpredictable</td><td>Savings Plan</td><td>Flat $/hour commitment, family-agnostic</td></tr>
+<tr><td>Bursty / experimental</td><td>On-demand or Spot</td><td>Don't commit what you can't predict</td></tr>
+</table>
+
+<h3>Common mistakes (and what they cost)</h3>
+<ul>
+<li><strong>Buying RIs at peak demand</strong> — locks in commitments at workload high-water-mark; 15-20% wasted commitment in normal operation.</li>
+<li><strong>Mixing RI types without a model</strong> — overlapping coverage, double-paying.</li>
+<li><strong>Letting commitments expire silently</strong> — workload still running, suddenly back to on-demand, 40-72% bill spike.</li>
+<li><strong>Single-region commitments for multi-region workloads</strong> — coverage doesn't apply where the work runs.</li>
+</ul>
+
+<h2 id="ch4">Chapter 4: Idle resource cleanup that doesn't break production</h2>
+<p>Idle resources are the simplest waste to identify and the most dangerous to clean. The fear: deleting a resource that turns out to be load-bearing for something undocumented.</p>
+<p>The safe pattern: <strong>quarantine before delete</strong>. Move idle resources to a holding state for 30-90 days. If nothing breaks, delete. If something breaks, restore.</p>
+<p>The five resources to systematically audit:</p>
+<ol>
+<li>Unattached EBS volumes (review monthly)</li>
+<li>Idle Elastic IPs (~$0.005/hour each, ~$44/year per idle IP)</li>
+<li>Unused load balancers (~$22/month per ALB)</li>
+<li>Old snapshots and AMIs (often grandfathered, no owner)</li>
+<li>Stopped instances with attached EBS (still paying for storage)</li>
+</ol>
+
+<h2 id="ch5">Chapter 5: Tagging governance — from chaos to chargeback in 90 days</h2>
+<p>Tagging is a culture problem dressed as a technical problem. The schema doesn't matter as much as the enforcement.</p>
+
+<h3>The 90-day rollout</h3>
+<ul>
+<li><strong>Days 1-30: Schema + audit</strong> — Define 5 mandatory tags (owner, env, cost-center, product, application). Audit current coverage.</li>
+<li><strong>Days 31-60: Showback</strong> — Tag-driven dashboards visible to teams; cost-by-team reports in Slack weekly. No enforcement yet.</li>
+<li><strong>Days 61-90: Chargeback</strong> — Untaggable spend rolls up to a single "untagged" cost center, owned by Platform team. Strong incentive to tag everything correctly.</li>
+</ul>
+
+<p>The agent-driven shortcut: instead of relying on engineering teams to tag at provisioning time, run an agent that nightly scans for new resources, infers ownership from CI/CD metadata, and either tags or alerts.</p>
+
+<h2 id="ch6">Chapter 6: FinOps for AI workloads (the new frontier)</h2>
+<p>AI/ML workloads added in 2024-2025 introduced six new cost dimensions traditional FinOps wasn't designed for:</p>
+<ol>
+<li><strong>Per-workload token economics</strong> — model name × token count × cost per 1M tokens</li>
+<li><strong>GPU utilization</strong> — clusters typically run below 50%</li>
+<li><strong>Vector database storage tiering</strong> — cold embeddings in Hot tier</li>
+<li><strong>Idle inference endpoints</strong> — serving traffic that doesn't exist</li>
+<li><strong>Cross-region egress</strong> — pulling training datasets from one region, serving from another</li>
+<li><strong>Observability tax</strong> — tracing every inference is expensive; sample wisely</li>
+</ol>
+<p>The full coverage is in our pillar page <a href="/finops-for-ai-workloads">/finops-for-ai-workloads</a>.</p>
+
+<h2 id="ch7">Chapter 7: Building the culture — engineers as cost owners</h2>
+<p>The most expensive thing in FinOps is the cultural gap between "the bill" and "the team that drives it". Bridging that gap takes 12-18 months of intentional work:</p>
+<ul>
+<li><strong>Weekly cost-by-team report</strong> — Friday, in Slack, public.</li>
+<li><strong>Blameless retros on cost spikes</strong> — same as production incidents.</li>
+<li><strong>Cost as a quality metric</strong> — alongside latency, error rate, security.</li>
+<li><strong>Engineer's choice</strong> — give the team the budget; let them decide how to spend it.</li>
+<li><strong>Cost-aware design reviews</strong> — every new architecture has a cost estimate.</li>
+</ul>
+<p>FinOps culture isn't built by writing more reports. It's built when the engineer who deploys the workload is the engineer who owns the bill.</p>
+
+<h2 id="next">Next steps</h2>
+<p>This playbook works whether you're using CostSage or not. If you'd like to talk to us about closing the visibility-to-action loop with agentic AI:</p>
+<p><a href="/pricing" class="cta">See CostSage pricing →</a></p>
+
+<footer>
+<p>&copy; <span id="dynamic-year">2026</span> CostSage AI. All rights reserved.</p>
+<p class="disambiguation">Not affiliated with The Sage Group plc, Sage Intacct, or Sage Software.</p>
+</footer>
+<script>document.getElementById("dynamic-year").textContent=new Date().getFullYear()</script>
+</body></html>
